@@ -1,0 +1,305 @@
+﻿<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <title>Wyam2 - Overview</title>
+        <link href="/assets/css/highlight.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/override.css" rel="stylesheet">
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>        
+        <script src="/assets/js/app.min.js"></script>         
+        <script src="/assets/js/highlight.pack.js"></script>   
+        <script src="/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/assets/js/mermaid.min.js"></script>
+        <script src="/assets/js/svg-pan-zoom.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/assets/js/html5shiv.min.js"></script>
+        <script src="/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        <meta name="google" content="notranslate">
+<meta http-equiv="Content-Language" content="en">
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/" class="logo">
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li><a href="/blog">Blog</a></li>
+        <li><a href="/docs">Documentation</a></li>
+        <li class="active"><a href="/recipes">Recipes</a></li>
+        <li><a href="/modules">Modules</a></li>
+        <li><a href="/shortcodes">Shortcodes</a></li>
+        <li><a href="/api">API</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+        <div><p><a href="https://github.com/Wyam2/docs/tree/master/input/recipes/blog/overview.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
+    <div id="infobar-headings"><h6>On This Page</h6><p><a href="#key-features">Key Features</a></p>
+<p><a href="#scaffolding">Scaffolding</a></p>
+<p><a href="#building">Building</a></p>
+<p><a href="#themes">Themes</a></p>
+<p><a href="#usage-notes">Usage Notes</a></p>
+<hr class="infobar-hidden">
+</div>
+
+                </section>
+                <section class="sidebar">    
+                                     
+                    
+
+                    <ul class="sidebar-menu">
+                        
+
+                <li class="treeview active">
+                    <a href="/recipes/blog">Blog Recipe</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li class="selected"><a href="/recipes/blog/overview">Overview</a></li>
+                <li><a href="/recipes/blog/settings">Settings</a></li>
+                <li><a href="/recipes/blog/document-metadata">Document Metadata</a></li>
+                <li><a href="/recipes/blog/pipelines">Pipelines</a></li>
+                <li class="treeview">
+                    <a href="/recipes/blog/themes">Themes</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/recipes/blog/themes/blogtemplate">BlogTemplate</a></li>
+                <li><a href="/recipes/blog/themes/cleanblog">CleanBlog</a></li>
+                <li><a href="/recipes/blog/themes/phantom">Phantom</a></li>
+                <li><a href="/recipes/blog/themes/solidstate">SolidState</a></li>
+                <li><a href="/recipes/blog/themes/stellar">Stellar</a></li>
+                <li><a href="/recipes/blog/themes/trophy">Trophy</a></li>
+
+                    </ul>
+                </li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/recipes/docs">Docs Recipe</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/recipes/docs/overview">Overview</a></li>
+                <li><a href="/recipes/docs/settings">Settings</a></li>
+                <li><a href="/recipes/docs/document-metadata">Document Metadata</a></li>
+                <li><a href="/recipes/docs/pipelines">Pipelines</a></li>
+                <li class="treeview">
+                    <a href="/recipes/docs/themes">Themes</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/recipes/docs/themes/samson">Samson</a></li>
+
+                    </ul>
+                </li>
+
+                    </ul>
+                </li>
+
+                    </ul>
+                            
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+		<section class="content-header">
+			<h1>Overview</h1>
+		</section>
+	<section class="content">
+		<p>The Blog recipe is probably the best way to get an experience similar to other blog-based static site generators like Jekyll. It will pick up all Markdown and Razor files in the <code>/posts</code> directory as blog posts, and all Markdown and Razor files in the root site directory as additional information pages. It will also generate Atom and RSS feeds for your posts, as well as create archives by date and by tags.</p>
+<h1 id="key-features">Key Features</h1>
+<ul>
+<li>Content pages in addition to blog posts.</li>
+<li>Posts and pages can be in <a href="/modules/markdown">Markdown</a> or <a href="/modules/razor">Razor</a>.</li>
+<li>Tag engine, including a tag archive and tag lists on every post.</li>
+<li>Automatic archive page.</li>
+<li>Meta-refresh redirects and/or a Netlify redirect file.</li>
+<li>RSS, Atom, and/or RDF feeds.</li>
+</ul>
+<h1 id="scaffolding">Scaffolding</h1>
+<p>To scaffold the recipe, run:</p>
+<pre><code>wyam new -r <a href="/api/Wyam.Blog/Blog">Blog</a>
+</code></pre>
+<p>This generates a skeleton set of input files that includes a blog post and a content page. You can use this as a starting point for your own site.</p>
+<h1 id="building">Building</h1>
+<p>To build a site with this recipe, run:</p>
+<pre><code>wyam -r <a href="/api/Wyam.Blog/Blog">Blog</a>
+</code></pre>
+<h1 id="themes">Themes</h1>
+<p>To select a specific <a href="/recipes/blog/themes">theme</a>, run:</p>
+<pre><code>wyam -r <a href="/api/Wyam.Blog/Blog">Blog</a> -t CleanBlog
+</code></pre>
+<h1 id="usage-notes">Usage Notes</h1>
+<h2 id="blog-post-published-dates">Blog Post Published Dates</h2>
+<p>To find the published date for blog posts, the metadata will first be searched for a <code>Published</code> value. If one cannot be found (or it can't be converted to a <code>DateTime</code>) then the filename of the input file for the post will be checked for a date that appears in the beginning of the file name of the format <code>YYYY-MM-DD-</code>.</p>
+<h2 id="index-and-archive-pages">Index and Archive Pages</h2>
+<p>The Blog recipe is very flexible in terms of how your posts are presented. You can display them on the index page, on an archive page, with or without excerpts, and control things like page counts. This is all managed using the following <a href="/recipes/blog/settings">settings</a>:</p>
+<ul>
+<li><code>BlogKeys.IndexPageSize</code></li>
+<li><code>BlogKeys.IndexPaging</code></li>
+<li><code>BlogKeys.IndexFullPosts</code></li>
+<li><code>BlogKeys.ArchivePageSize</code></li>
+<li><code>BlogKeys.ArchiveExcerpts</code></li>
+<li><code>BlogKeys.GenerateArchive</code></li>
+</ul>
+<p>You can display your posts on either the index, a separate archive, or both.</p>
+<p>For example, to display the full content of your most recent post on the index and the remaining posts in the archive in pages of 10, add the following to your <a href="/docs/usage/configuration">configuration file</a>:</p>
+<pre><code>Settings[BlogKeys.IndexPageSize] = 1;
+Settings[BlogKeys.IndexFullPosts] = true;
+Settings[BlogKeys.ArchivePageSize] = 10;
+</code></pre>
+<p>Alternatively, to display all of your posts on the index page in groups of 5 and turn off the archive section, add the following:</p>
+<pre><code>Settings[BlogKeys.IndexPageSize] = 5;
+Settings[BlogKeys.IndexPaging] = true;
+Settings[BlogKeys.GenerateArchive] = false;
+</code></pre>
+<p>For more information about these settings including their types and default values, see <a href="/recipes/blog/settings">the settings page</a>.</p>
+<h2 id="redirects">Redirects</h2>
+<p>If migrating your site from another generator, the paths may not match up exactly. This recipe supports multiple styles of redirects. To activate, add <code>RedirectFrom</code> metadata to the <a href="/docs/concepts/metadata#front-matter">front matter</a> of each page that should be the endpoint of a redirection. You can control what gets generated to support redirection with the <code>MetaRefreshRedirects</code> and <code>NetlifyRedirects</code> global metadata values. By default, <a href="https://www.w3.org/TR/WCAG20-TECHS/H76.html">meta refresh redirects</a> are generated. These are small HTML files that contain a <code>&lt;meta&gt;</code> header tag redirecting the client. They are also <a href="https://support.google.com/webmasters/answer/79812">supported by Google</a> and other search engines.</p>
+<h2 id="link-validation">Link Validation</h2>
+<p>The recipe includes the ability to validate both relative (internal) and absolute (external) links. Both features are opt-in given that they add additional time to the generation process. To activate them add <code>Settings[BlogKeys.ValidateRelativeLinks] = true;</code> for relative link validation and/or <code>Settings[BlogKeys.ValidateAbsoluteLinks] = true;</code> for absolute link validation to your configuration file.</p>
+<p>By default validation failures output a warning with details on the link, why it failed, and which files it's in. You can switch to outputting errors (which will usually break the build) by using <code>Settings[BlogKeys.ValidateLinksAsError] = true;</code> in your configuration file.</p>
+<p>Note that turning on validation for absolute links typically results in a number of falsely reported failures which will need to be checked manually (so it's not recommended to validate absolute links <em>and</em> output errors).</p>
+
+	</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                Wyam2 is maintained by <a href="https://savornicesei.com">Simona Avornicesei</a> and <a href="https://github.com/Wyam2/Wyam/graphs/contributors">other awesome contributors</a>, as a continuation of the <a href="https://github.com/Wyamio/Wyam">Wyam</a> project crafted by <a href="https://daveaglick.com">Dave Glick</a>. <a href="https://github.com/Wyam2/Wyam">Code on GitHub</a>. This site was entirely generated by Wyam. Check out <a href="https://github.com/Wyam2/docs">the site code on GitHub</a>.
+<br><br>
+
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        <div class="github-button">
+    <a href="https://github.com/Wyam2/Wyam"><i class="fa fa-github"></i> GitHub</a>
+</div>
+
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).ready(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        useMaxWidth: false
+                    },
+					startOnLoad: false,
+					cloneCssStyles: false
+                });     
+                mermaid.init(undefined, ".mermaid");
+
+                // Remove the max-width setting that Mermaid sets
+                var mermaidSvg = $('.mermaid svg');
+                mermaidSvg.addClass('img-responsive');
+                mermaidSvg.css('max-width', '');
+
+                // Make it scrollable
+				var target = document.querySelector(".mermaid svg");
+				if(target !== null)
+				{
+					var panZoom = window.panZoom = svgPanZoom(target, {
+						zoomEnabled: true,
+						controlIconsEnabled: true,
+						fit: true,
+						center: true,
+                        maxZoom: 20,
+                        zoomScaleSensitivity: 0.6
+					});			                          
+
+                    // Do the reset once right away to fit the diagram
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                    
+                    $(window).resize(function(){
+                        panZoom.resize();
+                        panZoom.fit();
+                        panZoom.center();
+                    });
+				}
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>

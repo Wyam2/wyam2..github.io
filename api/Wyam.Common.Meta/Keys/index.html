@@ -1,0 +1,893 @@
+﻿<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <title>Wyam2 - API - Keys Class</title>
+        <link href="/assets/css/highlight.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/override.css" rel="stylesheet">
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>        
+        <script src="/assets/js/app.min.js"></script>         
+        <script src="/assets/js/highlight.pack.js"></script>   
+        <script src="/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/assets/js/mermaid.min.js"></script>
+        <script src="/assets/js/svg-pan-zoom.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/assets/js/html5shiv.min.js"></script>
+        <script src="/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        <meta name="google" content="notranslate">
+<meta http-equiv="Content-Language" content="en">
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/" class="logo">
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li><a href="/blog">Blog</a></li>
+        <li><a href="/docs">Documentation</a></li>
+        <li><a href="/recipes">Recipes</a></li>
+        <li><a href="/modules">Modules</a></li>
+        <li><a href="/shortcodes">Shortcodes</a></li>
+        <li class="active"><a href="/api">API</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
+<p><a href="#Syntax">Syntax</a></p>
+<p><a href="#fields">Fields</a></p>
+<hr class="infobar-hidden">
+</div>
+
+                </section>
+                <section class="sidebar">    
+                                     
+                    	
+	    <script src="/assets/js/lunr.min.js"></script>
+    <script src="/assets/js/searchIndex.js"></script>
+    <div class="sidebar-form">
+        <div class="input-group">
+            <input type="text" name="search" id="search" class="form-control" placeholder="Search Types...">
+            <span class="input-group-btn">
+                <button class="btn btn-flat"><i class="fa fa-search"></i></button>
+            </span>
+        </div>
+    </div>
+    <div id="search-results">
+    </div>
+    <script>
+        function runSearch(query){
+            $("#search-results").empty();			
+            if( query.length < 2 ){
+                return;
+            }			
+            var results = searchModule.search("*" + query + "*");
+            var listHtml = "<ul class='sidebar-menu'>";	
+            listHtml += "<li class='header'>Type Results</li>";	
+            if(results.length == 0 ){
+                listHtml += "<li>No results found</li>";
+            } else {					
+                for(var i = 0; i < results.length; ++i){
+                    var res = results[i];
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
+                }				
+            }
+            listHtml += "</ul>";				
+            $("#search-results").append(listHtml);
+        }
+
+        $(document).ready(function(){
+            $("#search").on('input propertychange paste', function() {
+                runSearch($("#search").val());
+            });
+        });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
+    </script>
+	
+    <hr>
+
+                    <ul class="sidebar-menu">
+                        
+			<li class="header">Assembly</li>
+		<li><a href="/api/Wyam.Common.dll">Wyam<wbr>.Common<wbr>.dll</a></li>
+		<li class="header">Namespace</li>
+		<li><a href="/api/Wyam.Common.Meta">Wyam<wbr>.Common<wbr>.Meta</a></li>
+		<li role="separator" class="divider"></li>
+			<li class="header">Class Types</li>
+				<li><a href="/api/Wyam.Common.Meta/CachedDelegateMetadataValue">Cached<wbr>Delegate<wbr>Metadata<wbr>Value</a></li>
+				<li><a href="/api/Wyam.Common.Meta/ConvertingDictionary">ConvertingDictionary</a></li>
+				<li><a href="/api/Wyam.Common.Meta/DelegateMetadataValue">Delegate<wbr>Metadata<wbr>Value</a></li>
+				<li class="selected"><a href="/api/Wyam.Common.Meta/Keys">Keys</a></li>
+				<li><a href="/api/Wyam.Common.Meta/MetadataConversionExtensions">Metadata<wbr>Conversion<wbr>Extensions</a></li>
+				<li><a href="/api/Wyam.Common.Meta/MetadataItems">MetadataItems</a></li>
+				<li><a href="/api/Wyam.Common.Meta/MetadataXmlExtensions">Metadata<wbr>Xml<wbr>Extensions</a></li>
+			<li class="header">Interface Types</li>
+				<li><a href="/api/Wyam.Common.Meta/IMetadata">IMetadata</a></li>
+				<li><a href="/api/Wyam.Common.Meta/IMetadata_1">IMetadata<wbr>&lt;T&gt;<wbr></a></li>
+				<li><a href="/api/Wyam.Common.Meta/IMetadataDictionary">IMetadataDictionary</a></li>
+				<li><a href="/api/Wyam.Common.Meta/IMetadataValue">IMetadataValue</a></li>
+			<li class="header">Struct Types</li>
+				<li><a href="/api/Wyam.Common.Meta/MetadataItem">MetadataItem</a></li>
+
+
+                    </ul>
+                            
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+<section class="content-header">
+	<h1>Keys <small>Class</small></h1>
+</section>
+<section class="content">
+	
+	
+		<h1 id="Summary">Summary</h1>
+	<div class="lead">
+    Common metadata keys for modules in the core library.
+    </div>
+
+		<div class="panel panel-default">
+  			<div class="panel-body">
+				<div class="row">
+					<div class="col-md-6">
+						<dl class="dl-horizontal">		
+								<dt>Assembly</dt>
+								<dd><a href="/api/Wyam.Common.dll">Wyam<wbr>.Common<wbr>.dll</a></dd>
+
+								<dt>Namespace</dt>
+								<dd><a href="/api/Wyam.Common.Meta">Wyam<wbr>.Common<wbr>.Meta</a></dd>
+											
+							
+								<dt>Base Types</dt>
+								<dd>
+									<ul class="list-unstyled">										
+											<li>Object</li>								
+									</ul>
+								</dd>				
+							
+							
+						</dl>
+					</div>		
+					<div class="col-md-6">
+						<div class="mermaid">
+							graph BT
+	Type--&gt;Base0["Object"]
+	Type["Keys"]
+class Type type-node
+
+						</div>
+					</div>
+				</div>
+  			</div>
+		</div>
+
+	<h1 id="Syntax">Syntax</h1>
+	<pre><code>public static class Keys</code></pre>
+
+
+
+
+
+
+
+
+
+			<h1 id="fields">Fields</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover three-cols">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Constant Value</th>
+								<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/A2342DF3">Children</a></td>
+								<td>Children</td>
+								<td>
+									<div>
+    All the children of this node.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/95F2666D">CleanOutputPath</a></td>
+								<td>CleanOutputPath</td>
+								<td>
+									<div>
+    Indicates whether to clean the output path on each execution.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/D43BDA8F">CurrentPage</a></td>
+								<td>CurrentPage</td>
+								<td>
+									<div>
+    The index of the current page (1 based).
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/918A60AF">Date<wbr>Time<wbr>Display<wbr>Culture</a></td>
+								<td>DateTimeDisplayCulture</td>
+								<td>
+									<div>
+    Indicates the culture to use for displaying dates in output.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/D084A371">DateTimeInputCulture</a></td>
+								<td>DateTimeInputCulture</td>
+								<td>
+									<div>
+    Indicates the culture to use for reading and interpreting dates as input.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/1C23F93F">DestinationFileBase</a></td>
+								<td>DestinationFileBase</td>
+								<td>
+									<div>
+    The file name without any extension. Equivalent
+    to <code class="cs">Path.GetFileNameWithoutExtension(DestinationFilePath)</code>.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/C9771CF8">DestinationFileDir</a></td>
+								<td>DestinationFileDir</td>
+								<td>
+									<div>
+    The full absolute directory of the file.
+    Equivalent to <code class="cs">Path.GetDirectoryName(DestinationFilePath)</code>.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/DB9B6443">DestinationFileExt</a></td>
+								<td>DestinationFileExt</td>
+								<td>
+									<div>
+    The extension of the file. Equivalent
+    to <code class="cs">Path.GetExtension(DestinationFilePath)</code>.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/7BA36EA1">DestinationFileName</a></td>
+								<td>DestinationFileName</td>
+								<td>
+									<div>
+    The full file name. Equivalent
+    to <code class="cs">Path.GetFileName(DestinationFilePath)</code>.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/725619F4">DestinationFilePath</a></td>
+								<td>DestinationFilePath</td>
+								<td>
+									<div>
+    The full absolute path (including file name)
+    of the destination file.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/57F451E8">Destination<wbr>File<wbr>Path<wbr>Base</a></td>
+								<td>DestinationFilePathBase</td>
+								<td>
+									<div>
+    The full absolute path (including file name)
+    of the destination file without the file extension.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/0012C58C">GroupDocuments</a></td>
+								<td>GroupDocuments</td>
+								<td>
+									<div>
+    Contains all the documents for the current group.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/26747278">GroupKey</a></td>
+								<td>GroupKey</td>
+								<td>
+									<div>
+    The key for the current group.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/F52E2892">HasNextPage</a></td>
+								<td>HasNextPage</td>
+								<td>
+									<div>
+    Whether there is another page after this one.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/6EF74E81">HasPreviousPage</a></td>
+								<td>HasPreviousPage</td>
+								<td>
+									<div>
+    Whether there is another page before this one.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/A87956A0">Host</a></td>
+								<td>Host</td>
+								<td>
+									<div>
+    The host to use when generating links.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/10B31D9B">Index</a></td>
+								<td>Index</td>
+								<td>
+									<div>
+    The one-based index of the current document relative to other documents in the pipeline.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/6B20C268">LinkHideExtensions</a></td>
+								<td>LinkHideExtensions</td>
+								<td>
+									<div>
+    Indicates whether to hide ".html" and ".htm" extensions by default when generating links.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/FBDE22AA">LinkHideIndexPages</a></td>
+								<td>LinkHideIndexPages</td>
+								<td>
+									<div>
+    Indicates whether to hide index pages by default when generating links.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/A228F555">LinkLowercase</a></td>
+								<td>LinkLowercase</td>
+								<td>
+									<div>
+    Indicates that links should always be rendered in lowercase.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/BC476CE5">LinkRoot</a></td>
+								<td>LinkRoot</td>
+								<td>
+									<div>
+    The default root path to use when generating links
+    (for example, <pre><code class="cs">"/virtual/directory"</code></pre>).
+    Note that you may also want to use the <pre><code class="cs">--virtual-dir</code></pre>
+    argument on the command line when using this setting so that
+    the preview server serves the site at the same path as the generated links
+    (for example, <pre><code class="cs">--virtual-dir "/virtual/directory"</code></pre>).
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/0F0474A7">LinksUseHttps</a></td>
+								<td>LinksUseHttps</td>
+								<td>
+									<div>
+    Indicates if generated links should use HTTPS instead of HTTP as the scheme.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/697A5E6B">Next</a></td>
+								<td>Next</td>
+								<td>
+									<div>
+    The next node in the tree using a depth-first
+    search or <code class="cs">null</code> if this was the last node.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/1B842855">NextPage</a></td>
+								<td>NextPage</td>
+								<td>
+									<div>
+    The next page.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/147A9582">NextSibling</a></td>
+								<td>NextSibling</td>
+								<td>
+									<div>
+    The next sibling, that is the next node in the children collection
+    of the parent or <code class="cs">null</code> if this is the last node in the collection or the parent is null.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/316C4D44">PageDocuments</a></td>
+								<td>PageDocuments</td>
+								<td>
+									<div>
+    Contains all the documents for the current page.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/692E2557">Parent</a></td>
+								<td>Parent</td>
+								<td>
+									<div>
+    The parent of this node or <code class="cs">null</code> if it is a root.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/C4187550">Previous</a></td>
+								<td>Previous</td>
+								<td>
+									<div>
+    The previous node in the tree using a depth-first
+    search or <code class="cs">null</code> if this was the first node.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/C04E0166">PreviousPage</a></td>
+								<td>PreviousPage</td>
+								<td>
+									<div>
+    The previous page.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/5E07EE70">PreviousSibling</a></td>
+								<td>PreviousSibling</td>
+								<td>
+									<div>
+    The previous sibling, that is the previous node in the children
+    collection of the parent or <code class="cs">null</code> if this is the first node in the collection or the parent is null.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/7CBF52DE">RedirectFrom</a></td>
+								<td>RedirectFrom</td>
+								<td>
+									<div>
+    The path(s) where the document should be redirected from.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/0736F02A">RelativeFileDir</a></td>
+								<td>RelativeFileDir</td>
+								<td>
+									<div>
+    The path to the folder containing the file relative to the input folder.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/84551788">RelativeFilePath</a></td>
+								<td>RelativeFilePath</td>
+								<td>
+									<div>
+    The path to the file relative to the input folder. This metadata
+    value is used when generating links to the document.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/EC132A8E">RelativeFilePathBase</a></td>
+								<td>RelativeFilePathBase</td>
+								<td>
+									<div>
+    The path to the file relative to the input folder without extension.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/8D16F225">SitemapItem</a></td>
+								<td>SitemapItem</td>
+								<td>
+									<div>
+    Contains a document-specific sitemap item for use when generating a sitemap.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/4B163B4D">SourceFileBase</a></td>
+								<td>SourceFileBase</td>
+								<td>
+									<div>
+    The name of the original file without extension.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/0FA54E3D">SourceFileDir</a></td>
+								<td>SourceFileDir</td>
+								<td>
+									<div>
+    The absolute path to the folder of the original file.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/1D493686">SourceFileExt</a></td>
+								<td>SourceFileExt</td>
+								<td>
+									<div>
+    The extension of the original file (including the ".").
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/2C96ACD3">SourceFileName</a></td>
+								<td>SourceFileName</td>
+								<td>
+									<div>
+    The file name of the original file with extension.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/2563DB86">SourceFilePath</a></td>
+								<td>SourceFilePath</td>
+								<td>
+									<div>
+    The absolute path to the original file.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/EB41ECDB">SourceFilePathBase</a></td>
+								<td>SourceFilePathBase</td>
+								<td>
+									<div>
+    The absolute path to the original file without the file extension.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/71117B9B">SourceFileRoot</a></td>
+								<td>SourceFileRoot</td>
+								<td>
+									<div>
+    The absolute root search path without any nested directories
+    (I.e., the path that was searched, and possibly descended, for the given pattern).
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/266A21BD">SourceHeaders</a></td>
+								<td>SourceHeaders</td>
+								<td>
+									<div>
+    The web headers of the document.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/430C125C">SourceUri</a></td>
+								<td>SourceUri</td>
+								<td>
+									<div>
+    The URI where the document was downloaded from.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/7AAC5830">Title</a></td>
+								<td>Title</td>
+								<td>
+									<div>
+    The calculated title of the document.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/E3982B1C">TotalItems</a></td>
+								<td>TotalItems</td>
+								<td>
+									<div>
+    The total number of items across all pages.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/DB9441DD">TotalPages</a></td>
+								<td>TotalPages</td>
+								<td>
+									<div>
+    The total number of pages.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/E099BCE7">TreePath</a></td>
+								<td>TreePath</td>
+								<td>
+									<div>
+    The path that represents this node in the tree.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/F2981DCA">TreePlaceholder</a></td>
+								<td>TreePlaceholder</td>
+								<td>
+									<div>
+    Gets set on documents that were created as a placeholder for tree roots.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/24223510">UseCache</a></td>
+								<td>UseCache</td>
+								<td>
+									<div>
+    Indicates whether caching should be used.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/1F514438">WriteExtension</a></td>
+								<td>WriteExtension</td>
+								<td>
+									<div>
+    The extension to use when writing the file.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/BF4F7308">WriteFileName</a></td>
+								<td>WriteFileName</td>
+								<td>
+									<div>
+    The file name to use when writing the file.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+							<tr>
+								<td><a href="/api/Wyam.Common.Meta/Keys/7D4BEDDA">WritePath</a></td>
+								<td>WritePath</td>
+								<td>
+									<div>
+    The path to use when writing the file.
+    </div>
+											<div><small><em>static</em></small></div>
+								</td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
+
+
+
+
+	
+</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                Wyam2 is maintained by <a href="https://savornicesei.com">Simona Avornicesei</a> and <a href="https://github.com/Wyam2/Wyam/graphs/contributors">other awesome contributors</a>, as a continuation of the <a href="https://github.com/Wyamio/Wyam">Wyam</a> project crafted by <a href="https://daveaglick.com">Dave Glick</a>. <a href="https://github.com/Wyam2/Wyam">Code on GitHub</a>. This site was entirely generated by Wyam. Check out <a href="https://github.com/Wyam2/docs">the site code on GitHub</a>.
+<br><br>
+
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        <div class="github-button">
+    <a href="https://github.com/Wyam2/Wyam"><i class="fa fa-github"></i> GitHub</a>
+</div>
+
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).ready(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        useMaxWidth: false
+                    },
+					startOnLoad: false,
+					cloneCssStyles: false
+                });     
+                mermaid.init(undefined, ".mermaid");
+
+                // Remove the max-width setting that Mermaid sets
+                var mermaidSvg = $('.mermaid svg');
+                mermaidSvg.addClass('img-responsive');
+                mermaidSvg.css('max-width', '');
+
+                // Make it scrollable
+				var target = document.querySelector(".mermaid svg");
+				if(target !== null)
+				{
+					var panZoom = window.panZoom = svgPanZoom(target, {
+						zoomEnabled: true,
+						controlIconsEnabled: true,
+						fit: true,
+						center: true,
+                        maxZoom: 20,
+                        zoomScaleSensitivity: 0.6
+					});			                          
+
+                    // Do the reset once right away to fit the diagram
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                    
+                    $(window).resize(function(){
+                        panZoom.resize();
+                        panZoom.fit();
+                        panZoom.center();
+                    });
+				}
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>

@@ -1,0 +1,338 @@
+﻿<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <title>Wyam2 - Migrating to 0.12.x</title>
+        <link href="/assets/css/highlight.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/override.css" rel="stylesheet">
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>        
+        <script src="/assets/js/app.min.js"></script>         
+        <script src="/assets/js/highlight.pack.js"></script>   
+        <script src="/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/assets/js/mermaid.min.js"></script>
+        <script src="/assets/js/svg-pan-zoom.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/assets/js/html5shiv.min.js"></script>
+        <script src="/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        <meta name="google" content="notranslate">
+<meta http-equiv="Content-Language" content="en">
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/" class="logo">
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li><a href="/blog">Blog</a></li>
+        <li class="active"><a href="/docs">Documentation</a></li>
+        <li><a href="/recipes">Recipes</a></li>
+        <li><a href="/modules">Modules</a></li>
+        <li><a href="/shortcodes">Shortcodes</a></li>
+        <li><a href="/api">API</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+        <div><p><a href="https://github.com/Wyam2/docs/tree/master/input/docs/advanced/migrating-to-0.12.x.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
+    <div id="infobar-headings"><h6>On This Page</h6><p><a href="#section"></a><a name="0.12.4"></a>0.12.4</p>
+<p><a href="#section-1"></a><a name="0.12.1"></a>0.12.1</p>
+<p><a href="#section-2"></a><a name="0.12.0"></a>0.12.0</p>
+<hr class="infobar-hidden">
+</div>
+
+                </section>
+                <section class="sidebar">    
+                                     
+                    
+
+                    <ul class="sidebar-menu">
+                        
+
+                <li class="treeview">
+                    <a href="/docs/concepts">Concepts</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/docs/concepts/documents">Documents</a></li>
+                <li><a href="/docs/concepts/metadata">Metadata</a></li>
+                <li><a href="/docs/concepts/modules">Modules</a></li>
+                <li><a href="/docs/concepts/shortcodes">Shortcodes</a></li>
+                <li><a href="/docs/concepts/pipelines">Pipelines</a></li>
+                <li><a href="/docs/concepts/recipes">Recipes</a></li>
+                <li><a href="/docs/concepts/themes">Themes</a></li>
+                <li><a href="/docs/concepts/io">I/O</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/docs/usage">Usage</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/docs/usage/obtaining">Obtaining</a></li>
+                <li><a href="/docs/usage/command-line">Command Line</a></li>
+                <li><a href="/docs/usage/configuration">Configuration</a></li>
+                <li><a href="/docs/usage/settings">Settings</a></li>
+                <li><a href="/docs/usage/embedding">Embedding</a></li>
+                <li><a href="/docs/usage/executing-in-a-unit-test">Executing In A Unit Test</a></li>
+                <li><a href="/docs/usage/examples">Examples</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/docs/deployment">Deployment</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/docs/deployment/appveyor">AppVeyor for Continuous Integration</a></li>
+                <li><a href="/docs/deployment/azure">Azure</a></li>
+                <li><a href="/docs/deployment/netlify">Netlify</a></li>
+                <li><a href="/docs/deployment/serving-from-a-subdirectory">Serving From A Subdirectory</a></li>
+                <li><a href="/docs/deployment/ssl-and-https">SSL and HTTPS</a></li>
+                <li><a href="/docs/deployment/cake">Using Cake</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/docs/extensibility">Extensibility</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/docs/extensibility/creating-a-theme">Creating A Theme</a></li>
+                <li><a href="/docs/extensibility/customizing-recipe-pipelines">Customizing Recipe Pipelines</a></li>
+                <li><a href="/docs/extensibility/customizing-themes">Customizing Themes</a></li>
+                <li><a href="/docs/extensibility/writing-a-module">Writing a Module</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview active">
+                    <a href="/docs/advanced">Advanced</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/docs/advanced/custom_document_types">Custom Document Types</a></li>
+                <li><a href="/docs/advanced/document-content-streams">Document Content Streams</a></li>
+                <li class="selected"><a href="/docs/advanced/migrating-to-0.12.x">Migrating to 0.12.x</a></li>
+                <li><a href="/docs/advanced/setting-the-culture">Setting The Culture</a></li>
+                <li><a href="/docs/advanced/what_to_exclude_from_source_control">What To Exclude From Source Control</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/docs/resources">Resources</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/docs/resources/some-background">Some Background</a></li>
+                <li><a href="/docs/resources/built-with-wyam">Built With Wyam</a></li>
+                <li><a href="/docs/resources/blog-posts">Blog Posts</a></li>
+                <li><a href="/docs/resources/tools">Tools</a></li>
+                <li><a href="/docs/resources/hosts">Hosts</a></li>
+
+                    </ul>
+                </li>
+
+                    </ul>
+                            
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+		<section class="content-header">
+			<h1>Migrating to 0.12.x</h1>
+		</section>
+	<section class="content">
+		<p>The 0.12.x series of releases is a chance to "reset" some things that worked well when this was just a smaller project but need to change as Wyam serves more use cases. These changes will set the project up for a number of new features in the 0.13.x releases such as recipes and themes.</p>
+<h1 id="section"><a name="0.12.4"></a>0.12.4</h1>
+<p>This release included some changes to NuGet packages to better handle additional extension points down the road (such as recipes, themes, file providers, etc.):</p>
+<ul>
+<li>The ability to specify a <a href="/docs/usage/configuration">NuGet version range</a> is back. This is good news for constraining which versions of packages are used in your build in order to make them consistent and repeatable. Unfortunately, it's also a breaking change because the <a href="https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files">NuGet version range convention</a> specifies that specific versions be enclosed in <code>[</code> and <code>]</code> brackets. Wyam had been using an unadorned number for specific versions, which now indicates that version <em>or anything higher</em>.
+<ul>
+<li>If you specify specific versions for any NuGet packages, surround the version with <code>[</code> and <code>]</code> to maintain the existing behavior.</li>
+</ul>
+</li>
+<li>In order to better represent that Wyam extension packages may contain other extensions beyond modules, all of the Wyam packages have been renamed from <code>Wyam.Modules.*</code> to <code>Wyam.*</code>. For example, Markdown support can now be found in <code>Wyam.Markdown</code>.
+<ul>
+<li>Change all of your NuGet package names to the new name without the <code>.Modules</code> component.</li>
+</ul>
+</li>
+</ul>
+<h1 id="section-1"><a name="0.12.1"></a>0.12.1</h1>
+<hr>
+<p>The major breaking change in 0.12.1 is that every module is no longer included with the core distribution. This was necessary because as the number of modules has increased, the distribution size has as well, and it was getting to the point that the core distribution was becoming larger than desired for simple use cases. You will now need to declare any non-core modules using preprocessor directives in your configuration file:</p>
+<pre><code>#n -p Wyam.Modules.Markdown
+</code></pre>
+<p>Alternatively, you can download a meta-package that contains references to all official Wyam module packages:</p>
+<pre><code>#n -p Wyam.Modules.All
+</code></pre>
+<h1 id="section-2"><a name="0.12.0"></a>0.12.0</h1>
+<hr>
+<p>In general, the steps to migrate look like the following:</p>
+<ul>
+<li>Modify the paths used with <code><a href="/api/Wyam.Core.Modules.IO/ReadFiles">ReadFiles</a></code> and <code><a href="/api/Wyam.Core.Modules.IO/CopyFiles">CopyFiles</a></code> to use <a href="/docs/concepts/io#globbing">globbing patterns</a> and honor <a href="/docs/concepts/io#case-sensitivity">case sensitivity</a>.</li>
+<li>Change uses of <code>IMetadata.Link()</code> to <code>IExecutionContext.GetLink()</code> in templates and helper methods.</li>
+<li>Change uses of <code>PathHelper</code> to instance methods of <code><a href="/api/Wyam.Common.IO/FilePath">FilePath</a></code> and <code><a href="/api/Wyam.Common.IO/DirectoryPath">DirectoryPath</a></code>.</li>
+</ul>
+<p>Here is a little more detail about the changes:</p>
+<ul>
+<li>All paths are now case sensitive (see <a href="/docs/concepts/io#case-sensitivity">case sensitivity</a> for a discussion of why).</li>
+<li>Modules now use <a href="/docs/concepts/io#globbing">globbing patterns</a> instead of simple file search patterns.</li>
+<li>Methods to manually specify search depth and apply conditions that globbing can cover (such as limiting to specific extensions) have generally been removed.</li>
+<li>Path metadata set by modules such as <code><a href="/api/Wyam.Core.Modules.IO/ReadFiles">ReadFiles</a></code> is now typed as <code><a href="/api/Wyam.Common.IO/FilePath">FilePath</a></code> or <code><a href="/api/Wyam.Common.IO/DirectoryPath">DirectoryPath</a></code>.
+<ul>
+<li>You can still easily get a <code>string</code> by using <code>IMetadata.String()</code> but direct casts to <code>string</code> (I.e., <code>(string)document["key"]</code>) may fail.</li>
+</ul>
+</li>
+<li><code><a href="/api/Wyam.Common.Documents/IDocument/A839CC25">IDocument.Source</a></code> is now a <code><a href="/api/Wyam.Common.IO/FilePath">FilePath</a></code> and must be absolute (modules should use the static string <code>NormalizedPath.AbstractProvider</code> as the provider for a source path if the document was generated internally).</li>
+<li><code>PathHelper</code> is no longer available, use instance methods of <code><a href="/api/Wyam.Common.IO/FilePath">FilePath</a></code> and <code><a href="/api/Wyam.Common.IO/DirectoryPath">DirectoryPath</a></code> instead.</li>
+<li><code>IMetadata.Link()</code> has been moved to <code>ExecutionContext.GetLink()</code> and link settings like host and root path can be globally controlled with <code>OutputSettings</code></li>
+</ul>
+<h2 id="modules">Modules</h2>
+<p>Several modules that interact with the file system have been updated. An attempt was made to either retain backwards compatibility or provide temporary legacy modules that would work the same way the old ones did. However, the differences between the native <code>System.IO</code> classes we had been using and the new multi-provider IO abstraction were just too great. Instead of spending lots of effort writing code specifically to support backwards compatibility, the decision was made to make a clean break and update the existing modules in place. The section below describes the most important changes and how to adapt your site.</p>
+<h3 id="readfiles">ReadFiles</h3>
+<p>The <code><a href="/api/Wyam.Core.Modules.IO/ReadFiles">ReadFiles</a></code> constructor now accepts one or more <a href="/docs/concepts/io#globbing">globbing patterns</a>. This easily covers everything the old version used to, plus enables much more powerful file searching. For example, instead of using a pattern of "*.md" and <code>.FromAllDirectories()</code> you can just use the globbing pattern "**/*.md". Because the globbing patterns cover recursion, the methods to manually specify depth have been removed. The method for limiting extensions has also been removed as that can be represented in the globbing patterns.</p>
+<p>In addition, many situations that would have required a predicate with <code>.Where()</code> can now rely on globbing patterns. For example, <code>ReadFiles("*.cshtml").Where(x =&gt; System.IO.Path.GetFileName(x)[0] != '_')</code> can now be written as <code>ReadFiles("{!_,}*.cshtml")</code>. Because the globbing patterns work differently than the old style patterns, it's recommended that you read and understand them before migrating your modules.</p>
+<p><code>ReadFiles.Where()</code> has been modified to pass an <code><a href="/api/Wyam.Common.IO/IFile">IFile</a></code> instead of just a string path. If you need your predicate to operate on the path, just look at <code><a href="/api/Wyam.Common.IO/IFile/C3AB30A7">IFile.Path</a></code>. This will allow more complex conditional reads, such as when the file was created.</p>
+<h3 id="copyfiles">CopyFiles</h3>
+<p>The changes to <code><a href="/api/Wyam.Core.Modules.IO/CopyFiles">CopyFiles</a></code> are similar to those for <code><a href="/api/Wyam.Core.Modules.IO/ReadFiles">ReadFiles</a></code>. The constructor now accepts one or more <a href="/docs/concepts/io#globbing">globbing patterns</a> and the methods to manually specify depth have been removed. The method for limiting extensions has also been removed as that can be represented in the globbing patterns. <code>CopyFiles.Where()</code> has been modified to pass an <code><a href="/api/Wyam.Common.IO/IFile">IFile</a></code> instead of just a string path.</p>
+<h3 id="rss-and-sitemap">Rss and Sitemap</h3>
+<p>The link/location customizers are now <code>Func&lt;FilePath, <a href="/api/Wyam.Common.IO/FilePath">FilePath</a>&gt;</code> instead of a <code>Func&lt;string, string&gt;</code>.</p>
+
+	</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                Wyam2 is maintained by <a href="https://savornicesei.com">Simona Avornicesei</a> and <a href="https://github.com/Wyam2/Wyam/graphs/contributors">other awesome contributors</a>, as a continuation of the <a href="https://github.com/Wyamio/Wyam">Wyam</a> project crafted by <a href="https://daveaglick.com">Dave Glick</a>. <a href="https://github.com/Wyam2/Wyam">Code on GitHub</a>. This site was entirely generated by Wyam. Check out <a href="https://github.com/Wyam2/docs">the site code on GitHub</a>.
+<br><br>
+
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        <div class="github-button">
+    <a href="https://github.com/Wyam2/Wyam"><i class="fa fa-github"></i> GitHub</a>
+</div>
+
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).ready(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        useMaxWidth: false
+                    },
+					startOnLoad: false,
+					cloneCssStyles: false
+                });     
+                mermaid.init(undefined, ".mermaid");
+
+                // Remove the max-width setting that Mermaid sets
+                var mermaidSvg = $('.mermaid svg');
+                mermaidSvg.addClass('img-responsive');
+                mermaidSvg.css('max-width', '');
+
+                // Make it scrollable
+				var target = document.querySelector(".mermaid svg");
+				if(target !== null)
+				{
+					var panZoom = window.panZoom = svgPanZoom(target, {
+						zoomEnabled: true,
+						controlIconsEnabled: true,
+						fit: true,
+						center: true,
+                        maxZoom: 20,
+                        zoomScaleSensitivity: 0.6
+					});			                          
+
+                    // Do the reset once right away to fit the diagram
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                    
+                    $(window).resize(function(){
+                        panZoom.resize();
+                        panZoom.fit();
+                        panZoom.center();
+                    });
+				}
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>

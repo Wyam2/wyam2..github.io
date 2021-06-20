@@ -1,0 +1,575 @@
+﻿<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <title>Wyam2 - Settings</title>
+        <link href="/assets/css/highlight.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/override.css" rel="stylesheet">
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>        
+        <script src="/assets/js/app.min.js"></script>         
+        <script src="/assets/js/highlight.pack.js"></script>   
+        <script src="/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/assets/js/mermaid.min.js"></script>
+        <script src="/assets/js/svg-pan-zoom.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/assets/js/html5shiv.min.js"></script>
+        <script src="/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        <meta name="google" content="notranslate">
+<meta http-equiv="Content-Language" content="en">
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/" class="logo">
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li><a href="/blog">Blog</a></li>
+        <li><a href="/docs">Documentation</a></li>
+        <li class="active"><a href="/recipes">Recipes</a></li>
+        <li><a href="/modules">Modules</a></li>
+        <li><a href="/shortcodes">Shortcodes</a></li>
+        <li><a href="/api">API</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+        <div><p><a href="https://github.com/Wyam2/docs/tree/master/input/recipes/docs/settings.cshtml"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
+    <div id="infobar-headings"></div>
+
+                </section>
+                <section class="sidebar">    
+                                     
+                    
+
+                    <ul class="sidebar-menu">
+                        
+
+                <li class="treeview">
+                    <a href="/recipes/blog">Blog Recipe</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/recipes/blog/overview">Overview</a></li>
+                <li><a href="/recipes/blog/settings">Settings</a></li>
+                <li><a href="/recipes/blog/document-metadata">Document Metadata</a></li>
+                <li><a href="/recipes/blog/pipelines">Pipelines</a></li>
+                <li class="treeview">
+                    <a href="/recipes/blog/themes">Themes</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/recipes/blog/themes/blogtemplate">BlogTemplate</a></li>
+                <li><a href="/recipes/blog/themes/cleanblog">CleanBlog</a></li>
+                <li><a href="/recipes/blog/themes/phantom">Phantom</a></li>
+                <li><a href="/recipes/blog/themes/solidstate">SolidState</a></li>
+                <li><a href="/recipes/blog/themes/stellar">Stellar</a></li>
+                <li><a href="/recipes/blog/themes/trophy">Trophy</a></li>
+
+                    </ul>
+                </li>
+
+                    </ul>
+                </li>
+                <li class="treeview active">
+                    <a href="/recipes/docs">Docs Recipe</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/recipes/docs/overview">Overview</a></li>
+                <li class="selected"><a href="/recipes/docs/settings">Settings</a></li>
+                <li><a href="/recipes/docs/document-metadata">Document Metadata</a></li>
+                <li><a href="/recipes/docs/pipelines">Pipelines</a></li>
+                <li class="treeview">
+                    <a href="/recipes/docs/themes">Themes</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/recipes/docs/themes/samson">Samson</a></li>
+
+                    </ul>
+                </li>
+
+                    </ul>
+                </li>
+
+                    </ul>
+                            
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+		<section class="content-header">
+			<h1>Settings</h1>
+		</section>
+	<section class="content">
+		
+<p>The settings listed below apply globally and can be set from the <a href="/docs/usage/command-line">command line</a> or from a <a href="/docs/usage/settings">configuration file</a>. They are used to configure options and otherwise control the generation process.</p>
+
+<p>In addition to the optional settings listed below, you should also set a host with the following code in your configuration file:</p>
+
+<pre><code>Settings[Keys.Host] = "mysite.com";</code></pre>
+
+<p>While most generated links are relative to ensure local testing works, some links need to be absolute such as feeds. This setting ensures the correct URL is generated for those links.</p>
+
+
+        <ul>
+                    <li>        
+                        <p>
+                            <strong><code>DocsKeys.AssemblyFiles</code></strong>: <code class="cs">System.String</code> or <code class="cs">IEnumerable&lt;string&gt;</code>
+                        </p>
+                                <p>
+    Indicates where to locate assemblies for the API documentation. You can specify
+    one (or more) globbing pattern(s).
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>DocsKeys.AuthorPageSize</code></strong>: <code class="cs">System.Int32</code>
+                        </p>
+                                <p>
+    The page size for blog author index pages (the default is 5).
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>DocsKeys.AutoLinkTypes</code></strong>: <code class="cs">System.Boolean</code>
+                        </p>
+                                <p>
+    Controls whether type names from the API enclosed in code fences in either
+    blog posts or content pages should be automatically linked to the
+    corresponding API documentation page (the default is <code class="cs">true</code>).
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>DocsKeys.BaseEditUrl</code></strong>: <code class="cs">System.String</code>
+                        </p>
+                                <p>
+    The base URL for generating edit links for content and blog pages.
+    The edit link combines this base URL with the relative path of the
+    input file.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>DocsKeys.BlogAtomPath</code></strong>: <code class="cs">Wyam.Common.IO.FilePath</code> or <code class="cs">System.String</code>
+                        </p>
+                                <p>
+    Specifies the path where the blog Atom file will be output.
+    The default value is <code class="cs">feed.atom</code>. Set to <code class="cs">null</code>
+    to prevent generating an Atom feed.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>DocsKeys.BlogPageSize</code></strong>: <code class="cs">System.Int32</code>
+                        </p>
+                                <p>
+    The page size for blog index pages (the default is 5).
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>DocsKeys.BlogPath</code></strong>: <code class="cs">Wyam.Common.IO.DirectoryPath</code> or <code class="cs">System.String</code>
+                        </p>
+                                <p>
+    Controls the parent path where blog posts are placed. The default is "blog".
+    This affects both input and output files (I.e., if you change this your input
+    files must also be under the same path).
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>DocsKeys.BlogRdfPath</code></strong>: <code class="cs">Wyam.Common.IO.FilePath</code> or <code class="cs">System.String</code>
+                        </p>
+                                <p>
+    Specifies the path where the blog RDF file will be output.
+    The default value is <code class="cs">null</code> which
+    prevents generating an RDF feed.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>DocsKeys.BlogRssPath</code></strong>: <code class="cs">Wyam.Common.IO.FilePath</code> or <code class="cs">System.String</code>
+                        </p>
+                                <p>
+    Specifies the path where the blog RSS file will be output.
+    The default value is <code class="cs">feed.rss</code>. Set to <code class="cs">null</code>
+    to prevent generating an RSS feed.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>DocsKeys.BlogTitle</code></strong>: <code class="cs">System.String</code>
+                        </p>
+                                <p>
+    Specifies the blog title.
+    The default value is <code class="cs"><a href="/api/Wyam.Blog/Blog">Blog</a></code>.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>DocsKeys.CaseInsensitiveAuthors</code></strong>: <code class="cs">System.Boolean</code>
+                        </p>
+                                <p>
+    Set to <code class="cs">true</code> to make author groupings case-insensitive.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>DocsKeys.CaseInsensitiveCategories</code></strong>: <code class="cs">System.Boolean</code>
+                        </p>
+                                <p>
+    Set to <code class="cs">true</code> to make category groupings case-insensitive.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>DocsKeys.CaseInsensitiveTags</code></strong>: <code class="cs">System.Boolean</code>
+                        </p>
+                                <p>
+    Set to <code class="cs">true</code> to make tag groupings case-insensitive.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>DocsKeys.CategoryPageSize</code></strong>: <code class="cs">System.Int32</code>
+                        </p>
+                                <p>
+    The page size for blog category index pages (the default is 5).
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>DocsKeys.IgnoreFolders</code></strong>: <code class="cs">System.String</code> or <code class="cs">IEnumerable&lt;string&gt;</code>
+                        </p>
+                                <p>
+    This should be a string or array of strings with the name(s)
+    of root-level folders to ignore when scanning for content pages.
+    Setting this global metadata value is useful when introducing
+    your own pipelines for files under certain folders and you don't
+    want the primary content page pipelines to pick them up.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>DocsKeys.IncludeDateInPostPath</code></strong>: <code class="cs">System.Boolean</code>
+                        </p>
+                                <p>
+    Setting this to <code class="cs">true</code> uses
+    the year and date in the output path of blog posts.
+    The default value is <code class="cs">false</code>.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>DocsKeys.IncludeGlobalNamespace</code></strong>: <code class="cs">System.Boolean</code>
+                        </p>
+                                <p>
+    Controls whether the global namespace is included in your API
+    documentation.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>DocsKeys.Logo</code></strong>: <code class="cs">Wyam.Common.IO.FilePath</code>
+                        </p>
+                                <p>
+    The path to a logo to use for the site.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>DocsKeys.MarkdownConfiguration</code></strong>: <code class="cs">System.String</code>
+                        </p>
+                                <p>
+    Set this to control the activated set of Markdown extensions for the
+    Markdig Markdown renderer. The default value is "advanced+bootstrap".
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>DocsKeys.MarkdownExtensionTypes</code></strong>: <code class="cs">System.Collections.Generic.IEnumerable`1</code>
+                        </p>
+                                <p>
+    Set this to add extension Markdown extensions for the Markdig Markdown
+    renderer. The default value is null;
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>DocsKeys.MarkdownPrependLinkRoot</code></strong>: <code class="cs">System.Boolean</code>
+                        </p>
+                                <p>
+    Set to <code class="cs">true</code> to prepend a configured <code class="cs">LinkRoot</code> to all root-relative Markdown links.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>DocsKeys.MetaRefreshRedirects</code></strong>: <code class="cs">System.Boolean</code>
+                        </p>
+                                <p>
+    Set to <code class="cs">true</code> (the default value) to generate meta refresh pages
+    for any redirected documents (as indicated by a <code class="cs">RedirectFrom</code>
+    metadata value in the document).
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>DocsKeys.MonthPageSize</code></strong>: <code class="cs">System.Int32</code>
+                        </p>
+                                <p>
+    The page size for blog monthly index pages (the default is 5).
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>DocsKeys.NetlifyRedirects</code></strong>: <code class="cs">System.Boolean</code>
+                        </p>
+                                <p>
+    Set to <code class="cs">true</code> (the default value is <code class="cs">false</code>) to generate
+    a Netlify <code class="cs">_redirects</code> file from redirected documents
+    (as indicated by a <code class="cs">RedirectFrom</code> metadata value).
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>DocsKeys.ProcessIncludes</code></strong>: <code class="cs">System.Boolean</code>
+                        </p>
+                                <p>
+    Indicates that include statements should be processed using the <code class="cs">Wyam.Core.Modules.IO.Include</code> module.
+    The default behavior is to process all includes.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>DocsKeys.ProjectFiles</code></strong>: <code class="cs">System.String</code> or <code class="cs">IEnumerable&lt;string&gt;</code>
+                        </p>
+                                <p>
+    Indicates where to locate project files for the API documentation.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>DocsKeys.SearchIndex</code></strong>: <code class="cs">System.Boolean</code>
+                        </p>
+                                <p>
+    Set to <code class="cs">false</code> to prevent a search index for API types from being
+    generated and presented on the API pages.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>DocsKeys.SolutionFiles</code></strong>: <code class="cs">System.String</code> or <code class="cs">IEnumerable&lt;string&gt;</code>
+                        </p>
+                                <p>
+    Indicates where to locate solution files for the API documentation.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>DocsKeys.SourceFiles</code></strong>: <code class="cs">System.String</code> or <code class="cs">IEnumerable&lt;string&gt;</code>
+                        </p>
+                                <p>
+    Indicates where to locate source files for the API documentation.
+    By default the globbing pattern "src/**/{!bin,!obj,!packages,!*.Tests,}/**/*.cs"
+    is used which searches for all "*.cs" files at any depth under a "src" folder
+    but not under "bin", "obj", "packages" or "Tests" folders. You can specify
+    your own globbing pattern (or more than one globbing pattern) if your source
+    files are found elsewhere.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>DocsKeys.TagPageSize</code></strong>: <code class="cs">System.Int32</code>
+                        </p>
+                                <p>
+    The page size for blog tag index pages (the default is 5).
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>DocsKeys.Title</code></strong>: <code class="cs">System.String</code>
+                        </p>
+                                <p>The title of the site.</p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>DocsKeys.ValidateAbsoluteLinks</code></strong>: <code class="cs">System.Boolean</code>
+                        </p>
+                                <p>
+    Set to <code class="cs">true</code> (the default value is <code class="cs">false</code>) to
+    validate all absolute links. Note that this may add considerable
+    time to your generation process.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>DocsKeys.ValidateLinksAsError</code></strong>: <code class="cs">System.Boolean</code>
+                        </p>
+                                <p>
+    Set to <code class="cs">true</code> (the default value is <code class="cs">false</code>) to
+    report errors on link validation failures.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>DocsKeys.ValidateRelativeLinks</code></strong>: <code class="cs">System.Boolean</code>
+                        </p>
+                                <p>
+    Set to <code class="cs">true</code> (the default value) to
+    validate all relative links.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>DocsKeys.YearPageSize</code></strong>: <code class="cs">System.Int32</code>
+                        </p>
+                                <p>
+    The page size for blog yearly index pages (the default is 5).
+    </p>
+                    </li>
+        </ul>
+
+
+<p>Note that this list isn't exhaustive. Some modules used by the recipe may have their own settings that you can set as well. <a href="/docs/usage/settings">General settings</a> are also available to every recipe.</p>
+	</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                Wyam2 is maintained by <a href="https://savornicesei.com">Simona Avornicesei</a> and <a href="https://github.com/Wyam2/Wyam/graphs/contributors">other awesome contributors</a>, as a continuation of the <a href="https://github.com/Wyamio/Wyam">Wyam</a> project crafted by <a href="https://daveaglick.com">Dave Glick</a>. <a href="https://github.com/Wyam2/Wyam">Code on GitHub</a>. This site was entirely generated by Wyam. Check out <a href="https://github.com/Wyam2/docs">the site code on GitHub</a>.
+<br><br>
+
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        <div class="github-button">
+    <a href="https://github.com/Wyam2/Wyam"><i class="fa fa-github"></i> GitHub</a>
+</div>
+
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).ready(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        useMaxWidth: false
+                    },
+					startOnLoad: false,
+					cloneCssStyles: false
+                });     
+                mermaid.init(undefined, ".mermaid");
+
+                // Remove the max-width setting that Mermaid sets
+                var mermaidSvg = $('.mermaid svg');
+                mermaidSvg.addClass('img-responsive');
+                mermaidSvg.css('max-width', '');
+
+                // Make it scrollable
+				var target = document.querySelector(".mermaid svg");
+				if(target !== null)
+				{
+					var panZoom = window.panZoom = svgPanZoom(target, {
+						zoomEnabled: true,
+						controlIconsEnabled: true,
+						fit: true,
+						center: true,
+                        maxZoom: 20,
+                        zoomScaleSensitivity: 0.6
+					});			                          
+
+                    // Do the reset once right away to fit the diagram
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                    
+                    $(window).resize(function(){
+                        panZoom.resize();
+                        panZoom.fit();
+                        panZoom.center();
+                    });
+				}
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>

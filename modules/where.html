@@ -1,0 +1,704 @@
+﻿<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <title>Wyam2 - Modules - Where</title>
+        <link href="/assets/css/highlight.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/override.css" rel="stylesheet">
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>        
+        <script src="/assets/js/app.min.js"></script>         
+        <script src="/assets/js/highlight.pack.js"></script>   
+        <script src="/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/assets/js/mermaid.min.js"></script>
+        <script src="/assets/js/svg-pan-zoom.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/assets/js/html5shiv.min.js"></script>
+        <script src="/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        <meta name="google" content="notranslate">
+<meta http-equiv="Content-Language" content="en">
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/" class="logo">
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li><a href="/blog">Blog</a></li>
+        <li><a href="/docs">Documentation</a></li>
+        <li><a href="/recipes">Recipes</a></li>
+        <li class="active"><a href="/modules">Modules</a></li>
+        <li><a href="/shortcodes">Shortcodes</a></li>
+        <li><a href="/api">API</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    			
+        <div id="infobar-headings"><h6>On This Page</h6><p><a href="#Usage">Usage</a></p>
+<hr class="infobar-hidden">
+</div>
+ 
+
+                </section>
+                <section class="sidebar">    
+                                     
+                    
+    <script src="/assets/js/lunr.min.js"></script>
+<script src="/assets/js/modulesSearchIndex.js"></script>
+<div class="sidebar-form">
+    <div class="input-group">
+        <input type="text" name="search" id="search" class="form-control" placeholder="Search Modules...">
+        <span class="input-group-btn">
+            <button class="btn btn-flat"><i class="fa fa-search"></i></button>
+        </span>
+    </div>
+</div>
+<div id="search-results">
+</div>
+<script>
+    function runSearch(query){
+        $("#search-results").empty();			
+        if( query.length < 2 ){
+            return;
+        }			
+        var results = searchModule.search("*" + query + "*");
+        var listHtml = "<ul class='sidebar-menu'>";	
+        listHtml += "<li class='header'>Type Results</li>";	
+        if(results.length == 0 ){
+            listHtml += "<li>No results found</li>";
+        } else {					
+            for(var i = 0; i < results.length; ++i){
+                var res = results[i];
+                listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
+            }				
+        }
+        listHtml += "</ul>";				
+        $("#search-results").append(listHtml);
+    }
+
+    $(document).ready(function(){
+        $("#search").on('input propertychange paste', function() {
+            runSearch($("#search").val());
+        });
+    });
+
+    function htmlEscape(html) {
+        return document.createElement('div')
+            .appendChild(document.createTextNode(html))
+            .parentNode
+            .innerHTML;
+    }
+</script>
+    <hr>
+
+                    <ul class="sidebar-menu">
+                        
+				<li class="header">Content</li>
+			<li>
+				<a href="/modules/append">
+					Append
+				</a>
+			</li>
+			<li>
+				<a href="/modules/autolink">
+					AutoLink
+				</a>
+			</li>
+			<li>
+				<a href="/modules/content">
+					Content
+				</a>
+			</li>
+			<li>
+				<a href="/modules/csvtohtml">
+					CsvToHtml
+				</a>
+			</li>
+			<li>
+				<a href="/modules/csvtomarkdown">
+					CsvToMarkdown
+				</a>
+			</li>
+			<li>
+				<a href="/modules/exceltocsv">
+					ExcelToCsv
+				</a>
+			</li>
+			<li>
+				<a href="/modules/generatecloudsearchdata">
+					GenerateCloudSearchData
+				</a>
+			</li>
+			<li>
+				<a href="/modules/generatefeeds">
+					GenerateFeeds
+				</a>
+			</li>
+			<li>
+				<a href="/modules/generatejson">
+					GenerateJson
+				</a>
+			</li>
+			<li>
+				<a href="/modules/highlight">
+					Highlight
+				</a>
+			</li>
+			<li>
+				<a href="/modules/htmlescape">
+					HtmlEscape
+				</a>
+			</li>
+			<li>
+				<a href="/modules/htmlinsert">
+					HtmlInsert
+				</a>
+			</li>
+			<li>
+				<a href="/modules/image">
+					Image
+				</a>
+			</li>
+			<li>
+				<a href="/modules/join">
+					Join
+				</a>
+			</li>
+			<li>
+				<a href="/modules/minifycss">
+					MinifyCss
+				</a>
+			</li>
+			<li>
+				<a href="/modules/minifyhtml">
+					MinifyHtml
+				</a>
+			</li>
+			<li>
+				<a href="/modules/minifyjs">
+					MinifyJs
+				</a>
+			</li>
+			<li>
+				<a href="/modules/minifyxhtml">
+					MinifyXhtml
+				</a>
+			</li>
+			<li>
+				<a href="/modules/minifyxml">
+					MinifyXml
+				</a>
+			</li>
+			<li>
+				<a href="/modules/prepend">
+					Prepend
+				</a>
+			</li>
+			<li>
+				<a href="/modules/redirect">
+					Redirect
+				</a>
+			</li>
+			<li>
+				<a href="/modules/replace">
+					Replace
+				</a>
+			</li>
+			<li>
+				<a href="/modules/replacein">
+					ReplaceIn
+				</a>
+			</li>
+			<li>
+				<a href="/modules/searchindex">
+					SearchIndex
+				</a>
+			</li>
+			<li>
+				<a href="/modules/shortcodes">
+					Shortcodes
+				</a>
+			</li>
+			<li>
+				<a href="/modules/sitemap">
+					Sitemap
+				</a>
+			</li>
+			<li class="header">Control</li>
+			<li>
+				<a href="/modules/branch">
+					Branch
+				</a>
+			</li>
+			<li>
+				<a href="/modules/combine">
+					Combine
+				</a>
+			</li>
+			<li>
+				<a href="/modules/concat">
+					Concat
+				</a>
+			</li>
+			<li>
+				<a href="/modules/concatbranch">
+					ConcatBranch
+				</a>
+			</li>
+			<li>
+				<a href="/modules/documents">
+					Documents
+				</a>
+			</li>
+			<li>
+				<a href="/modules/foreach">
+					ForEach
+				</a>
+			</li>
+			<li>
+				<a href="/modules/frontmatter">
+					FrontMatter
+				</a>
+			</li>
+			<li>
+				<a href="/modules/groupby">
+					GroupBy
+				</a>
+			</li>
+			<li>
+				<a href="/modules/groupbymany">
+					GroupByMany
+				</a>
+			</li>
+			<li>
+				<a href="/modules/if">
+					If
+				</a>
+			</li>
+			<li>
+				<a href="/modules/merge">
+					Merge
+				</a>
+			</li>
+			<li>
+				<a href="/modules/orderby">
+					OrderBy
+				</a>
+			</li>
+			<li>
+				<a href="/modules/paginate">
+					Paginate
+				</a>
+			</li>
+			<li>
+				<a href="/modules/sidecar">
+					Sidecar
+				</a>
+			</li>
+			<li>
+				<a href="/modules/sort">
+					Sort
+				</a>
+			</li>
+			<li>
+				<a href="/modules/switch">
+					Switch
+				</a>
+			</li>
+			<li>
+				<a href="/modules/take">
+					Take
+				</a>
+			</li>
+			<li class="selected">
+				<a href="/modules/where">
+					Where
+				</a>
+			</li>
+			<li class="header">Extensibility</li>
+			<li>
+				<a href="/modules/execute">
+					Execute
+				</a>
+			</li>
+			<li>
+				<a href="/modules/modulecollection">
+					ModuleCollection
+				</a>
+			</li>
+			<li>
+				<a href="/modules/namedmodule">
+					NamedModule
+				</a>
+			</li>
+			<li>
+				<a href="/modules/trace">
+					Trace
+				</a>
+			</li>
+			<li class="header">Input/Output</li>
+			<li>
+				<a href="/modules/copyfiles">
+					CopyFiles
+				</a>
+			</li>
+			<li>
+				<a href="/modules/download">
+					Download
+				</a>
+			</li>
+			<li>
+				<a href="/modules/include">
+					Include
+				</a>
+			</li>
+			<li>
+				<a href="/modules/mirrorresources">
+					MirrorResources
+				</a>
+			</li>
+			<li>
+				<a href="/modules/readapplicationinput">
+					ReadApplicationInput
+				</a>
+			</li>
+			<li>
+				<a href="/modules/readfiles">
+					ReadFiles
+				</a>
+			</li>
+			<li>
+				<a href="/modules/readproject">
+					ReadProject
+				</a>
+			</li>
+			<li>
+				<a href="/modules/readsolution">
+					ReadSolution
+				</a>
+			</li>
+			<li>
+				<a href="/modules/unwrittenfiles">
+					UnwrittenFiles
+				</a>
+			</li>
+			<li>
+				<a href="/modules/validatelinks">
+					ValidateLinks
+				</a>
+			</li>
+			<li>
+				<a href="/modules/writefiles">
+					WriteFiles
+				</a>
+			</li>
+			<li class="header">Metadata</li>
+			<li>
+				<a href="/modules/analyzecsharp">
+					AnalyzeCSharp
+				</a>
+			</li>
+			<li>
+				<a href="/modules/copymeta">
+					CopyMeta
+				</a>
+			</li>
+			<li>
+				<a href="/modules/directorymeta">
+					DirectoryMeta
+				</a>
+			</li>
+			<li>
+				<a href="/modules/excerpt">
+					Excerpt
+				</a>
+			</li>
+			<li>
+				<a href="/modules/filename">
+					FileName
+				</a>
+			</li>
+			<li>
+				<a href="/modules/flatten">
+					Flatten
+				</a>
+			</li>
+			<li>
+				<a href="/modules/github">
+					GitHub
+				</a>
+			</li>
+			<li>
+				<a href="/modules/headings">
+					Headings
+				</a>
+			</li>
+			<li>
+				<a href="/modules/htmlquery">
+					HtmlQuery
+				</a>
+			</li>
+			<li>
+				<a href="/modules/indx">
+					Index
+				</a>
+			</li>
+			<li>
+				<a href="/modules/json">
+					Json
+				</a>
+			</li>
+			<li>
+				<a href="/modules/meta">
+					Meta
+				</a>
+			</li>
+			<li>
+				<a href="/modules/objects">
+					Objects
+				</a>
+			</li>
+			<li>
+				<a href="/modules/sql">
+					Sql
+				</a>
+			</li>
+			<li>
+				<a href="/modules/title">
+					Title
+				</a>
+			</li>
+			<li>
+				<a href="/modules/tree">
+					Tree
+				</a>
+			</li>
+			<li>
+				<a href="/modules/validatemeta">
+					ValidateMeta&lt;T&gt;
+				</a>
+			</li>
+			<li>
+				<a href="/modules/xml">
+					Xml
+				</a>
+			</li>
+			<li>
+				<a href="/modules/xmp">
+					Xmp
+				</a>
+			</li>
+			<li>
+				<a href="/modules/yaml">
+					Yaml
+				</a>
+			</li>
+			<li>
+				<a href="/modules/youtube">
+					YouTube
+				</a>
+			</li>
+			<li class="header">Templates</li>
+			<li>
+				<a href="/modules/less">
+					Less
+				</a>
+			</li>
+			<li>
+				<a href="/modules/markdown">
+					Markdown
+				</a>
+			</li>
+			<li>
+				<a href="/modules/razor">
+					Razor
+				</a>
+			</li>
+			<li>
+				<a href="/modules/sass">
+					Sass
+				</a>
+			</li>
+			<li>
+				<a href="/modules/xslt">
+					Xslt
+				</a>
+			</li>
+
+
+                    </ul>
+                            
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+<section class="content-header">
+    <h1>
+		Where
+	</h1>
+</section>
+<section class="content">
+	  
+	
+			<div class="lead">
+    Filters the current sequence of modules using a predicate.
+    </div>
+		<h1 id="Usage">Usage</h1>
+		<ul>			
+					<li>
+								<p><strong><code>Where(DocumentConfig predicate)</code></strong></p>
+								<p>
+    Specifies the predicate to use for filtering documents.
+    Only input documents for which the predicate returns <code>true</code> will be output.
+    </p>
+								<ul>
+										<li><p><code>predicate</code></p><p>A predicate delegate that should return a <code>bool</code>.</p></li>
+								</ul>
+					</li>				
+		</ul>
+
+
+
+</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                Wyam2 is maintained by <a href="https://savornicesei.com">Simona Avornicesei</a> and <a href="https://github.com/Wyam2/Wyam/graphs/contributors">other awesome contributors</a>, as a continuation of the <a href="https://github.com/Wyamio/Wyam">Wyam</a> project crafted by <a href="https://daveaglick.com">Dave Glick</a>. <a href="https://github.com/Wyam2/Wyam">Code on GitHub</a>. This site was entirely generated by Wyam. Check out <a href="https://github.com/Wyam2/docs">the site code on GitHub</a>.
+<br><br>
+
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        <div class="github-button">
+    <a href="https://github.com/Wyam2/Wyam"><i class="fa fa-github"></i> GitHub</a>
+</div>
+
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).ready(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        useMaxWidth: false
+                    },
+					startOnLoad: false,
+					cloneCssStyles: false
+                });     
+                mermaid.init(undefined, ".mermaid");
+
+                // Remove the max-width setting that Mermaid sets
+                var mermaidSvg = $('.mermaid svg');
+                mermaidSvg.addClass('img-responsive');
+                mermaidSvg.css('max-width', '');
+
+                // Make it scrollable
+				var target = document.querySelector(".mermaid svg");
+				if(target !== null)
+				{
+					var panZoom = window.panZoom = svgPanZoom(target, {
+						zoomEnabled: true,
+						controlIconsEnabled: true,
+						fit: true,
+						center: true,
+                        maxZoom: 20,
+                        zoomScaleSensitivity: 0.6
+					});			                          
+
+                    // Do the reset once right away to fit the diagram
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                    
+                    $(window).resize(function(){
+                        panZoom.resize();
+                        panZoom.fit();
+                        panZoom.center();
+                    });
+				}
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>

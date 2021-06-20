@@ -1,0 +1,1376 @@
+﻿<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <title>Wyam2 - Modules - AnalyzeCSharp</title>
+        <link href="/assets/css/highlight.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/override.css" rel="stylesheet">
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>        
+        <script src="/assets/js/app.min.js"></script>         
+        <script src="/assets/js/highlight.pack.js"></script>   
+        <script src="/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/assets/js/mermaid.min.js"></script>
+        <script src="/assets/js/svg-pan-zoom.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/assets/js/html5shiv.min.js"></script>
+        <script src="/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        <meta name="google" content="notranslate">
+<meta http-equiv="Content-Language" content="en">
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/" class="logo">
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li><a href="/blog">Blog</a></li>
+        <li><a href="/docs">Documentation</a></li>
+        <li><a href="/recipes">Recipes</a></li>
+        <li class="active"><a href="/modules">Modules</a></li>
+        <li><a href="/shortcodes">Shortcodes</a></li>
+        <li><a href="/api">API</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    			
+        <div id="infobar-headings"><h6>On This Page</h6><p><a href="#Package">Package</a></p>
+<p><a href="#Usage">Usage</a></p>
+<p><a href="#methods">Fluent Methods</a></p>
+<p><a href="#settings">Settings</a></p>
+<p><a href="#output-metadata">Output Metadata</a></p>
+<hr class="infobar-hidden">
+</div>
+ 
+
+                </section>
+                <section class="sidebar">    
+                                     
+                    
+    <script src="/assets/js/lunr.min.js"></script>
+<script src="/assets/js/modulesSearchIndex.js"></script>
+<div class="sidebar-form">
+    <div class="input-group">
+        <input type="text" name="search" id="search" class="form-control" placeholder="Search Modules...">
+        <span class="input-group-btn">
+            <button class="btn btn-flat"><i class="fa fa-search"></i></button>
+        </span>
+    </div>
+</div>
+<div id="search-results">
+</div>
+<script>
+    function runSearch(query){
+        $("#search-results").empty();			
+        if( query.length < 2 ){
+            return;
+        }			
+        var results = searchModule.search("*" + query + "*");
+        var listHtml = "<ul class='sidebar-menu'>";	
+        listHtml += "<li class='header'>Type Results</li>";	
+        if(results.length == 0 ){
+            listHtml += "<li>No results found</li>";
+        } else {					
+            for(var i = 0; i < results.length; ++i){
+                var res = results[i];
+                listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
+            }				
+        }
+        listHtml += "</ul>";				
+        $("#search-results").append(listHtml);
+    }
+
+    $(document).ready(function(){
+        $("#search").on('input propertychange paste', function() {
+            runSearch($("#search").val());
+        });
+    });
+
+    function htmlEscape(html) {
+        return document.createElement('div')
+            .appendChild(document.createTextNode(html))
+            .parentNode
+            .innerHTML;
+    }
+</script>
+    <hr>
+
+                    <ul class="sidebar-menu">
+                        
+				<li class="header">Content</li>
+			<li>
+				<a href="/modules/append">
+					Append
+				</a>
+			</li>
+			<li>
+				<a href="/modules/autolink">
+					AutoLink
+				</a>
+			</li>
+			<li>
+				<a href="/modules/content">
+					Content
+				</a>
+			</li>
+			<li>
+				<a href="/modules/csvtohtml">
+					CsvToHtml
+				</a>
+			</li>
+			<li>
+				<a href="/modules/csvtomarkdown">
+					CsvToMarkdown
+				</a>
+			</li>
+			<li>
+				<a href="/modules/exceltocsv">
+					ExcelToCsv
+				</a>
+			</li>
+			<li>
+				<a href="/modules/generatecloudsearchdata">
+					GenerateCloudSearchData
+				</a>
+			</li>
+			<li>
+				<a href="/modules/generatefeeds">
+					GenerateFeeds
+				</a>
+			</li>
+			<li>
+				<a href="/modules/generatejson">
+					GenerateJson
+				</a>
+			</li>
+			<li>
+				<a href="/modules/highlight">
+					Highlight
+				</a>
+			</li>
+			<li>
+				<a href="/modules/htmlescape">
+					HtmlEscape
+				</a>
+			</li>
+			<li>
+				<a href="/modules/htmlinsert">
+					HtmlInsert
+				</a>
+			</li>
+			<li>
+				<a href="/modules/image">
+					Image
+				</a>
+			</li>
+			<li>
+				<a href="/modules/join">
+					Join
+				</a>
+			</li>
+			<li>
+				<a href="/modules/minifycss">
+					MinifyCss
+				</a>
+			</li>
+			<li>
+				<a href="/modules/minifyhtml">
+					MinifyHtml
+				</a>
+			</li>
+			<li>
+				<a href="/modules/minifyjs">
+					MinifyJs
+				</a>
+			</li>
+			<li>
+				<a href="/modules/minifyxhtml">
+					MinifyXhtml
+				</a>
+			</li>
+			<li>
+				<a href="/modules/minifyxml">
+					MinifyXml
+				</a>
+			</li>
+			<li>
+				<a href="/modules/prepend">
+					Prepend
+				</a>
+			</li>
+			<li>
+				<a href="/modules/redirect">
+					Redirect
+				</a>
+			</li>
+			<li>
+				<a href="/modules/replace">
+					Replace
+				</a>
+			</li>
+			<li>
+				<a href="/modules/replacein">
+					ReplaceIn
+				</a>
+			</li>
+			<li>
+				<a href="/modules/searchindex">
+					SearchIndex
+				</a>
+			</li>
+			<li>
+				<a href="/modules/shortcodes">
+					Shortcodes
+				</a>
+			</li>
+			<li>
+				<a href="/modules/sitemap">
+					Sitemap
+				</a>
+			</li>
+			<li class="header">Control</li>
+			<li>
+				<a href="/modules/branch">
+					Branch
+				</a>
+			</li>
+			<li>
+				<a href="/modules/combine">
+					Combine
+				</a>
+			</li>
+			<li>
+				<a href="/modules/concat">
+					Concat
+				</a>
+			</li>
+			<li>
+				<a href="/modules/concatbranch">
+					ConcatBranch
+				</a>
+			</li>
+			<li>
+				<a href="/modules/documents">
+					Documents
+				</a>
+			</li>
+			<li>
+				<a href="/modules/foreach">
+					ForEach
+				</a>
+			</li>
+			<li>
+				<a href="/modules/frontmatter">
+					FrontMatter
+				</a>
+			</li>
+			<li>
+				<a href="/modules/groupby">
+					GroupBy
+				</a>
+			</li>
+			<li>
+				<a href="/modules/groupbymany">
+					GroupByMany
+				</a>
+			</li>
+			<li>
+				<a href="/modules/if">
+					If
+				</a>
+			</li>
+			<li>
+				<a href="/modules/merge">
+					Merge
+				</a>
+			</li>
+			<li>
+				<a href="/modules/orderby">
+					OrderBy
+				</a>
+			</li>
+			<li>
+				<a href="/modules/paginate">
+					Paginate
+				</a>
+			</li>
+			<li>
+				<a href="/modules/sidecar">
+					Sidecar
+				</a>
+			</li>
+			<li>
+				<a href="/modules/sort">
+					Sort
+				</a>
+			</li>
+			<li>
+				<a href="/modules/switch">
+					Switch
+				</a>
+			</li>
+			<li>
+				<a href="/modules/take">
+					Take
+				</a>
+			</li>
+			<li>
+				<a href="/modules/where">
+					Where
+				</a>
+			</li>
+			<li class="header">Extensibility</li>
+			<li>
+				<a href="/modules/execute">
+					Execute
+				</a>
+			</li>
+			<li>
+				<a href="/modules/modulecollection">
+					ModuleCollection
+				</a>
+			</li>
+			<li>
+				<a href="/modules/namedmodule">
+					NamedModule
+				</a>
+			</li>
+			<li>
+				<a href="/modules/trace">
+					Trace
+				</a>
+			</li>
+			<li class="header">Input/Output</li>
+			<li>
+				<a href="/modules/copyfiles">
+					CopyFiles
+				</a>
+			</li>
+			<li>
+				<a href="/modules/download">
+					Download
+				</a>
+			</li>
+			<li>
+				<a href="/modules/include">
+					Include
+				</a>
+			</li>
+			<li>
+				<a href="/modules/mirrorresources">
+					MirrorResources
+				</a>
+			</li>
+			<li>
+				<a href="/modules/readapplicationinput">
+					ReadApplicationInput
+				</a>
+			</li>
+			<li>
+				<a href="/modules/readfiles">
+					ReadFiles
+				</a>
+			</li>
+			<li>
+				<a href="/modules/readproject">
+					ReadProject
+				</a>
+			</li>
+			<li>
+				<a href="/modules/readsolution">
+					ReadSolution
+				</a>
+			</li>
+			<li>
+				<a href="/modules/unwrittenfiles">
+					UnwrittenFiles
+				</a>
+			</li>
+			<li>
+				<a href="/modules/validatelinks">
+					ValidateLinks
+				</a>
+			</li>
+			<li>
+				<a href="/modules/writefiles">
+					WriteFiles
+				</a>
+			</li>
+			<li class="header">Metadata</li>
+			<li class="selected">
+				<a href="/modules/analyzecsharp">
+					AnalyzeCSharp
+				</a>
+			</li>
+			<li>
+				<a href="/modules/copymeta">
+					CopyMeta
+				</a>
+			</li>
+			<li>
+				<a href="/modules/directorymeta">
+					DirectoryMeta
+				</a>
+			</li>
+			<li>
+				<a href="/modules/excerpt">
+					Excerpt
+				</a>
+			</li>
+			<li>
+				<a href="/modules/filename">
+					FileName
+				</a>
+			</li>
+			<li>
+				<a href="/modules/flatten">
+					Flatten
+				</a>
+			</li>
+			<li>
+				<a href="/modules/github">
+					GitHub
+				</a>
+			</li>
+			<li>
+				<a href="/modules/headings">
+					Headings
+				</a>
+			</li>
+			<li>
+				<a href="/modules/htmlquery">
+					HtmlQuery
+				</a>
+			</li>
+			<li>
+				<a href="/modules/indx">
+					Index
+				</a>
+			</li>
+			<li>
+				<a href="/modules/json">
+					Json
+				</a>
+			</li>
+			<li>
+				<a href="/modules/meta">
+					Meta
+				</a>
+			</li>
+			<li>
+				<a href="/modules/objects">
+					Objects
+				</a>
+			</li>
+			<li>
+				<a href="/modules/sql">
+					Sql
+				</a>
+			</li>
+			<li>
+				<a href="/modules/title">
+					Title
+				</a>
+			</li>
+			<li>
+				<a href="/modules/tree">
+					Tree
+				</a>
+			</li>
+			<li>
+				<a href="/modules/validatemeta">
+					ValidateMeta&lt;T&gt;
+				</a>
+			</li>
+			<li>
+				<a href="/modules/xml">
+					Xml
+				</a>
+			</li>
+			<li>
+				<a href="/modules/xmp">
+					Xmp
+				</a>
+			</li>
+			<li>
+				<a href="/modules/yaml">
+					Yaml
+				</a>
+			</li>
+			<li>
+				<a href="/modules/youtube">
+					YouTube
+				</a>
+			</li>
+			<li class="header">Templates</li>
+			<li>
+				<a href="/modules/less">
+					Less
+				</a>
+			</li>
+			<li>
+				<a href="/modules/markdown">
+					Markdown
+				</a>
+			</li>
+			<li>
+				<a href="/modules/razor">
+					Razor
+				</a>
+			</li>
+			<li>
+				<a href="/modules/sass">
+					Sass
+				</a>
+			</li>
+			<li>
+				<a href="/modules/xslt">
+					Xslt
+				</a>
+			</li>
+
+
+                    </ul>
+                            
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+<section class="content-header">
+    <h1>
+		AnalyzeCSharp
+					<small><span class="label label-default">Wyam.CodeAnalysis</span></small>
+	</h1>
+</section>
+<section class="content">
+	  
+	
+			<div class="lead">
+    Performs static code analysis on the input documents, outputting a new document for each symbol.
+    </div>
+			<div>
+    This module acts as the basis for code analysis scenarios such as generating source code documentation.
+    All input documents are assumed to contain C# source in their content and are used to create a Roslyn
+    compilation. All symbols (namespaces, types, members, etc.) in the compilation are then recursively
+    processed and output from this module as documents, one per symbol. The output documents have empty content
+    and all information about the symbol is contained in the metadata. This lets you pass the output documents
+    for each symbol on to a template engine like Razor and generate pages for each symbol by having the
+    template use the document metadata.
+    </div>
+			<h1 id="Package">Package</h1>
+			<div>This module exists in the <strong>Wyam.CodeAnalysis</strong> package which is not part of the core distribution. Add the following preprocessor directive to your <a href="/docs/usage/configuration">configuration file</a> to use it:</div>
+			<pre class="prettyprint"><code>#n Wyam.CodeAnalysis</code></pre>
+		<h1 id="Usage">Usage</h1>
+		<ul>			
+				<li><p><strong><code>AnalyzeCSharp()</code></strong></p></li>
+		</ul>
+			<h1 id="methods">Fluent Methods</h1>
+			<p>Chain these methods together after the constructor to modify behavior.</p>
+			<ul>
+					<li>
+								<p><strong><code>WhereNamespaces(bool includeGlobal, params string[] namespaces)</code></strong></p>
+								<p>
+    Limits symbols in the initial result set to those in the specified namespaces.
+    </p>
+								<ul>
+										<li><p><code>includeGlobal</code></p><p>If set to <code>true</code>, symbols in the unnamed global namespace are included.</p></li>
+										<li><p><code>namespaces</code></p><p>The namespaces to include symbols from (if <code>namespaces</code> is <code>null</code>, symbols from all
+    namespaces are included).</p></li>
+								</ul>
+					</li>				
+					<li>
+								<p><strong><code>WhereNamespaces(Func&lt;string, bool&gt; predicate)</code></strong></p>
+								<p>
+    Limits symbols in the initial result set to those in the namespaces that satisfy the specified predicate.
+    </p>
+								<ul>
+										<li><p><code>predicate</code></p><p>A predicate that returns true if symbols in the namespace should be included.</p></li>
+								</ul>
+					</li>				
+					<li>
+								<p><strong><code>WherePublic(bool includeProtected = true)</code></strong></p>
+								<p>
+    Limits symbols in the initial result set to those that are public (and optionally protected)
+    </p>
+								<ul>
+										<li><p><code>includeProtected</code></p><p>If set to <code>true</code>, protected symbols are also included.</p></li>
+								</ul>
+					</li>				
+					<li>
+								<p><strong><code>WhereSymbol(Func&lt;ISymbol, bool&gt; predicate)</code></strong></p>
+								<p>
+    Controls which symbols are processed as part of the initial result set.
+    </p>
+								<ul>
+										<li><p><code>predicate</code></p><p>A predicate that returns <code>true</code> if the symbol should be included in the initial result set.</p></li>
+								</ul>
+					</li>				
+					<li>
+								<p><strong><code>WithAssemblies(IEnumerable&lt;string&gt; assemblies)</code></strong></p>
+								<p>
+    Analyzes the specified assemblies.
+    </p>
+								<ul>
+										<li><p><code>assemblies</code></p><p>Globbing patterns indicating the assemblies to analyze.</p></li>
+								</ul>
+					</li>				
+					<li>
+								<p><strong><code>WithAssemblies(string assemblies)</code></strong></p>
+								<p>
+    Analyzes the specified assemblies.
+    </p>
+								<ul>
+										<li><p><code>assemblies</code></p><p>A globbing pattern indicating the assemblies to analyze.</p></li>
+								</ul>
+					</li>				
+					<li>
+								<p><strong><code>WithAssemblySymbols(bool assemblySymbols = true)</code></strong></p>
+								<p>
+    Controls whether assembly symbol documents are output.
+    </p>
+								<ul>
+										<li><p><code>assemblySymbols</code></p><p><code>true</code> to output assembly symbol documents.</p></li>
+								</ul>
+					</li>				
+					<li>
+								<p><strong><code>WithCssClasses(string tagName, string cssClasses)</code></strong></p>
+								<p>
+    While converting XML documentation to HTML, any tags with the specified name will get the specified CSS class(s).
+    This is helpful to style your XML documentation comment rendering to support the stylesheet of your site.
+    </p>
+								<ul>
+										<li><p><code>tagName</code></p><p>Name of the tag.</p></li>
+										<li><p><code>cssClasses</code></p><p>The CSS classes to set for the specified tag name. Separate multiple CSS classes
+    with a space (just like you would in HTML).</p></li>
+								</ul>
+					</li>				
+					<li>
+								<p><strong><code>WithDocsForImplicitSymbols(bool docsForImplicitSymbols = true)</code></strong></p>
+								<p>
+    By default, XML documentation comments are not parsed and rendered for documents that are not part
+    of the initial result set. This can control that behavior and be used to generate documentation
+    metadata for all documents, regardless if they were part of the initial result set.
+    </p>
+								<ul>
+										<li><p><code>docsForImplicitSymbols</code></p><p>If set to <code>true</code>, documentation metadata is generated for XML comments on all symbols.</p></li>
+								</ul>
+					</li>				
+					<li>
+								<p><strong><code>WithImplicitInheritDoc(bool implicitInheritDoc = true)</code></strong></p>
+								<p>
+    This will assume <code>inheritdoc</code> if a symbol has no other code comments.
+    </p>
+								<ul>
+										<li><p><code>implicitInheritDoc</code></p><p>If set to <code>true</code>, the symbol will inherit documentation comments
+    if no other comments are provided.</p></li>
+								</ul>
+					</li>				
+					<li>
+								<p><strong><code>WithInputDocuments(bool inputDocuments = true)</code></strong></p>
+								<p>
+    Controls whether the content of input documents is treated as code and used in the analysis (the default is <code>true</code>).
+    </p>
+								<ul>
+										<li><p><code>inputDocuments</code></p><p><code>true</code> to analyze the content of input documents.</p></li>
+								</ul>
+					</li>				
+					<li>
+								<p><strong><code>WithNamedTypes(Func&lt;INamedTypeSymbol, bool&gt; predicate = null)</code></strong></p>
+								<p>
+    Restricts the initial result set to named type symbols (I.e., classes, interfaces, etc.). Also allows supplying
+    an additional predicate on the named type.
+    </p>
+								<ul>
+										<li><p><code>predicate</code></p><p>A predicate that returns <code>true</code> if the symbol should be included in the initial result set.</p></li>
+								</ul>
+					</li>				
+					<li>
+								<p><strong><code>WithProjects(IEnumerable&lt;string&gt; projects)</code></strong></p>
+								<p>
+    Analyzes the specified projects.
+    </p>
+								<ul>
+										<li><p><code>projects</code></p><p>Globbing patterns indicating the projects to analyze.</p></li>
+								</ul>
+					</li>				
+					<li>
+								<p><strong><code>WithProjects(string projects)</code></strong></p>
+								<p>
+    Analyzes the specified projects.
+    </p>
+								<ul>
+										<li><p><code>projects</code></p><p>A globbing pattern indicating the projects to analyze.</p></li>
+								</ul>
+					</li>				
+					<li>
+								<p><strong><code>WithSolutions(IEnumerable&lt;string&gt; solutions)</code></strong></p>
+								<p>
+    Analyzes the specified solutions.
+    </p>
+								<ul>
+										<li><p><code>solutions</code></p><p>Globbing patterns indicating the solutions to analyze.</p></li>
+								</ul>
+					</li>				
+					<li>
+								<p><strong><code>WithSolutions(string solutions)</code></strong></p>
+								<p>
+    Analyzes the specified solutions.
+    </p>
+								<ul>
+										<li><p><code>solutions</code></p><p>A globbing pattern indicating the solutions to analyze.</p></li>
+								</ul>
+					</li>				
+					<li>
+								<p><strong><code>WithWritePath(Func&lt;IMetadata, FilePath&gt; writePath)</code></strong></p>
+								<p>
+    This changes the default behavior for the generated <code>WritePath</code> metadata value, which is to place files in a path
+    with the same name as their containing namespace. Namespace documents will be named "index.html" while other type documents
+    will get a name equal to their SymbolId. Member documents will get the same name as their containing type plus an
+    anchor to their SymbolId. Note that the default scheme makes the assumption that members will not have their own files,
+    if that's not the case a new WritePath function will have to be supplied using this method.
+    </p>
+								<ul>
+										<li><p><code>writePath</code></p><p>A function that takes the metadata for a given symbol and returns a <code>FilePath</code> to
+    use for the <code>WritePath</code> metadata value.</p></li>
+								</ul>
+					</li>				
+					<li>
+								<p><strong><code>WithWritePathPrefix(DirectoryPath prefix)</code></strong></p>
+								<p>
+    This lets you add a prefix to the default <code>WritePath</code> behavior (such as nesting symbol documents inside
+    a folder like "api/"). Whatever you supply will be combined with the <code>WritePath</code>. This method has no
+    effect if you've supplied a custom <code>WritePath</code> behavior.
+    </p>
+								<ul>
+										<li><p><code>prefix</code></p><p>The prefix to use for each generated <code>WritePath</code>.</p></li>
+								</ul>
+					</li>				
+			</ul>
+
+<h1 id="settings">Settings</h1><p>The settings listed below apply globally and can be set from the <a href="/docs/usage/command-line">command line</a> or from a <a href="/docs/usage/settings">configuration file</a>. They are used to configure options and otherwise control module behavior.</p>        <ul>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.OutputBuildLog</code></strong>: <code class="cs">System.Boolean</code>
+                        </p>
+                                <p>
+    Set this to <code class="cs">true</code> in the global settings to generate a binary build log when analyzing projects or solutions. The log will
+    be output alongside the project file.
+    </p>
+                    </li>
+        </ul>
+
+
+<h1 id="output-metadata">Output Metadata</h1><p>The metadata values listed below apply to individual documents and are created and set by the module as indicated in their descriptions.</p>        <ul>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.Accessibility</code></strong>: <code class="cs">System.String</code>
+                        </p>
+                                <p>
+    This is available for type, method, field, event, and property symbols and contains the declared accessibility of the symbol.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.AllInterfaces</code></strong>: <code class="cs">IReadOnlyList&lt;IDocument&gt;</code>
+                        </p>
+                                <p>
+    This is available for type symbols and contains a collection of the documents that represent all implemented interfaces. The collection
+    is empty if the type doesn't implement any interfaces.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.AttributeData</code></strong>: <code class="cs">Microsoft.CodeAnalysis.AttributeData</code>
+                        </p>
+                                <p>
+    This is available for attribute symbols and contains the Roslyn <code class="cs">Microsoft.CodeAnalysis.AttributeData</code> instance for the attribute.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.Attributes</code></strong>: <code class="cs">IReadOnlyList&lt;IDocument&gt;</code>
+                        </p>
+                                <p>
+    This is available for type, method, field, event, property, parameter, and type parameter symbols and contains the type symbol documents for attributes applied to the symbol.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.BaseTypes</code></strong>: <code class="cs">IReadOnlyList&lt;IDocument&gt;</code>
+                        </p>
+                                <p>
+    This is available for type symbols and contains a collection of the documents that represent all base types (inner-most first).
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.CommentId</code></strong>: <code class="cs">System.String</code>
+                        </p>
+                                <p>
+    A unique ID that identifies the symbol for documentation purposes.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.CommentXml</code></strong>: <code class="cs">System.String</code>
+                        </p>
+                                <p>
+    This is available for documents in the initial result set (<code class="cs">Wyam.CodeAnalysis.CodeAnalysisKeys.IsResult</code> is <code class="cs">true</code>) and contains
+    the full unprocessed XML documentation comments content for this symbol. In addition, special metadata keys
+    may be added for custom comment elements with the name <code class="cs">[ElementName]Comments</code>. These special metadata
+    keys contain a <code class="cs">Wyam.CodeAnalysis.OtherComment</code> instance with the rendered HTML content (and any attributes) of the
+    custom XML documentation comments with the given <code class="cs">[ElementName]</code>.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.ConstantValue</code></strong>: <code class="cs">System.Object</code>
+                        </p>
+                                <p>
+    This is available for field symbols and contains the constant value (if one exists).
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.Constructors</code></strong>: <code class="cs">IReadOnlyList&lt;IDocument&gt;</code>
+                        </p>
+                                <p>
+    This is available for type symbols and contains a collection of the documents that represent all constructors of the type. The collection
+    is empty if the type doesn't have any explicit constructors.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.ContainingAssembly</code></strong>: <code class="cs">Wyam.Common.Documents.IDocument</code>
+                        </p>
+                                <p>
+    The document that represents the containing assembly (or null if this symbol is not from an assembly).
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.ContainingNamespace</code></strong>: <code class="cs">Wyam.Common.Documents.IDocument</code>
+                        </p>
+                                <p>
+    The document that represents the containing namespace (or null if this symbol is not nested).
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.ContainingType</code></strong>: <code class="cs">Wyam.Common.Documents.IDocument</code>
+                        </p>
+                                <p>
+    This is available for type, method, field, event, property, and parameter symbols and contains a document
+    representing the containing type(or<code class="cs">null</code> if no containing type).
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.DeclaringType</code></strong>: <code class="cs">Wyam.Common.Documents.IDocument</code>
+                        </p>
+                                <p>
+    This is available for type parameter symbols and contains a document that represents the declaring type of the type parameter.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.DerivedTypes</code></strong>: <code class="cs">IReadOnlyList&lt;IDocument&gt;</code>
+                        </p>
+                                <p>
+    This is available for type symbols and contains a collection of the documents that represent all types derived from the type. The collection
+    is empty if the type doesn't have any derived types.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.DisplayName</code></strong>: <code class="cs">System.String</code>
+                        </p>
+                                <p>
+    A display name for the symbol. For namespaces, this is the same as <code class="cs">Wyam.CodeAnalysis.CodeAnalysisKeys.QualifiedName</code>.
+    For types, this is the same as <code class="cs">Wyam.CodeAnalysis.CodeAnalysisKeys.FullName</code>.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.Example</code></strong>: <code class="cs">System.String</code>
+                        </p>
+                                <p>
+    This is available for documents in the initial result set (<code class="cs">Wyam.CodeAnalysis.CodeAnalysisKeys.IsResult</code> is <code class="cs">true</code>) and contains
+    the rendered HTML content from all<code class="cs">example</code> XML documentation comments for this symbol.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.Exceptions</code></strong>: <code class="cs">System.Collections.Generic.IReadOnlyList`1</code>
+                        </p>
+                                <p>
+    This is available for documents in the initial result set (<code class="cs">Wyam.CodeAnalysis.CodeAnalysisKeys.IsResult</code> is <code class="cs">true</code>) and contains
+    a collection of all<code class="cs">exception</code> XML documentation comments for this symbol with their name, link, and/or rendered HTML content.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.ExtensionMethods</code></strong>: <code class="cs">IReadOnlyList&lt;IDocument&gt;</code>
+                        </p>
+                                <p>
+    This is available for type symbols and contains a collection of the documents that represent all extension members applicable to the type.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.FullName</code></strong>: <code class="cs">System.String</code>
+                        </p>
+                                <p>
+    The full name of the symbol. For namespaces, this is the name of the namespace. For types, this includes all generic type parameters.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.HasConstantValue</code></strong>: <code class="cs">System.Boolean</code>
+                        </p>
+                                <p>
+    This is available for field symbols and indicates whether a constant value is available for the field.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.ImplementingTypes</code></strong>: <code class="cs">IReadOnlyList&lt;IDocument&gt;</code>
+                        </p>
+                                <p>
+    This is available for interface symbols and contains a collection of the documents that represent all types that implement the interface. The collection
+    is empty if no other types implement the interface.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.IsAbstract</code></strong>: <code class="cs">System.Boolean</code>
+                        </p>
+                                <p>
+    Indicates if the symbol is abstract.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.IsOverride</code></strong>: <code class="cs">System.Boolean</code>
+                        </p>
+                                <p>
+    Indicates if the symbol is an override.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.IsResult</code></strong>: <code class="cs">System.Boolean</code>
+                        </p>
+                                <p>
+    By default only certain symbols are processed as part of the initial
+    result set(such as those that match the specified predicate). If this value is <code class="cs">true</code>, then this
+    symbol was part of the initial result set. If it is <code class="cs">false</code>, the symbol was lazily processed later
+    while fetching related symbols and may not contain the full set of metadata.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.IsStatic</code></strong>: <code class="cs">System.Boolean</code>
+                        </p>
+                                <p>
+    Indicates if the symbol is static.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.IsVirtual</code></strong>: <code class="cs">System.Boolean</code>
+                        </p>
+                                <p>
+    Indicates if the symbol is virtual.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.Kind</code></strong>: <code class="cs">System.String</code>
+                        </p>
+                                <p>
+    This is the general kind of symbol. For example, the for a namespace this is "Namespace" and for a type this is "NamedType".
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.MemberNamespaces</code></strong>: <code class="cs">IReadOnlyList&lt;IDocument&gt;</code>
+                        </p>
+                                <p>
+    This is available for namespace symbols and contains a collection of the documents that represent all member namespaces.
+    The collection is empty if there are no member namespaces.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.Members</code></strong>: <code class="cs">IReadOnlyList&lt;IDocument&gt;</code>
+                        </p>
+                                <p>
+    This is available for type symbols and contains a collection of the documents that represent all members of the type, including inherited ones. The collection
+    is empty if the type doesn't have any members.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.MemberTypes</code></strong>: <code class="cs">IReadOnlyList&lt;IDocument&gt;</code>
+                        </p>
+                                <p>
+    This is available for namespace and type symbols and contains a collection of the documents that represent all member types.
+    It only contains direct children (as opposed to all nested types).
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.Name</code></strong>: <code class="cs">System.String</code>
+                        </p>
+                                <p>
+    The name of the symbol, or an empty string if the symbol has no name (like the global namespace).
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.Operators</code></strong>: <code class="cs">IReadOnlyList&lt;IDocument&gt;</code>
+                        </p>
+                                <p>
+    This is available for type symbols and contains a collection of the documents that represent all operators of the type, including inherited ones. The collection
+    is empty if the type doesn't have any operators.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.OverriddenMethod</code></strong>: <code class="cs">Wyam.Common.Documents.IDocument</code>
+                        </p>
+                                <p>
+    This is available for method symbols and contains a document that represents the method being overridden (or <code class="cs">null</code> if no method is overriden by this one).
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.Parameters</code></strong>: <code class="cs">IReadOnlyList&lt;IDocument&gt;</code>
+                        </p>
+                                <p>
+    This is available for method and property (I.e., indexer) symbols and contains a collection of the documents that represent the parameters of the method or property.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.Params</code></strong>: <code class="cs">System.Collections.Generic.IReadOnlyList`1</code>
+                        </p>
+                                <p>
+    This is available for documents in the initial result set (<code class="cs">Wyam.CodeAnalysis.CodeAnalysisKeys.IsResult</code> is <code class="cs">true</code>) and contains
+    a collection of all<code class="cs">param</code> XML documentation comments for this symbol with their name, link, and/or rendered HTML content.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.Permissions</code></strong>: <code class="cs">System.Collections.Generic.IReadOnlyList`1</code>
+                        </p>
+                                <p>
+    This is available for documents in the initial result set (<code class="cs">Wyam.CodeAnalysis.CodeAnalysisKeys.IsResult</code> is <code class="cs">true</code>) and contains
+    a collection of all<code class="cs">permission</code> XML documentation comments for this symbol with their name, link, and/or rendered HTML content.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.QualifiedName</code></strong>: <code class="cs">System.String</code>
+                        </p>
+                                <p>
+    The qualified name of the symbol which includes all containing namespaces.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>Keys.RelativeFileDir</code></strong>: <code class="cs">Wyam.Common.IO.DirectoryPath</code>
+                        </p>
+                                <p>
+    The same as the directory of <code class="cs">Wyam.Common.Meta.Keys.WritePath</code>.
+    This metadata key is available for compatibility with other modules.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>Keys.RelativeFilePath</code></strong>: <code class="cs">Wyam.Common.IO.FilePath</code>
+                        </p>
+                                <p>
+    The same as <code class="cs">Wyam.Common.Meta.Keys.WritePath</code>.
+    This metadata key is available for compatibility with other modules.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>Keys.RelativeFilePathBase</code></strong>: <code class="cs">Wyam.Common.IO.FilePath</code>
+                        </p>
+                                <p>
+    The same as <code class="cs">Wyam.Common.Meta.Keys.WritePath</code> without the file extension.
+    This metadata key is available for compatibility with other modules.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.Remarks</code></strong>: <code class="cs">System.String</code>
+                        </p>
+                                <p>
+    This is available for documents in the initial result set (<code class="cs">Wyam.CodeAnalysis.CodeAnalysisKeys.IsResult</code> is <code class="cs">true</code>) and contains
+    the rendered HTML content from all<code class="cs">remarks</code> XML documentation comments for this symbol.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.Returns</code></strong>: <code class="cs">System.String</code>
+                        </p>
+                                <p>
+    This is available for documents in the initial result set (<code class="cs">Wyam.CodeAnalysis.CodeAnalysisKeys.IsResult</code> is <code class="cs">true</code>) and contains
+    the rendered HTML content from all<code class="cs">returns</code> XML documentation comments for this symbol.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.ReturnType</code></strong>: <code class="cs">Wyam.Common.Documents.IDocument</code>
+                        </p>
+                                <p>
+    This is available for method symbols and contains a document that represents the return type of the method (or <code class="cs">null</code> if the method returns <code class="cs">void</code>).
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.SeeAlso</code></strong>: <code class="cs">IReadOnlyList&lt;string&gt;</code>
+                        </p>
+                                <p>
+    This is available for documents in the initial result set (<code class="cs">Wyam.CodeAnalysis.CodeAnalysisKeys.IsResult</code> is <code class="cs">true</code>) and contains
+    a collection of all<code class="cs">seealso</code> XML documentation comments for this symbol with their rendered HTML link (or just name if no link could be generated).
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.SpecificKind</code></strong>: <code class="cs">System.String</code>
+                        </p>
+                                <p>
+    The more specific kind of the symbol ("Class", "Struct", etc.) This is the same as <code class="cs">Kind</code> if there is no more specific kind.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.Summary</code></strong>: <code class="cs">System.String</code>
+                        </p>
+                                <p>
+    This is available for documents in the initial result set (<code class="cs">Wyam.CodeAnalysis.CodeAnalysisKeys.IsResult</code> is <code class="cs">true</code>) and contains
+    the rendered HTML content from all<code class="cs">summary</code> XML documentation comments for this symbol.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.Symbol</code></strong>: <code class="cs">Microsoft.CodeAnalysis.ISymbol</code> (or <code class="cs">System.Collections.Generic.IEnumerable`1</code> if a namespace)
+                        </p>
+                                <p>
+    The Roslyn <code class="cs">ISymbol</code> from which this document is derived. If the document represents a namespace, this metadata might contain more than one
+    symbol since the namespaces documents consolidate same-named namespaces across input code and assemblies.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.SymbolId</code></strong>: <code class="cs">System.String</code>
+                        </p>
+                                <p>
+    A unique ID that identifies the symbol (can be used for generating folder paths, for example).
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.Syntax</code></strong>: <code class="cs">System.String</code>
+                        </p>
+                                <p>
+    This is available for documents in the initial result set (<code class="cs">Wyam.CodeAnalysis.CodeAnalysisKeys.IsResult</code> is <code class="cs">true</code>) and contains
+    a generated syntax example for the symbol.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.Type</code></strong>: <code class="cs">Wyam.Common.Documents.IDocument</code>
+                        </p>
+                                <p>
+    This is available for field, event, property, and parameter symbols and contains the document that represents the type of the symbol.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.TypeParameters</code></strong>: <code class="cs">IReadOnlyList&lt;IDocument&gt;</code>
+                        </p>
+                                <p>
+    This is available for type and method symbols and contains a collection of the documents that represent all generic type parameters of the type or method. The collection
+    is empty if the type or method doesn't have any generic type parameters.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.TypeParams</code></strong>: <code class="cs">System.Collections.Generic.IReadOnlyList`1</code>
+                        </p>
+                                <p>
+    This is available for documents in the initial result set (<code class="cs">Wyam.CodeAnalysis.CodeAnalysisKeys.IsResult</code> is <code class="cs">true</code>) and contains
+    a collection of all<code class="cs">typeparam</code> XML documentation comments for this symbol with their name, link, and/or rendered HTML content.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>CodeAnalysisKeys.Value</code></strong>: <code class="cs">System.String</code>
+                        </p>
+                                <p>
+    This is available for documents in the initial result set (<code class="cs">Wyam.CodeAnalysis.CodeAnalysisKeys.IsResult</code> is <code class="cs">true</code>) and contains
+    the rendered HTML content from all<code class="cs">value</code> XML documentation comments for this symbol.
+    </p>
+                    </li>
+                    <li>        
+                        <p>
+                            <strong><code>Keys.WritePath</code></strong>: <code class="cs">Wyam.Common.IO.FilePath</code>
+                        </p>
+                                <p>
+    A write path is generated for each symbol during code analysis and serves several purposes.First, it's
+    used to automatically create hyperlinks for references in XML documentation comments.It can also be used
+    for generating inbound links from other modules or pipelines to a given symbol. Because the WriteFiles module
+    will check for any WritePath metadata values when outputting documents, this metadata also makes writing
+    symbol documents to disk easier (presumably after they've been sent through a templating module).
+    </p>
+                    </li>
+        </ul>
+</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                Wyam2 is maintained by <a href="https://savornicesei.com">Simona Avornicesei</a> and <a href="https://github.com/Wyam2/Wyam/graphs/contributors">other awesome contributors</a>, as a continuation of the <a href="https://github.com/Wyamio/Wyam">Wyam</a> project crafted by <a href="https://daveaglick.com">Dave Glick</a>. <a href="https://github.com/Wyam2/Wyam">Code on GitHub</a>. This site was entirely generated by Wyam. Check out <a href="https://github.com/Wyam2/docs">the site code on GitHub</a>.
+<br><br>
+
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        <div class="github-button">
+    <a href="https://github.com/Wyam2/Wyam"><i class="fa fa-github"></i> GitHub</a>
+</div>
+
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).ready(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        useMaxWidth: false
+                    },
+					startOnLoad: false,
+					cloneCssStyles: false
+                });     
+                mermaid.init(undefined, ".mermaid");
+
+                // Remove the max-width setting that Mermaid sets
+                var mermaidSvg = $('.mermaid svg');
+                mermaidSvg.addClass('img-responsive');
+                mermaidSvg.css('max-width', '');
+
+                // Make it scrollable
+				var target = document.querySelector(".mermaid svg");
+				if(target !== null)
+				{
+					var panZoom = window.panZoom = svgPanZoom(target, {
+						zoomEnabled: true,
+						controlIconsEnabled: true,
+						fit: true,
+						center: true,
+                        maxZoom: 20,
+                        zoomScaleSensitivity: 0.6
+					});			                          
+
+                    // Do the reset once right away to fit the diagram
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                    
+                    $(window).resize(function(){
+                        panZoom.resize();
+                        panZoom.fit();
+                        panZoom.center();
+                    });
+				}
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>

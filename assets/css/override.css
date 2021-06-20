@@ -1,0 +1,244 @@
+body.layout-boxed {
+  background-image: -webkit-linear-gradient(top, #345b7d 0%, #6c5b7b 100%);
+  background-image: -o-linear-gradient(top, #345b7d 0%, #6c5b7b 100%);
+  background-image: linear-gradient(to bottom, #345b7d 0%, #6c5b7b 100%);
+  background-repeat: repeat-x;
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff345b7d', endColorstr='#ff6c5b7b', GradientType=0);
+}
+@media (min-width: 1250px) {
+  .infobar {
+    color: #fff;
+  }
+  .infobar a,
+  .infobar a:link,
+  .infobar a:visited {
+    color: rgba(255, 255, 255, 0.8);
+  }
+  .infobar a:hover,
+  .infobar a:active {
+    color: #fff;
+  }
+}
+@media (min-width: 768px) {
+  body.layout-top-nav .main-header > .navbar,
+  .main-header .navbar {
+    margin-left: 280px;
+  }
+  #navbar-collapse {
+    float: right !important;
+  }
+}
+@media (max-width: 767px) {
+  .main-header .logo {
+    width: 280px;
+    margin-left: -140px;
+  }
+  .main-header .logo .logo-lg {
+    width: 280px;
+  }
+}
+body.layout-boxed.no-gutter .top-banner {
+  height: 55px;
+  border-bottom: 5px solid #ccc;
+}
+.main-header {
+  border-bottom: 5px solid #ccc;
+  max-height: initial;
+}
+.main-header .logo {
+  line-height: initial;
+  background-color: initial;
+  padding: 0;
+  width: 280px;
+}
+.main-sidebar {
+  padding-top: 55px;
+}
+body.layout-boxed .top-banner,
+.main-header,
+.main-header .navbar {
+  background-color: #eee;
+}
+.layout-top-nav .main-header > .logo {
+  width: 280px;
+  background-color: #eee;
+  color: #808080;
+  padding: 0;
+  line-height: 0;
+}
+.main-header .navbar .nav > li > a {
+  color: #808080;
+}
+.main-header .navbar .nav > li a:hover,
+.main-header .navbar .nav .open a:hover,
+.main-header .navbar .nav > li a:active .main-header .navbar .nav > li a:focus,
+.main-header .navbar .nav > li a:active .main-header .navbar .nav .open a:focus,
+.main-header .navbar .nav .open a:active .main-header .navbar .nav > li a:focus,
+.main-header .navbar .nav .open a:active .main-header .navbar .nav .open a:focus {
+  background: #ccc;
+  color: #404040;
+}
+.main-header .navbar .nav > .active a {
+  background: #ccc;
+  color: #404040;
+}
+.navbar-toggle,
+.main-header .navbar .sidebar-toggle {
+  color: #345b7d;
+  border-radius: 0;
+}
+.navbar-toggle:hover,
+.main-header .navbar .sidebar-toggle:hover {
+  color: #345b7d;
+  background-color: #ccc;
+}
+.content-header h1 {
+  color: #345b7d;
+  font-weight: bold;
+}
+h1,
+.h1 {
+  color: #6c5b7b;
+}
+h2,
+.h2 {
+  color: #c16c84;
+}
+h3,
+.h3 {
+  color: #f67280;
+}
+h4,
+.h4 {
+  color: #f9b194;
+}
+.jumbotron {
+  padding: 0;
+  color: #fff;
+  margin: 0;
+}
+.jumbotron h1,
+.jumbotron .h1 {
+  color: rgba(255, 255, 255, 0.6);
+}
+.jumbotron-title {
+  margin-bottom: 30px;
+}
+.jumbotron-intro,
+.jumbotron-title {
+  background: #ccc;
+}
+.jumbotron-intro .container-background {
+  background: url('/assets/img/intro-bg.jpg') no-repeat center center;
+  background-size: cover;
+}
+.jumbotron-intro .container {
+  padding: 48px 40px;
+  margin: 0;
+}
+.jumbotron-intro .container h1 {
+  text-transform: uppercase;
+  color: rgba(0, 0, 0, 0.6);
+  text-shadow: 0px 0px 60px rgba(255, 255, 255, 0.6), 0px 0px 30px rgba(255, 255, 255, 0.6);
+}
+@media (min-width: 1200px) {
+  .jumbotron-intro .container {
+    width: 1260px;
+  }
+}
+.jumbotron-description {
+  padding-top: 12px;
+}
+.jumbotron-description a,
+.jumbotron-description a:hover,
+.jumbotron-description a:visited {
+  color: #fff;
+  text-decoration: underline;
+}
+.jumbotron-description-1 {
+  background: #6c5b7b;
+}
+.jumbotron-description-1 h2 {
+  color: #fff;
+}
+.jumbotron-description-2 {
+  background: #c16c84;
+}
+.jumbotron-description-3 {
+  background: #f67280;
+}
+.jumbotron-description-4 {
+  background: #f9b194;
+}
+@media (min-width: 1200px) {
+  .jumbotron-intro {
+    height: 400px;
+  }
+  .jumbotron-intro .container-background {
+    background: none;
+  }
+  .jumbotron-intro .container {
+    background: url('/assets/img/intro-bg.jpg') no-repeat center center;
+    height: 400px;
+  }
+}
+/* For Gitter and GitHub */
+
+.bottom-footer {
+  margin-bottom: 40px !important;
+  color: #fff;
+}
+.bottom-footer a,
+.bottom-footer a:link,
+.bottom-footer a:visited {
+  color: rgba(255, 255, 255, 0.8);
+}
+.bottom-footer a:hover,
+.bottom-footer a:active {
+  color: #fff;
+}
+.gitter-open-chat-button {
+  background-color: #345b7d;
+  font-family: "Roboto", Helvetica, Arial, sans-serif;
+  letter-spacing: normal;
+  right: 90px;
+}
+.gitter-open-chat-button:focus,
+.gitter-open-chat-button:hover,
+.github-button:focus,
+.github-button:hover {
+  background-color: #345b7d;
+  color: #fff;
+}
+.gitter-chat-embed {
+  top: 49px;
+  border-top: 1px solid #000;
+  z-index: 10000;
+}
+.github-button {
+  z-index: 100;
+  position: fixed;
+  bottom: 0px;
+  right: 240px;
+  padding: 1em 3em;
+  background-color: #345b7d;
+  border: 0;
+  border-top-left-radius: 0.5em;
+  border-top-right-radius: 0.5em;
+  font-family: sans-serif;
+  font-size: 9pt;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  cursor: hand;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+  color: #fff;
+}
+.github-button a,
+.github-button a:active,
+.github-button a:hover,
+.github-button a:focus {
+  color: #fff;
+}

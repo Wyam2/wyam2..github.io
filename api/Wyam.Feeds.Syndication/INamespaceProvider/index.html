@@ -1,0 +1,456 @@
+﻿<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <title>Wyam2 - API - INamespaceProvider Interface</title>
+        <link href="/assets/css/highlight.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/override.css" rel="stylesheet">
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>        
+        <script src="/assets/js/app.min.js"></script>         
+        <script src="/assets/js/highlight.pack.js"></script>   
+        <script src="/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/assets/js/mermaid.min.js"></script>
+        <script src="/assets/js/svg-pan-zoom.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/assets/js/html5shiv.min.js"></script>
+        <script src="/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        <meta name="google" content="notranslate">
+<meta http-equiv="Content-Language" content="en">
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/" class="logo">
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li><a href="/blog">Blog</a></li>
+        <li><a href="/docs">Documentation</a></li>
+        <li><a href="/recipes">Recipes</a></li>
+        <li><a href="/modules">Modules</a></li>
+        <li><a href="/shortcodes">Shortcodes</a></li>
+        <li class="active"><a href="/api">API</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Syntax">Syntax</a></p>
+<p><a href="#Methods">Methods</a></p>
+<hr class="infobar-hidden">
+</div>
+
+                </section>
+                <section class="sidebar">    
+                                     
+                    	
+	    <script src="/assets/js/lunr.min.js"></script>
+    <script src="/assets/js/searchIndex.js"></script>
+    <div class="sidebar-form">
+        <div class="input-group">
+            <input type="text" name="search" id="search" class="form-control" placeholder="Search Types...">
+            <span class="input-group-btn">
+                <button class="btn btn-flat"><i class="fa fa-search"></i></button>
+            </span>
+        </div>
+    </div>
+    <div id="search-results">
+    </div>
+    <script>
+        function runSearch(query){
+            $("#search-results").empty();			
+            if( query.length < 2 ){
+                return;
+            }			
+            var results = searchModule.search("*" + query + "*");
+            var listHtml = "<ul class='sidebar-menu'>";	
+            listHtml += "<li class='header'>Type Results</li>";	
+            if(results.length == 0 ){
+                listHtml += "<li>No results found</li>";
+            } else {					
+                for(var i = 0; i < results.length; ++i){
+                    var res = results[i];
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
+                }				
+            }
+            listHtml += "</ul>";				
+            $("#search-results").append(listHtml);
+        }
+
+        $(document).ready(function(){
+            $("#search").on('input propertychange paste', function() {
+                runSearch($("#search").val());
+            });
+        });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
+    </script>
+	
+    <hr>
+
+                    <ul class="sidebar-menu">
+                        
+			<li class="header">Assembly</li>
+		<li><a href="/api/Wyam.Feeds.dll">Wyam<wbr>.Feeds<wbr>.dll</a></li>
+		<li class="header">Namespace</li>
+		<li><a href="/api/Wyam.Feeds.Syndication">Wyam<wbr>.Feeds<wbr>.Syndication</a></li>
+		<li role="separator" class="divider"></li>
+			<li class="header">Class Types</li>
+				<li><a href="/api/Wyam.Feeds.Syndication/Feed">Feed</a></li>
+				<li><a href="/api/Wyam.Feeds.Syndication/FeedItem">FeedItem</a></li>
+				<li><a href="/api/Wyam.Feeds.Syndication/FeedMetadata">FeedMetadata</a></li>
+				<li><a href="/api/Wyam.Feeds.Syndication/FeedSerializer">FeedSerializer</a></li>
+				<li><a href="/api/Wyam.Feeds.Syndication/FeedType">FeedType</a></li>
+			<li class="header">Interface Types</li>
+				<li><a href="/api/Wyam.Feeds.Syndication/IFeed">IFeed</a></li>
+				<li><a href="/api/Wyam.Feeds.Syndication/IFeedItem">IFeedItem</a></li>
+				<li><a href="/api/Wyam.Feeds.Syndication/IFeedMetadata">IFeedMetadata</a></li>
+				<li class="selected"><a href="/api/Wyam.Feeds.Syndication/INamespaceProvider">INamespaceProvider</a></li>
+				<li><a href="/api/Wyam.Feeds.Syndication/IUriProvider">IUriProvider</a></li>
+
+
+                    </ul>
+                            
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+<section class="content-header">
+	<h1>INamespaceProvider <small>Interface</small></h1>
+</section>
+<section class="content">
+	
+	
+	
+		<div class="panel panel-default">
+  			<div class="panel-body">
+				<div class="row">
+					<div class="col-md-6">
+						<dl class="dl-horizontal">		
+								<dt>Assembly</dt>
+								<dd><a href="/api/Wyam.Feeds.dll">Wyam<wbr>.Feeds<wbr>.dll</a></dd>
+
+								<dt>Namespace</dt>
+								<dd><a href="/api/Wyam.Feeds.Syndication">Wyam<wbr>.Feeds<wbr>.Syndication</a></dd>
+											
+							
+							
+							
+								<dt>Implementing Types</dt>
+								<dd>
+									<ul class="list-unstyled">
+											<li><a href="/api/Wyam.Feeds.Syndication.Rdf/RdfTextInput">RdfTextInput</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Rdf/RdfItem">RdfItem</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Rss/RssSkipDays">RssSkipDays</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Atom/AtomLink">AtomLink</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Rss/RssSkipHours">RssSkipHours</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Rss/RssCategory">RssCategory</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Rdf/RdfFeedBase">RdfFeedBase</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Atom/AtomInReplyTo">AtomInReplyTo</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Rss/RssItem">RssItem</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Rss/RssEnclosure">RssEnclosure</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication/IFeed">IFeed</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Atom/AtomBase">AtomBase</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Rss/RssSource">RssSource</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Atom/AtomCommonAttributes">AtomCommonAttributes</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Atom/AtomContent">AtomContent</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Rss/RssChannel">RssChannel</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Rdf/RdfFeed">RdfFeed</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Rdf/RdfImage">RdfImage</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Rss/RssPerson">RssPerson</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Rdf/RdfChannel">RdfChannel</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication/Feed">Feed</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Rss/RssChannelBase">RssChannelBase</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Rss/RssFeed">RssFeed</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Extensions/ExtensibleBase">ExtensibleBase</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Rss/RssCloud">RssCloud</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Atom/AtomFeed">AtomFeed</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Rss/RssImage">RssImage</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Rdf/RdfBase">RdfBase</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Atom/AtomSource">AtomSource</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Rss/RssGuid">RssGuid</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Atom/AtomEntry">AtomEntry</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Atom/AtomPerson">AtomPerson</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Atom/AtomCategory">AtomCategory</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Rss/RssTextInput">RssTextInput</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Rss/RssBase">RssBase</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Atom/AtomText">AtomText</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Atom/AtomGenerator">AtomGenerator</a></li>								
+									</ul>
+								</dd>				
+						</dl>
+					</div>		
+					<div class="col-md-6">
+						<div class="mermaid">
+							graph BT
+	Type["INamespaceProvider"]
+class Type type-node
+	Implementing0["RdfTextInput"]-.-&gt;Type
+	click Implementing0 "/api/Wyam.Feeds.Syndication.Rdf/RdfTextInput"
+	Implementing1["RdfItem"]-.-&gt;Type
+	click Implementing1 "/api/Wyam.Feeds.Syndication.Rdf/RdfItem"
+	Implementing2["RssSkipDays"]-.-&gt;Type
+	click Implementing2 "/api/Wyam.Feeds.Syndication.Rss/RssSkipDays"
+	Implementing3["AtomLink"]-.-&gt;Type
+	click Implementing3 "/api/Wyam.Feeds.Syndication.Atom/AtomLink"
+	Implementing4["RssSkipHours"]-.-&gt;Type
+	click Implementing4 "/api/Wyam.Feeds.Syndication.Rss/RssSkipHours"
+	Implementing5["RssCategory"]-.-&gt;Type
+	click Implementing5 "/api/Wyam.Feeds.Syndication.Rss/RssCategory"
+	Implementing6["RdfFeedBase"]-.-&gt;Type
+	click Implementing6 "/api/Wyam.Feeds.Syndication.Rdf/RdfFeedBase"
+	Implementing7["AtomInReplyTo"]-.-&gt;Type
+	click Implementing7 "/api/Wyam.Feeds.Syndication.Atom/AtomInReplyTo"
+	Implementing8["RssItem"]-.-&gt;Type
+	click Implementing8 "/api/Wyam.Feeds.Syndication.Rss/RssItem"
+	Implementing9["RssEnclosure"]-.-&gt;Type
+	click Implementing9 "/api/Wyam.Feeds.Syndication.Rss/RssEnclosure"
+	Implementing10["IFeed"]-.-&gt;Type
+	click Implementing10 "/api/Wyam.Feeds.Syndication/IFeed"
+	Implementing11["AtomBase"]-.-&gt;Type
+	click Implementing11 "/api/Wyam.Feeds.Syndication.Atom/AtomBase"
+	Implementing12["RssSource"]-.-&gt;Type
+	click Implementing12 "/api/Wyam.Feeds.Syndication.Rss/RssSource"
+	Implementing13["AtomCommonAttributes"]-.-&gt;Type
+	click Implementing13 "/api/Wyam.Feeds.Syndication.Atom/AtomCommonAttributes"
+	Implementing14["AtomContent"]-.-&gt;Type
+	click Implementing14 "/api/Wyam.Feeds.Syndication.Atom/AtomContent"
+	Implementing15["RssChannel"]-.-&gt;Type
+	click Implementing15 "/api/Wyam.Feeds.Syndication.Rss/RssChannel"
+	Implementing16["RdfFeed"]-.-&gt;Type
+	click Implementing16 "/api/Wyam.Feeds.Syndication.Rdf/RdfFeed"
+	Implementing17["RdfImage"]-.-&gt;Type
+	click Implementing17 "/api/Wyam.Feeds.Syndication.Rdf/RdfImage"
+	Implementing18["RssPerson"]-.-&gt;Type
+	click Implementing18 "/api/Wyam.Feeds.Syndication.Rss/RssPerson"
+	Implementing19["RdfChannel"]-.-&gt;Type
+	click Implementing19 "/api/Wyam.Feeds.Syndication.Rdf/RdfChannel"
+	Implementing20["Feed"]-.-&gt;Type
+	click Implementing20 "/api/Wyam.Feeds.Syndication/Feed"
+	Implementing21["RssChannelBase"]-.-&gt;Type
+	click Implementing21 "/api/Wyam.Feeds.Syndication.Rss/RssChannelBase"
+	Implementing22["RssFeed"]-.-&gt;Type
+	click Implementing22 "/api/Wyam.Feeds.Syndication.Rss/RssFeed"
+	Implementing23["ExtensibleBase"]-.-&gt;Type
+	click Implementing23 "/api/Wyam.Feeds.Syndication.Extensions/ExtensibleBase"
+	Implementing24["RssCloud"]-.-&gt;Type
+	click Implementing24 "/api/Wyam.Feeds.Syndication.Rss/RssCloud"
+	Implementing25["AtomFeed"]-.-&gt;Type
+	click Implementing25 "/api/Wyam.Feeds.Syndication.Atom/AtomFeed"
+	Implementing26["RssImage"]-.-&gt;Type
+	click Implementing26 "/api/Wyam.Feeds.Syndication.Rss/RssImage"
+	Implementing27["RdfBase"]-.-&gt;Type
+	click Implementing27 "/api/Wyam.Feeds.Syndication.Rdf/RdfBase"
+	Implementing28["AtomSource"]-.-&gt;Type
+	click Implementing28 "/api/Wyam.Feeds.Syndication.Atom/AtomSource"
+	Implementing29["RssGuid"]-.-&gt;Type
+	click Implementing29 "/api/Wyam.Feeds.Syndication.Rss/RssGuid"
+	Implementing30["AtomEntry"]-.-&gt;Type
+	click Implementing30 "/api/Wyam.Feeds.Syndication.Atom/AtomEntry"
+	Implementing31["AtomPerson"]-.-&gt;Type
+	click Implementing31 "/api/Wyam.Feeds.Syndication.Atom/AtomPerson"
+	Implementing32["AtomCategory"]-.-&gt;Type
+	click Implementing32 "/api/Wyam.Feeds.Syndication.Atom/AtomCategory"
+	Implementing33["RssTextInput"]-.-&gt;Type
+	click Implementing33 "/api/Wyam.Feeds.Syndication.Rss/RssTextInput"
+	Implementing34["RssBase"]-.-&gt;Type
+	click Implementing34 "/api/Wyam.Feeds.Syndication.Rss/RssBase"
+	Implementing35["AtomText"]-.-&gt;Type
+	click Implementing35 "/api/Wyam.Feeds.Syndication.Atom/AtomText"
+	Implementing36["AtomGenerator"]-.-&gt;Type
+	click Implementing36 "/api/Wyam.Feeds.Syndication.Atom/AtomGenerator"
+
+						</div>
+					</div>
+				</div>
+  			</div>
+		</div>
+
+	<h1 id="Syntax">Syntax</h1>
+	<pre><code>public interface INamespaceProvider</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+			<h1 id="Methods">Methods</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover three-cols">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Value</th>
+								<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/api/Wyam.Feeds.Syndication/INamespaceProvider/67458465">AddNamespaces<wbr>(<wbr>Xml<wbr>Serializer<wbr>Namespaces)<wbr></a></td>
+								<td>void</td>
+								<td>
+									<div>
+    Adds additional namespace URIs for the feed
+    </div>
+								</td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
+
+
+	
+</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                Wyam2 is maintained by <a href="https://savornicesei.com">Simona Avornicesei</a> and <a href="https://github.com/Wyam2/Wyam/graphs/contributors">other awesome contributors</a>, as a continuation of the <a href="https://github.com/Wyamio/Wyam">Wyam</a> project crafted by <a href="https://daveaglick.com">Dave Glick</a>. <a href="https://github.com/Wyam2/Wyam">Code on GitHub</a>. This site was entirely generated by Wyam. Check out <a href="https://github.com/Wyam2/docs">the site code on GitHub</a>.
+<br><br>
+
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        <div class="github-button">
+    <a href="https://github.com/Wyam2/Wyam"><i class="fa fa-github"></i> GitHub</a>
+</div>
+
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).ready(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        useMaxWidth: false
+                    },
+					startOnLoad: false,
+					cloneCssStyles: false
+                });     
+                mermaid.init(undefined, ".mermaid");
+
+                // Remove the max-width setting that Mermaid sets
+                var mermaidSvg = $('.mermaid svg');
+                mermaidSvg.addClass('img-responsive');
+                mermaidSvg.css('max-width', '');
+
+                // Make it scrollable
+				var target = document.querySelector(".mermaid svg");
+				if(target !== null)
+				{
+					var panZoom = window.panZoom = svgPanZoom(target, {
+						zoomEnabled: true,
+						controlIconsEnabled: true,
+						fit: true,
+						center: true,
+                        maxZoom: 20,
+                        zoomScaleSensitivity: 0.6
+					});			                          
+
+                    // Do the reset once right away to fit the diagram
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                    
+                    $(window).resize(function(){
+                        panZoom.resize();
+                        panZoom.fit();
+                        panZoom.center();
+                    });
+				}
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>

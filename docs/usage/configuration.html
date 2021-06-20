@@ -1,0 +1,476 @@
+﻿<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <title>Wyam2 - Configuration</title>
+        <link href="/assets/css/highlight.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/override.css" rel="stylesheet">
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>        
+        <script src="/assets/js/app.min.js"></script>         
+        <script src="/assets/js/highlight.pack.js"></script>   
+        <script src="/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/assets/js/mermaid.min.js"></script>
+        <script src="/assets/js/svg-pan-zoom.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/assets/js/html5shiv.min.js"></script>
+        <script src="/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        <meta name="google" content="notranslate">
+<meta http-equiv="Content-Language" content="en">
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/" class="logo">
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li><a href="/blog">Blog</a></li>
+        <li class="active"><a href="/docs">Documentation</a></li>
+        <li><a href="/recipes">Recipes</a></li>
+        <li><a href="/modules">Modules</a></li>
+        <li><a href="/shortcodes">Shortcodes</a></li>
+        <li><a href="/api">API</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+        <div><p><a href="https://github.com/Wyam2/docs/tree/master/input/docs/usage/configuration.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
+    <div id="infobar-headings"><h6>On This Page</h6><p><a href="#preprocessor-directives">Preprocessor Directives</a></p>
+<p><a href="#declarations">Declarations</a></p>
+<p><a href="#pipelines">Pipelines</a></p>
+<p><a href="#execution-ordering">Execution Ordering</a></p>
+<hr class="infobar-hidden">
+</div>
+
+                </section>
+                <section class="sidebar">    
+                                     
+                    
+
+                    <ul class="sidebar-menu">
+                        
+
+                <li class="treeview">
+                    <a href="/docs/concepts">Concepts</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/docs/concepts/documents">Documents</a></li>
+                <li><a href="/docs/concepts/metadata">Metadata</a></li>
+                <li><a href="/docs/concepts/modules">Modules</a></li>
+                <li><a href="/docs/concepts/shortcodes">Shortcodes</a></li>
+                <li><a href="/docs/concepts/pipelines">Pipelines</a></li>
+                <li><a href="/docs/concepts/recipes">Recipes</a></li>
+                <li><a href="/docs/concepts/themes">Themes</a></li>
+                <li><a href="/docs/concepts/io">I/O</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview active">
+                    <a href="/docs/usage">Usage</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/docs/usage/obtaining">Obtaining</a></li>
+                <li><a href="/docs/usage/command-line">Command Line</a></li>
+                <li class="selected"><a href="/docs/usage/configuration">Configuration</a></li>
+                <li><a href="/docs/usage/settings">Settings</a></li>
+                <li><a href="/docs/usage/embedding">Embedding</a></li>
+                <li><a href="/docs/usage/executing-in-a-unit-test">Executing In A Unit Test</a></li>
+                <li><a href="/docs/usage/examples">Examples</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/docs/deployment">Deployment</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/docs/deployment/appveyor">AppVeyor for Continuous Integration</a></li>
+                <li><a href="/docs/deployment/azure">Azure</a></li>
+                <li><a href="/docs/deployment/netlify">Netlify</a></li>
+                <li><a href="/docs/deployment/serving-from-a-subdirectory">Serving From A Subdirectory</a></li>
+                <li><a href="/docs/deployment/ssl-and-https">SSL and HTTPS</a></li>
+                <li><a href="/docs/deployment/cake">Using Cake</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/docs/extensibility">Extensibility</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/docs/extensibility/creating-a-theme">Creating A Theme</a></li>
+                <li><a href="/docs/extensibility/customizing-recipe-pipelines">Customizing Recipe Pipelines</a></li>
+                <li><a href="/docs/extensibility/customizing-themes">Customizing Themes</a></li>
+                <li><a href="/docs/extensibility/writing-a-module">Writing a Module</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/docs/advanced">Advanced</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/docs/advanced/custom_document_types">Custom Document Types</a></li>
+                <li><a href="/docs/advanced/document-content-streams">Document Content Streams</a></li>
+                <li><a href="/docs/advanced/migrating-to-0.12.x">Migrating to 0.12.x</a></li>
+                <li><a href="/docs/advanced/setting-the-culture">Setting The Culture</a></li>
+                <li><a href="/docs/advanced/what_to_exclude_from_source_control">What To Exclude From Source Control</a></li>
+
+                    </ul>
+                </li>
+                <li class="treeview">
+                    <a href="/docs/resources">Resources</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/docs/resources/some-background">Some Background</a></li>
+                <li><a href="/docs/resources/built-with-wyam">Built With Wyam</a></li>
+                <li><a href="/docs/resources/blog-posts">Blog Posts</a></li>
+                <li><a href="/docs/resources/tools">Tools</a></li>
+                <li><a href="/docs/resources/hosts">Hosts</a></li>
+
+                    </ul>
+                </li>
+
+                    </ul>
+                            
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+		<section class="content-header">
+			<h1>Configuration</h1>
+		</section>
+	<section class="content">
+		<p>The command line Wyam application reads a configuration file typically named <code>config.wyam</code> (though you can change that with an argument) that sets up the environment and configures the pipelines. Preprocessor directives can appear anywhere in the configuration file, though they are always evaluated before processing the rest of the file (by convention they're usually at the top of the file).</p>
+<p>The configuration file is evaluated as C# code, so you can make use of the full C# language and the entire .NET ecosystem. However, it's not necessary to know C# to write Wyam configuration files. The syntax has been carefully crafted to be usable by anyone no matter their level of programming experience. Some extra pre-processing is also done to the file to make certain code easier to write (which actually makes the syntax a superset of C#, though this extra magic is entirely optional).</p>
+<p>A configuration file typically looks like this:</p>
+<pre><code>// <a href="/api/Wyam.Configuration.Preprocessing/Preprocessor">Preprocessor</a> directives
+
+// Body code
+// ...
+</code></pre>
+<p>When Wyam starts, the configuration file is compiled by Roslyn (a C# compiler) and strting with Wyam 1.0 a cached copy of the resulting compilation is stored on disk at <code>config.wyam.dll</code> by default. A hash of the config file is also stored at <code>config.wyam.hash</code>. These two files improve startup performance by allowing Wyam to skip the compilation phase if the config file has previously been processed and its contents haven't changed.</p>
+<h1 id="preprocessor-directives">Preprocessor Directives</h1>
+<p>Preprocessor directives establish the Wyam environment and get evaluated before the rest of the configuration file. They're typically responsible for declaring things like NuGet packages and assemblies. Every preprocessor directive starts with <code>#</code> at the beginning of a line and extend for the rest of the line. The following directives are available (the current set of directives can always be seen by calling <code>wyam help --directives</code>).</p>
+<pre><code>Available preprocessor directives:
+
+#nuget-source, #ns
+Specifies an additional package source to use.
+
+#recipe, #r
+    -i, --ignore-known-packages    Ignores (does not add) packages for
+                                   known recipes.
+    &lt;recipe&gt;                       The recipe to use.
+Specifies a recipe to use.
+
+#assembly, #a
+Adds an assembly reference by name, file name, or globbing pattern.
+
+#theme, #t
+    -i, --ignore-known-packages    Ignores (does not add) packages for
+                                   known themes.
+    &lt;theme&gt;                        The theme to use.
+Specifies a theme to use.
+
+#nuget, #n
+    -p, --prerelease         Specifies that prerelease packages are
+                             allowed.
+    -u, --unlisted           Specifies that unlisted packages are
+                             allowed.
+    -v, --version &lt;arg&gt;      Specifies the version range of the package
+                             to use.
+    -l, --latest             Specifies that the latest available version
+                             of the package should be used (this will
+                             always trigger a request to the sources).
+    -s, --source &lt;arg&gt;...    Specifies the package source(s) to get the
+                             package from.
+    -e, --exclusive          Indicates that only the specified package
+                             source(s) should be used to find the
+                             package.
+    &lt;package&gt;                The package to install.
+Adds a NuGet package (downloading and installing it if needed).
+</code></pre>
+<h2 id="nuget-packages">NuGet Packages</h2>
+<p>Any NuGet packages you specify in preprocessor directives are installed and then scanned for modules which are made available to the main configuration body. By default, Wyam will attempt to match requested packages with those on disk and will use the disk-based package when available. To force it to use a specific version or version range (and download and install it if necessary), use the <code>--version &lt;version&gt;</code> flag. To force it to always download and install the latest available version on the package feed, use the <code>--latest</code> flag, which will always result in a call to the configured source(s).</p>
+<p>Wyam follows the same conventions as NuGet with regards to <a href="https://docs.nuget.org/create/versioning#specifying-version-ranges-in-.nuspec-files">specifying version ranges</a>. Specifically, the following summarizes how to specify version ranges:</p>
+<pre><code>1.0  = 1.0 ≤ x
+(,1.0]  = x ≤ 1.0
+(,1.0)  = x &lt; 1.0
+[1.0] = x == 1.0
+(1.0) = invalid
+(1.0,) = 1.0 &lt; x
+(1.0,2.0) = 1.0 &lt; x &lt; 2.0
+[1.0,2.0] = 1.0 ≤ x ≤ 2.0
+</code></pre>
+<p>Note that many modules require their package to be installed before they can be used. For example, to make use of the <a href="/modules/markdown">Markdown</a> module, you must install the <code>Wyam.Markdown</code> package. To do this, you would add the following to your configuration file:</p>
+<pre><code>#n Wyam.Markdown
+</code></pre>
+<p>You can also specify the special <code>Wyam.All</code> package which will download all of the official Wyam module packages at once:</p>
+<pre><code>#n Wyam.All
+</code></pre>
+<p>All NuGet packages you specify, along with their dependencies, are located and downloaded at startup. Walking the full dependency tree can be time consuming since queries have to be issued to the NuGet server(s) for each individual package. To improve performance, the full set of packages and their dependencies is cached in a <code>packages.xml</code> file. If Wyam has already calculated the dependency tree for a given package and version, that entire tree will be stored in this cache file and it won't need to be rewalked on the next run. This means that the first execution of Wyam may take longer as the dependency cache is populated but subsiquent executions should be much faster.</p>
+<h2 id="assemblies">Assemblies</h2>
+<p>In addition to NuGet packages you can also load assemblies. All assemblies are loaded with the <code>#assembly</code> or <code>#a</code> directive. You can load all the assemblies in a directory by using a <a href="/docs/concepts/io#globbing">globbing pattern</a>, or by specifying a relative or absolute path to the assembly. You can also load assemblies by name. If you specify a short name, Wyam will attempt to resolve the assembly with the same version as the currently loaded framework. Keep in mind that non-framework assemblies located in the GAC <em>must</em> be loaded by full name (including the version, public key token, etc.).</p>
+<p>By default, the following assemblies are already loaded so you don't need to explicitly specify them:</p>
+<ul>
+<li><code>System</code></li>
+<li><code>System.Collections.Generic</code></li>
+<li><code>System.Linq</code></li>
+<li><code>System.Core</code></li>
+<li><code>Microsoft.CSharp</code></li>
+<li><code>System.IO</code></li>
+<li><code>System.Diagnostics</code></li>
+</ul>
+<h1 id="declarations">Declarations</h1>
+<p>The code in your configuration is executed inside the context of an "invisible" class and method. Note that any declarations such as classes or methods will be automatically "lifted" into an outer scope. In this way, the configuration file is more like a C# script than a normal code file. Any classes that are declared in the configuration file will be placed in the global scope. Any methods will be placed in the wrapping class outside the default wrapping method that contains the rest of the configuration code.</p>
+<pre><code>// "using" statements are placed in the outer scope
+// and are available throughout the script
+using System.IO;
+
+// classes are also placed in the outer scope
+public static class Helpers
+{
+    public static string GetWriteExtension()
+    {
+        return ".html";
+    }
+}
+
+// normal code is placed in a wrapper class and method
+// that gets called when the script is evaluated
+Pipelines.Add("Markdown",
+    ReadFiles("*.md"),
+    FrontMatter(Yaml()),
+    Markdown(),
+    WriteFiles(Helpers.GetWriteExtension())
+);
+</code></pre>
+<p>Note that namespaces for all found modules as well as the following namespaces are automatically brought into scope for every configuration script so you won't need to explicitly add them:</p>
+<ul>
+<li><code>System</code></li>
+<li><code>System.Collections.Generic</code></li>
+<li><code>System.Linq</code></li>
+<li><code>System.IO</code></li>
+<li><code>System.Diagnostics</code></li>
+</ul>
+<h1 id="pipelines">Pipelines</h1>
+<p>Configuring a pipeline is easy, and Wyam configuration files are designed to be simple and straightforward:</p>
+<pre><code>Pipelines.Add(
+    ReadFiles("*.md"),
+    Markdown(),
+    WriteFiles(".html")
+);
+</code></pre>
+<p>However, don't let the simplicity fool you. Wyam configuration files are C# scripts and as such can make use of the full C# language and the entire .NET ecosystem (including the built-in support for NuGet and other assemblies as explained above). One of the core modules even lets you write a delegate right in your configuration file for extreme flexibility.</p>
+<h2 id="pipeline-names">Pipeline Names</h2>
+<p>Pipelines should be given names, which makes them easier to identify in trace messages and also makes them easier to refer to within templates (for example, to get all the documents generated by a previous pipeline). Just pass in the name of a pipeline as the first parameter to the <code>Add()</code> method. If no name is provided (as above), then pipelines will implicitly be given the names <code><a href="/api/Wyam.Common.Execution/Pipeline">Pipeline</a> 1</code>, <code><a href="/api/Wyam.Common.Execution/Pipeline">Pipeline</a> 2</code>, etc.</p>
+<pre><code>Pipelines.Add("Markdown",
+    ReadFiles("*.md"),
+    FrontMatter(Yaml()),
+    Markdown(),
+    WriteFiles(".html")
+);
+</code></pre>
+<h2 id="child-modules">Child Modules</h2>
+<p>Some modules also accept child modules as part of their processing. For example, the <code><a href="/api/Wyam.Core.Modules.Control/FrontMatter">FrontMatter</a></code> module accepts a child module to handle parsing whatever front matter content is found. This way, the same module can be used to recognize front matter without it having to worry about what kind of content the front matter contains (such as YAML or JSON). For example:</p>
+<pre><code>Pipelines.Add("Markdown",
+    ReadFiles("*.md"),
+    FrontMatter(Yaml()),
+    Markdown(),
+    WriteFiles(".html")
+);
+</code></pre>
+<h2 id="fluent-methods">Fluent Methods</h2>
+<p>Some modules allow method chaining to extend or modify their behavior. For example, the <code><a href="/api/Wyam.Core.Modules.Control/OrderBy">OrderBy</a></code> module allows you to chain a call to <code>ThenBy()</code> if you would like to sort by multiple inputs. Or, you chain a call to <code>Descending()</code> if you would like to reverse the order.</p>
+<pre><code>Pipelines.Add("Markdown",
+    ReadFiles("*.md"),
+    FrontMatter(Yaml()),
+    OrderBy(@doc.Get&lt;DateTime&gt;("Published"))
+        .ThenBy(@doc["Title"])
+        .Descending(),
+    WriteFiles(".html")
+);
+</code></pre>
+<h2 id="skipping-previously-processed-documents">Skipping Previously Processed Documents</h2>
+<p>If you know that a given pipeline doesn't use data from other pipelines and you'd like to prevent reprocessing of documents after the first pass, you can set the <code>ProcessDocumentsOnce</code> flag. Under the hood, this looks for the first occurrence of a given <code><a href="/api/Wyam.Common.Documents/IDocument/A839CC25">IDocument.Source</a></code> and then caches all final result documents that have the same source. On subsequent executions, if a document with a previously seen <code><a href="/api/Wyam.Common.Documents/IDocument/A839CC25">IDocument.Source</a></code> is found <em>and it has the same content</em>, that document is removed from the module output and therefore won't get passed to the next module. At the end of the pipeline, all the documents from the first pass that have the same source as the removed one are added back to the result set (so later pipelines can still access them in the documents collection if needed). The <code>ProcessDocumentsOnce</code> flag can be set when creating a pipeline:</p>
+<pre><code>Pipelines.Add("Markdown",
+    ReadFiles("*.md"),
+    FrontMatter(Yaml()),
+    Markdown(),
+    WriteFiles(".html")
+).WithProcessDocumentsOnce();
+</code></pre>
+<h2 id="explicit-module-instantiation">Explicit Module Instantiation</h2>
+<p>Note that you supply the pipeline with new instances of each module. An astute reader will notice that in the example above, modules are being specified with what look like global methods. These methods are just shorthand for the actual module class constructors and this convention can be used for any module within the configuration script. The example configuration above could also have been written as:</p>
+<pre><code>Pipelines.Add("Markdown",
+    new ReadFiles("*.md"),
+    new Markdown(),
+    new WriteFiles(".html")
+);
+</code></pre>
+<h2 id="automatic-lambda-generation">Automatic Lambda Generation</h2>
+<p>Many modules accept functions so that you can use information about the current <code><a href="/api/Wyam.Common.Execution/IExecutionContext">IExecutionContext</a></code> and/or <code><a href="/api/Wyam.Common.Documents/IDocument">IDocument</a></code> when executing the module. For example, you may want to write files to disk in different locations depending on some value in each document's metadata. To make this easier in simple cases, and to assist users who may not be familiar with the <a href="https://msdn.microsoft.com/en-us/library/bb397687.aspx">C# lambda expression syntax</a>, the configuration file will automatically generate lambda expressions when using a special syntax. This generation will only happen for module constructors and fluent configuration methods. Any other method you use that requires a function will still have to specify it explicitly.</p>
+<p>If the module or fluent configuration method has a <code><a href="/api/Wyam.Common.Configuration/ContextConfig">ContextConfig</a></code> delegate argument, you can instead use any variable name that starts with <code>@ctx</code>. For example:</p>
+<pre><code>Foo(@ctx2.InputFolder)
+</code></pre>
+<p>will be expanded to:</p>
+<pre><code>Foo(@ctx2 =&gt; @ctx2.InputFolder)
+</code></pre>
+<p>Likewise, any variable name that starts with <code>@doc</code> will be expanded to a <code><a href="/api/Wyam.Common.Configuration/DocumentConfig">DocumentConfig</a></code> delegate. For example:</p>
+<pre><code>Foo(@doc["SomeMetadataValue"])
+</code></pre>
+<p>will be expanded to:</p>
+<pre><code>Foo((@doc, _) =&gt; @doc["SomeMetadataValue"])
+</code></pre>
+<p>If you use both <code>@ctx</code> and <code>@doc</code>, a <code><a href="/api/Wyam.Common.Configuration/DocumentConfig">DocumentConfig</a></code> delegate will be generated that uses both values. For example:</p>
+<pre><code>Foo(@doc[@ctx.InputFolder])
+</code></pre>
+<p>will be expanded to:</p>
+<pre><code>Foo((@doc, @ctx) =&gt; @doc[@ctx.InputFolder])
+</code></pre>
+<p>If you need to use the <code><a href="/api/Wyam.Common.Configuration/ContextConfig">ContextConfig</a></code> delegate argument but do not need to access <code>@doc</code> or <code>@ctx</code> then you will need to specify the lambda. For example, one of the overrides for the <code><a href="/api/Wyam.Core.Modules.IO/WriteFiles">WriteFiles</a></code> module is a string to let you specify a file extension. However, we might want to override the output and write to a single file (with minified and combined CSS for example). To accomplish this, we will need to pass in the lambda, even thought we won't be using it.</p>
+<pre><code>WriteFiles((doc, ctx) =&gt; "css/style.css")
+</code></pre>
+<h1 id="execution-ordering">Execution Ordering</h1>
+<p>Be aware that the configuration file only <em>configures</em> the pipelines. Each pipeline is executed in the order in which they were first added after the entire configuration file is evaluated. This means that you can't declare one pipeline, then declare another, and then add a new module to the first pipeline expecting it to reflect what happened in the second one. The second pipeline won't execute until the entire first pipeline is complete, including any modules that were added to it after the second one was declared. If you need to run some modules, switch to a different pipeline, and the perform additional processing on the first set of documents, look into the <a href="/modules/documents">Documents</a> module.</p>
+
+	</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                Wyam2 is maintained by <a href="https://savornicesei.com">Simona Avornicesei</a> and <a href="https://github.com/Wyam2/Wyam/graphs/contributors">other awesome contributors</a>, as a continuation of the <a href="https://github.com/Wyamio/Wyam">Wyam</a> project crafted by <a href="https://daveaglick.com">Dave Glick</a>. <a href="https://github.com/Wyam2/Wyam">Code on GitHub</a>. This site was entirely generated by Wyam. Check out <a href="https://github.com/Wyam2/docs">the site code on GitHub</a>.
+<br><br>
+
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        <div class="github-button">
+    <a href="https://github.com/Wyam2/Wyam"><i class="fa fa-github"></i> GitHub</a>
+</div>
+
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).ready(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        useMaxWidth: false
+                    },
+					startOnLoad: false,
+					cloneCssStyles: false
+                });     
+                mermaid.init(undefined, ".mermaid");
+
+                // Remove the max-width setting that Mermaid sets
+                var mermaidSvg = $('.mermaid svg');
+                mermaidSvg.addClass('img-responsive');
+                mermaidSvg.css('max-width', '');
+
+                // Make it scrollable
+				var target = document.querySelector(".mermaid svg");
+				if(target !== null)
+				{
+					var panZoom = window.panZoom = svgPanZoom(target, {
+						zoomEnabled: true,
+						controlIconsEnabled: true,
+						fit: true,
+						center: true,
+                        maxZoom: 20,
+                        zoomScaleSensitivity: 0.6
+					});			                          
+
+                    // Do the reset once right away to fit the diagram
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                    
+                    $(window).resize(function(){
+                        panZoom.resize();
+                        panZoom.fit();
+                        panZoom.center();
+                    });
+				}
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>

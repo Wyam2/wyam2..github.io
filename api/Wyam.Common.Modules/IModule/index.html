@@ -1,0 +1,647 @@
+﻿<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <title>Wyam2 - API - IModule Interface</title>
+        <link href="/assets/css/highlight.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/override.css" rel="stylesheet">
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>        
+        <script src="/assets/js/app.min.js"></script>         
+        <script src="/assets/js/highlight.pack.js"></script>   
+        <script src="/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/assets/js/mermaid.min.js"></script>
+        <script src="/assets/js/svg-pan-zoom.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/assets/js/html5shiv.min.js"></script>
+        <script src="/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        <meta name="google" content="notranslate">
+<meta http-equiv="Content-Language" content="en">
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/" class="logo">
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li><a href="/blog">Blog</a></li>
+        <li><a href="/docs">Documentation</a></li>
+        <li><a href="/recipes">Recipes</a></li>
+        <li><a href="/modules">Modules</a></li>
+        <li><a href="/shortcodes">Shortcodes</a></li>
+        <li class="active"><a href="/api">API</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+	<div id="infobar-headings"><h6>On This Page</h6><p><a href="#Summary">Summary</a></p>
+<p><a href="#Syntax">Syntax</a></p>
+<p><a href="#Methods">Methods</a></p>
+<p><a href="#ExtensionMethods">Extension Methods</a></p>
+<hr class="infobar-hidden">
+</div>
+
+                </section>
+                <section class="sidebar">    
+                                     
+                    	
+	    <script src="/assets/js/lunr.min.js"></script>
+    <script src="/assets/js/searchIndex.js"></script>
+    <div class="sidebar-form">
+        <div class="input-group">
+            <input type="text" name="search" id="search" class="form-control" placeholder="Search Types...">
+            <span class="input-group-btn">
+                <button class="btn btn-flat"><i class="fa fa-search"></i></button>
+            </span>
+        </div>
+    </div>
+    <div id="search-results">
+    </div>
+    <script>
+        function runSearch(query){
+            $("#search-results").empty();			
+            if( query.length < 2 ){
+                return;
+            }			
+            var results = searchModule.search("*" + query + "*");
+            var listHtml = "<ul class='sidebar-menu'>";	
+            listHtml += "<li class='header'>Type Results</li>";	
+            if(results.length == 0 ){
+                listHtml += "<li>No results found</li>";
+            } else {					
+                for(var i = 0; i < results.length; ++i){
+                    var res = results[i];
+                    listHtml += "<li><a href='" + res.url + "'>" + htmlEscape(res.title) + "</a></li>";
+                }				
+            }
+            listHtml += "</ul>";				
+            $("#search-results").append(listHtml);
+        }
+
+        $(document).ready(function(){
+            $("#search").on('input propertychange paste', function() {
+                runSearch($("#search").val());
+            });
+        });
+
+        function htmlEscape(html) {
+            return document.createElement('div')
+                .appendChild(document.createTextNode(html))
+                .parentNode
+                .innerHTML;
+        }
+    </script>
+	
+    <hr>
+
+                    <ul class="sidebar-menu">
+                        
+			<li class="header">Assembly</li>
+		<li><a href="/api/Wyam.Common.dll">Wyam<wbr>.Common<wbr>.dll</a></li>
+		<li class="header">Namespace</li>
+		<li><a href="/api/Wyam.Common.Modules">Wyam<wbr>.Common<wbr>.Modules</a></li>
+		<li role="separator" class="divider"></li>
+			<li class="header">Class Types</li>
+				<li><a href="/api/Wyam.Common.Modules/ContainerModule">ContainerModule</a></li>
+				<li><a href="/api/Wyam.Common.Modules/ContentModule">ContentModule</a></li>
+				<li><a href="/api/Wyam.Common.Modules/ModuleExtensions">ModuleExtensions</a></li>
+				<li><a href="/api/Wyam.Common.Modules/ModuleList">ModuleList</a></li>
+				<li><a href="/api/Wyam.Common.Modules/ModuleListExtensions">ModuleListExtensions</a></li>
+				<li><a href="/api/Wyam.Common.Modules/NamedModule">NamedModule</a></li>
+				<li><a href="/api/Wyam.Common.Modules/ReadDataModule_2">ReadDataModule<wbr>&lt;TModule, <wbr>TItem&gt;<wbr></a></li>
+			<li class="header">Interface Types</li>
+				<li><a href="/api/Wyam.Common.Modules/IAsNewDocuments">IAsNewDocuments</a></li>
+				<li class="selected"><a href="/api/Wyam.Common.Modules/IModule">IModule</a></li>
+				<li><a href="/api/Wyam.Common.Modules/IModuleList">IModuleList</a></li>
+				<li><a href="/api/Wyam.Common.Modules/IReadOnlyModuleList">IReadOnlyModuleList</a></li>
+
+
+                    </ul>
+                            
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+<section class="content-header">
+	<h1>IModule <small>Interface</small></h1>
+</section>
+<section class="content">
+	
+	
+		<h1 id="Summary">Summary</h1>
+	<div class="lead">
+    The primary module interface for classes that can transform or otherwise operate on documents.
+    </div>
+
+		<div class="panel panel-default">
+  			<div class="panel-body">
+				<div class="row">
+					<div class="col-md-6">
+						<dl class="dl-horizontal">		
+								<dt>Assembly</dt>
+								<dd><a href="/api/Wyam.Common.dll">Wyam<wbr>.Common<wbr>.dll</a></dd>
+
+								<dt>Namespace</dt>
+								<dd><a href="/api/Wyam.Common.Modules">Wyam<wbr>.Common<wbr>.Modules</a></dd>
+											
+							
+							
+							
+								<dt>Implementing Types</dt>
+								<dd>
+									<ul class="list-unstyled">
+											<li><a href="/api/Wyam.Core.Modules.Contents/Shortcodes">Shortcodes</a></li>								
+											<li><a href="/api/Wyam.Html/HtmlQuery">HtmlQuery</a></li>								
+											<li><a href="/api/Wyam.Json/GenerateJson">GenerateJson</a></li>								
+											<li><a href="/api/Wyam.Html/Headings">Headings</a></li>								
+											<li><a href="/api/Wyam.Images/Image">Image</a></li>								
+											<li><a href="/api/Wyam.Minification/MinifyHtml">MinifyHtml</a></li>								
+											<li><a href="/api/Wyam.Html/HtmlInsert">HtmlInsert</a></li>								
+											<li><a href="/api/Wyam.Core.Modules.Metadata/FileName">FileName</a></li>								
+											<li><a href="/api/Wyam.Testing.Modules/CountModule">CountModule</a></li>								
+											<li><a href="/api/Wyam.Core.Modules.Metadata/Tree">Tree</a></li>								
+											<li><a href="/api/Wyam.Core.Modules.Metadata/Meta">Meta</a></li>								
+											<li><a href="/api/Wyam.Core.Modules.Control/GroupBy">GroupBy</a></li>								
+											<li><a href="/api/Wyam.Tables/CsvToMarkdown">CsvToMarkdown</a></li>								
+											<li><a href="/api/Wyam.Core.Modules.Control/Take">Take</a></li>								
+											<li><a href="/api/Wyam.Core.Modules.Contents/Redirect">Redirect</a></li>								
+											<li><a href="/api/Wyam.Json/Json">Json</a></li>								
+											<li><a href="/api/Wyam.Core.Modules.IO/Download">Download</a></li>								
+											<li><a href="/api/Wyam.Core.Modules.Control/Switch">Switch</a></li>								
+											<li><a href="/api/Wyam.Core.Modules.Contents/Content">Content</a></li>								
+											<li><a href="/api/Wyam.Common.Modules/NamedModule">NamedModule</a></li>								
+											<li><a href="/api/Wyam.SearchIndex/SearchIndex">SearchIndex</a></li>								
+											<li><a href="/api/Wyam.Html/AutoLink">AutoLink</a></li>								
+											<li><a href="/api/Wyam.Core.Modules.Contents/ReplaceIn">ReplaceIn</a></li>								
+											<li><a href="/api/Wyam.Markdown/Markdown">Markdown</a></li>								
+											<li><a href="/api/Wyam.Minification/MinifyJs">MinifyJs</a></li>								
+											<li><a href="/api/Wyam.Core.Modules.Metadata/Objects">Objects</a></li>								
+											<li><a href="/api/Wyam.Core.Modules.Contents/Join">Join</a></li>								
+											<li><a href="/api/Wyam.Core.Modules.Metadata/Flatten">Flatten</a></li>								
+											<li><a href="/api/Wyam.Core.Modules.Metadata/Sql">Sql</a></li>								
+											<li><a href="/api/Wyam.Core.Modules.Control/ForEach">ForEach</a></li>								
+											<li><a href="/api/Wyam.Core.Modules.Control/FrontMatter">FrontMatter</a></li>								
+											<li><a href="/api/Wyam.Core.Modules.Metadata/CopyMeta">CopyMeta</a></li>								
+											<li><a href="/api/Wyam.Minification/MinifyXml">MinifyXml</a></li>								
+											<li><a href="/api/Wyam.Core.Modules.IO/CopyFiles">CopyFiles</a></li>								
+											<li><a href="/api/Wyam.Core.Modules.IO/WriteFiles">WriteFiles</a></li>								
+											<li><a href="/api/Wyam.Razor/Razor">Razor</a></li>								
+											<li><a href="/api/Wyam.Core.Modules.Metadata/ValidateMeta_1">ValidateMeta</a><wbr>&lt;<a href="/api/Wyam.Core.Modules.Metadata/ValidateMeta_1#typeparam-T">T</a>&gt;<wbr></li>								
+											<li><a href="/api/Wyam.Core.Modules.Metadata/Index">Index</a></li>								
+											<li><a href="/api/Wyam.Common.Modules/ContentModule">ContentModule</a></li>								
+											<li><a href="/api/Wyam.Core.Modules.Control/GroupByMany">GroupByMany</a></li>								
+											<li><a href="/api/Wyam.GitHub/GitHub">GitHub</a></li>								
+											<li><a href="/api/Wyam.Xmp/Xmp">Xmp</a></li>								
+											<li><a href="/api/Wyam.Less/Less">Less</a></li>								
+											<li><a href="/api/Wyam.Core.Modules.Control/Combine">Combine</a></li>								
+											<li><a href="/api/Wyam.Core.Modules.Control/Sidecar">Sidecar</a></li>								
+											<li><a href="/api/Wyam.Core.Modules.Control/Documents">Documents</a></li>								
+											<li><a href="/api/Wyam.Html/Excerpt">Excerpt</a></li>								
+											<li><a href="/api/Wyam.AmazonWebServices/GenerateCloudSearchData">Generate<wbr>Cloud<wbr>Search<wbr>Data</a></li>								
+											<li><a href="/api/Wyam.CodeAnalysis/ReadWorkspace">ReadWorkspace</a></li>								
+											<li><a href="/api/Wyam.Core.Modules.IO/ReadApplicationInput">ReadApplicationInput</a></li>								
+											<li><a href="/api/Wyam.Core.Modules.Metadata/Xml">Xml</a></li>								
+											<li><a href="/api/Wyam.Core.Modules.Control/Paginate">Paginate</a></li>								
+											<li><a href="/api/Wyam.Yaml/Yaml">Yaml</a></li>								
+											<li><a href="/api/Wyam.YouTube/YouTube">YouTube</a></li>								
+											<li><a href="/api/Wyam.Core.Modules.Contents/Sitemap">Sitemap</a></li>								
+											<li><a href="/api/Wyam.Highlight/Highlight">Highlight</a></li>								
+											<li><a href="/api/Wyam.Core.Modules.Contents/Replace">Replace</a></li>								
+											<li><a href="/api/Wyam.Core.Modules.Templates/Xslt">Xslt</a></li>								
+											<li><a href="/api/Wyam.Core.Modules.Contents/Append">Append</a></li>								
+											<li><a href="/api/Wyam.Core.Modules.Metadata/DirectoryMeta">DirectoryMeta</a></li>								
+											<li><a href="/api/Wyam.CodeAnalysis/AnalyzeCSharp">AnalyzeCSharp</a></li>								
+											<li><a href="/api/Wyam.Html/MirrorResources">MirrorResources</a></li>								
+											<li><a href="/api/Wyam.Feeds/GenerateFeeds">GenerateFeeds</a></li>								
+											<li><a href="/api/Wyam.Core.Modules.Control/ConcatBranch">ConcatBranch</a></li>								
+											<li><a href="/api/Wyam.Core.Modules.Extensibility/ModuleCollection">ModuleCollection</a></li>								
+											<li><a href="/api/Wyam.Minification/MinifyXhtml">MinifyXhtml</a></li>								
+											<li><a href="/api/Wyam.Core.Modules.Control/OrderBy">OrderBy</a></li>								
+											<li><a href="/api/Wyam.Core.Modules.IO/Include">Include</a></li>								
+											<li><a href="/api/Wyam.Core.Modules.Extensibility/Execute">Execute</a></li>								
+											<li><a href="/api/Wyam.Common.Modules/ContainerModule">ContainerModule</a></li>								
+											<li><a href="/api/Wyam.Core.Modules.Control/Branch">Branch</a></li>								
+											<li><a href="/api/Wyam.Core.Modules.Control/Where">Where</a></li>								
+											<li><a href="/api/Wyam.Core.Modules.Contents/Prepend">Prepend</a></li>								
+											<li><a href="/api/Wyam.Core.Modules.IO/ReadFiles">ReadFiles</a></li>								
+											<li><a href="/api/Wyam.Core.Modules.IO/UnwrittenFiles">UnwrittenFiles</a></li>								
+											<li><a href="/api/Wyam.Core.Modules.Control/Merge">Merge</a></li>								
+											<li><a href="/api/Wyam.CodeAnalysis/ReadSolution">ReadSolution</a></li>								
+											<li><a href="/api/Wyam.Tables/CsvToHtml">CsvToHtml</a></li>								
+											<li><a href="/api/Wyam.Core.Modules.Control/Concat">Concat</a></li>								
+											<li><a href="/api/Wyam.CodeAnalysis/ReadProject">ReadProject</a></li>								
+											<li><a href="/api/Wyam.Html/ValidateLinks">ValidateLinks</a></li>								
+											<li><a href="/api/Wyam.Core.Modules.Control/Sort">Sort</a></li>								
+											<li><a href="/api/Wyam.Tables/ExcelToCsv">ExcelToCsv</a></li>								
+											<li><a href="/api/Wyam.Core.Modules.Control/If">If</a></li>								
+											<li><a href="/api/Wyam.Html/HtmlEscape">HtmlEscape</a></li>								
+											<li><a href="/api/Wyam.Sass/Sass">Sass</a></li>								
+											<li><a href="/api/Wyam.Minification/MinifyCss">MinifyCss</a></li>								
+											<li><a href="/api/Wyam.Common.Modules/ReadDataModule_2">ReadDataModule</a><wbr>&lt;<a href="/api/Wyam.Common.Modules/ReadDataModule_2#typeparam-TModule">TModule</a>, <wbr><a href="/api/Wyam.Common.Modules/ReadDataModule_2#typeparam-TItem">TItem</a>&gt;<wbr></li>								
+											<li><a href="/api/Wyam.Core.Modules.Metadata/Title">Title</a></li>								
+											<li><a href="/api/Wyam.Core.Modules.Extensibility/Trace">Trace</a></li>								
+									</ul>
+								</dd>				
+						</dl>
+					</div>		
+					<div class="col-md-6">
+						<div class="mermaid">
+							graph BT
+	Type["IModule"]
+class Type type-node
+	Implementing0["Shortcodes"]-.-&gt;Type
+	click Implementing0 "/api/Wyam.Core.Modules.Contents/Shortcodes"
+	Implementing1["HtmlQuery"]-.-&gt;Type
+	click Implementing1 "/api/Wyam.Html/HtmlQuery"
+	Implementing2["GenerateJson"]-.-&gt;Type
+	click Implementing2 "/api/Wyam.Json/GenerateJson"
+	Implementing3["Headings"]-.-&gt;Type
+	click Implementing3 "/api/Wyam.Html/Headings"
+	Implementing4["Image"]-.-&gt;Type
+	click Implementing4 "/api/Wyam.Images/Image"
+	Implementing5["MinifyHtml"]-.-&gt;Type
+	click Implementing5 "/api/Wyam.Minification/MinifyHtml"
+	Implementing6["HtmlInsert"]-.-&gt;Type
+	click Implementing6 "/api/Wyam.Html/HtmlInsert"
+	Implementing7["FileName"]-.-&gt;Type
+	click Implementing7 "/api/Wyam.Core.Modules.Metadata/FileName"
+	Implementing8["CountModule"]-.-&gt;Type
+	click Implementing8 "/api/Wyam.Testing.Modules/CountModule"
+	Implementing9["Tree"]-.-&gt;Type
+	click Implementing9 "/api/Wyam.Core.Modules.Metadata/Tree"
+	Implementing10["Meta"]-.-&gt;Type
+	click Implementing10 "/api/Wyam.Core.Modules.Metadata/Meta"
+	Implementing11["GroupBy"]-.-&gt;Type
+	click Implementing11 "/api/Wyam.Core.Modules.Control/GroupBy"
+	Implementing12["CsvToMarkdown"]-.-&gt;Type
+	click Implementing12 "/api/Wyam.Tables/CsvToMarkdown"
+	Implementing13["Take"]-.-&gt;Type
+	click Implementing13 "/api/Wyam.Core.Modules.Control/Take"
+	Implementing14["Redirect"]-.-&gt;Type
+	click Implementing14 "/api/Wyam.Core.Modules.Contents/Redirect"
+	Implementing15["Json"]-.-&gt;Type
+	click Implementing15 "/api/Wyam.Json/Json"
+	Implementing16["Download"]-.-&gt;Type
+	click Implementing16 "/api/Wyam.Core.Modules.IO/Download"
+	Implementing17["Switch"]-.-&gt;Type
+	click Implementing17 "/api/Wyam.Core.Modules.Control/Switch"
+	Implementing18["Content"]-.-&gt;Type
+	click Implementing18 "/api/Wyam.Core.Modules.Contents/Content"
+	Implementing19["NamedModule"]-.-&gt;Type
+	click Implementing19 "/api/Wyam.Common.Modules/NamedModule"
+	Implementing20["SearchIndex"]-.-&gt;Type
+	click Implementing20 "/api/Wyam.SearchIndex/SearchIndex"
+	Implementing21["AutoLink"]-.-&gt;Type
+	click Implementing21 "/api/Wyam.Html/AutoLink"
+	Implementing22["ReplaceIn"]-.-&gt;Type
+	click Implementing22 "/api/Wyam.Core.Modules.Contents/ReplaceIn"
+	Implementing23["Markdown"]-.-&gt;Type
+	click Implementing23 "/api/Wyam.Markdown/Markdown"
+	Implementing24["MinifyJs"]-.-&gt;Type
+	click Implementing24 "/api/Wyam.Minification/MinifyJs"
+	Implementing25["Objects"]-.-&gt;Type
+	click Implementing25 "/api/Wyam.Core.Modules.Metadata/Objects"
+	Implementing26["Join"]-.-&gt;Type
+	click Implementing26 "/api/Wyam.Core.Modules.Contents/Join"
+	Implementing27["Flatten"]-.-&gt;Type
+	click Implementing27 "/api/Wyam.Core.Modules.Metadata/Flatten"
+	Implementing28["Sql"]-.-&gt;Type
+	click Implementing28 "/api/Wyam.Core.Modules.Metadata/Sql"
+	Implementing29["ForEach"]-.-&gt;Type
+	click Implementing29 "/api/Wyam.Core.Modules.Control/ForEach"
+	Implementing30["FrontMatter"]-.-&gt;Type
+	click Implementing30 "/api/Wyam.Core.Modules.Control/FrontMatter"
+	Implementing31["CopyMeta"]-.-&gt;Type
+	click Implementing31 "/api/Wyam.Core.Modules.Metadata/CopyMeta"
+	Implementing32["MinifyXml"]-.-&gt;Type
+	click Implementing32 "/api/Wyam.Minification/MinifyXml"
+	Implementing33["CopyFiles"]-.-&gt;Type
+	click Implementing33 "/api/Wyam.Core.Modules.IO/CopyFiles"
+	Implementing34["WriteFiles"]-.-&gt;Type
+	click Implementing34 "/api/Wyam.Core.Modules.IO/WriteFiles"
+	Implementing35["Razor"]-.-&gt;Type
+	click Implementing35 "/api/Wyam.Razor/Razor"
+	Implementing36["ValidateMeta&lt;T&gt;"]-.-&gt;Type
+	click Implementing36 "/api/Wyam.Core.Modules.Metadata/ValidateMeta_1"
+	Implementing37["Index"]-.-&gt;Type
+	click Implementing37 "/api/Wyam.Core.Modules.Metadata/Index"
+	Implementing38["ContentModule"]-.-&gt;Type
+	click Implementing38 "/api/Wyam.Common.Modules/ContentModule"
+	Implementing39["GroupByMany"]-.-&gt;Type
+	click Implementing39 "/api/Wyam.Core.Modules.Control/GroupByMany"
+	Implementing40["GitHub"]-.-&gt;Type
+	click Implementing40 "/api/Wyam.GitHub/GitHub"
+	Implementing41["Xmp"]-.-&gt;Type
+	click Implementing41 "/api/Wyam.Xmp/Xmp"
+	Implementing42["Less"]-.-&gt;Type
+	click Implementing42 "/api/Wyam.Less/Less"
+	Implementing43["Combine"]-.-&gt;Type
+	click Implementing43 "/api/Wyam.Core.Modules.Control/Combine"
+	Implementing44["Sidecar"]-.-&gt;Type
+	click Implementing44 "/api/Wyam.Core.Modules.Control/Sidecar"
+	Implementing45["Documents"]-.-&gt;Type
+	click Implementing45 "/api/Wyam.Core.Modules.Control/Documents"
+	Implementing46["Excerpt"]-.-&gt;Type
+	click Implementing46 "/api/Wyam.Html/Excerpt"
+	Implementing47["GenerateCloudSearchData"]-.-&gt;Type
+	click Implementing47 "/api/Wyam.AmazonWebServices/GenerateCloudSearchData"
+	Implementing48["ReadWorkspace"]-.-&gt;Type
+	click Implementing48 "/api/Wyam.CodeAnalysis/ReadWorkspace"
+	Implementing49["ReadApplicationInput"]-.-&gt;Type
+	click Implementing49 "/api/Wyam.Core.Modules.IO/ReadApplicationInput"
+	Implementing50["Xml"]-.-&gt;Type
+	click Implementing50 "/api/Wyam.Core.Modules.Metadata/Xml"
+	Implementing51["Paginate"]-.-&gt;Type
+	click Implementing51 "/api/Wyam.Core.Modules.Control/Paginate"
+	Implementing52["Yaml"]-.-&gt;Type
+	click Implementing52 "/api/Wyam.Yaml/Yaml"
+	Implementing53["YouTube"]-.-&gt;Type
+	click Implementing53 "/api/Wyam.YouTube/YouTube"
+	Implementing54["Sitemap"]-.-&gt;Type
+	click Implementing54 "/api/Wyam.Core.Modules.Contents/Sitemap"
+	Implementing55["Highlight"]-.-&gt;Type
+	click Implementing55 "/api/Wyam.Highlight/Highlight"
+	Implementing56["Replace"]-.-&gt;Type
+	click Implementing56 "/api/Wyam.Core.Modules.Contents/Replace"
+	Implementing57["Xslt"]-.-&gt;Type
+	click Implementing57 "/api/Wyam.Core.Modules.Templates/Xslt"
+	Implementing58["Append"]-.-&gt;Type
+	click Implementing58 "/api/Wyam.Core.Modules.Contents/Append"
+	Implementing59["DirectoryMeta"]-.-&gt;Type
+	click Implementing59 "/api/Wyam.Core.Modules.Metadata/DirectoryMeta"
+	Implementing60["AnalyzeCSharp"]-.-&gt;Type
+	click Implementing60 "/api/Wyam.CodeAnalysis/AnalyzeCSharp"
+	Implementing61["MirrorResources"]-.-&gt;Type
+	click Implementing61 "/api/Wyam.Html/MirrorResources"
+	Implementing62["GenerateFeeds"]-.-&gt;Type
+	click Implementing62 "/api/Wyam.Feeds/GenerateFeeds"
+	Implementing63["ConcatBranch"]-.-&gt;Type
+	click Implementing63 "/api/Wyam.Core.Modules.Control/ConcatBranch"
+	Implementing64["ModuleCollection"]-.-&gt;Type
+	click Implementing64 "/api/Wyam.Core.Modules.Extensibility/ModuleCollection"
+	Implementing65["MinifyXhtml"]-.-&gt;Type
+	click Implementing65 "/api/Wyam.Minification/MinifyXhtml"
+	Implementing66["OrderBy"]-.-&gt;Type
+	click Implementing66 "/api/Wyam.Core.Modules.Control/OrderBy"
+	Implementing67["Include"]-.-&gt;Type
+	click Implementing67 "/api/Wyam.Core.Modules.IO/Include"
+	Implementing68["Execute"]-.-&gt;Type
+	click Implementing68 "/api/Wyam.Core.Modules.Extensibility/Execute"
+	Implementing69["ContainerModule"]-.-&gt;Type
+	click Implementing69 "/api/Wyam.Common.Modules/ContainerModule"
+	Implementing70["Branch"]-.-&gt;Type
+	click Implementing70 "/api/Wyam.Core.Modules.Control/Branch"
+	Implementing71["Where"]-.-&gt;Type
+	click Implementing71 "/api/Wyam.Core.Modules.Control/Where"
+	Implementing72["Prepend"]-.-&gt;Type
+	click Implementing72 "/api/Wyam.Core.Modules.Contents/Prepend"
+	Implementing73["ReadFiles"]-.-&gt;Type
+	click Implementing73 "/api/Wyam.Core.Modules.IO/ReadFiles"
+	Implementing74["UnwrittenFiles"]-.-&gt;Type
+	click Implementing74 "/api/Wyam.Core.Modules.IO/UnwrittenFiles"
+	Implementing75["Merge"]-.-&gt;Type
+	click Implementing75 "/api/Wyam.Core.Modules.Control/Merge"
+	Implementing76["ReadSolution"]-.-&gt;Type
+	click Implementing76 "/api/Wyam.CodeAnalysis/ReadSolution"
+	Implementing77["CsvToHtml"]-.-&gt;Type
+	click Implementing77 "/api/Wyam.Tables/CsvToHtml"
+	Implementing78["Concat"]-.-&gt;Type
+	click Implementing78 "/api/Wyam.Core.Modules.Control/Concat"
+	Implementing79["ReadProject"]-.-&gt;Type
+	click Implementing79 "/api/Wyam.CodeAnalysis/ReadProject"
+	Implementing80["ValidateLinks"]-.-&gt;Type
+	click Implementing80 "/api/Wyam.Html/ValidateLinks"
+	Implementing81["Sort"]-.-&gt;Type
+	click Implementing81 "/api/Wyam.Core.Modules.Control/Sort"
+	Implementing82["ExcelToCsv"]-.-&gt;Type
+	click Implementing82 "/api/Wyam.Tables/ExcelToCsv"
+	Implementing83["If"]-.-&gt;Type
+	click Implementing83 "/api/Wyam.Core.Modules.Control/If"
+	Implementing84["HtmlEscape"]-.-&gt;Type
+	click Implementing84 "/api/Wyam.Html/HtmlEscape"
+	Implementing85["Sass"]-.-&gt;Type
+	click Implementing85 "/api/Wyam.Sass/Sass"
+	Implementing86["MinifyCss"]-.-&gt;Type
+	click Implementing86 "/api/Wyam.Minification/MinifyCss"
+	Implementing87["ReadDataModule&lt;TModule, TItem&gt;"]-.-&gt;Type
+	click Implementing87 "/api/Wyam.Common.Modules/ReadDataModule_2"
+	Implementing88["Title"]-.-&gt;Type
+	click Implementing88 "/api/Wyam.Core.Modules.Metadata/Title"
+	Implementing89["Trace"]-.-&gt;Type
+	click Implementing89 "/api/Wyam.Core.Modules.Extensibility/Trace"
+
+						</div>
+					</div>
+				</div>
+  			</div>
+		</div>
+
+	<h1 id="Syntax">Syntax</h1>
+	<pre><code>public interface IModule</code></pre>
+
+
+
+
+
+
+
+
+
+
+
+			<h1 id="Methods">Methods</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover three-cols">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Value</th>
+								<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/api/Wyam.Common.Modules/IModule/C05B7DFF">Execute<wbr>(IReadOnlyList<wbr>&lt;IDocument&gt;<wbr>, <wbr>IExecutionContext)<wbr></a></td>
+								<td>IEnumerable<wbr>&lt;<a href="/api/Wyam.Common.Documents/IDocument">IDocument</a>&gt;<wbr></td>
+								<td>
+									<div>
+    This should not be called directly, instead call <code class="cs">IExecutionContext.Execute()</code> if you need to execute a module from within another module.
+    </div>
+								</td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
+
+			<h1 id="ExtensionMethods">Extension Methods</h1>
+			<div class="box">
+				<div class="box-body no-padding table-responsive">
+					<table class="table table-striped table-hover three-cols">
+						<thead>
+							<tr>
+								<th>Name</th>
+								<th>Value</th>
+								<th>Summary</th>
+							</tr>
+						</thead>
+							<tbody><tr>
+								<td><a href="/api/Wyam.Common.Modules/ModuleExtensions/FF7EBCA6">WithName<wbr>(string)<wbr></a></td>
+								<td><a href="/api/Wyam.Common.Modules/IModule">IModule</a></td>
+								<td>
+									<div>
+    Converts the module to a named module.
+    </div>
+										<div><small><em>From <a href="/api/Wyam.Common.Modules/ModuleExtensions">ModuleExtensions</a></em></small></div>
+								</td>
+							</tr>
+					</tbody></table>
+				</div>
+			</div>
+		
+
+	
+</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                Wyam2 is maintained by <a href="https://savornicesei.com">Simona Avornicesei</a> and <a href="https://github.com/Wyam2/Wyam/graphs/contributors">other awesome contributors</a>, as a continuation of the <a href="https://github.com/Wyamio/Wyam">Wyam</a> project crafted by <a href="https://daveaglick.com">Dave Glick</a>. <a href="https://github.com/Wyam2/Wyam">Code on GitHub</a>. This site was entirely generated by Wyam. Check out <a href="https://github.com/Wyam2/docs">the site code on GitHub</a>.
+<br><br>
+
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        <div class="github-button">
+    <a href="https://github.com/Wyam2/Wyam"><i class="fa fa-github"></i> GitHub</a>
+</div>
+
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).ready(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        useMaxWidth: false
+                    },
+					startOnLoad: false,
+					cloneCssStyles: false
+                });     
+                mermaid.init(undefined, ".mermaid");
+
+                // Remove the max-width setting that Mermaid sets
+                var mermaidSvg = $('.mermaid svg');
+                mermaidSvg.addClass('img-responsive');
+                mermaidSvg.css('max-width', '');
+
+                // Make it scrollable
+				var target = document.querySelector(".mermaid svg");
+				if(target !== null)
+				{
+					var panZoom = window.panZoom = svgPanZoom(target, {
+						zoomEnabled: true,
+						controlIconsEnabled: true,
+						fit: true,
+						center: true,
+                        maxZoom: 20,
+                        zoomScaleSensitivity: 0.6
+					});			                          
+
+                    // Do the reset once right away to fit the diagram
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                    
+                    $(window).resize(function(){
+                        panZoom.resize();
+                        panZoom.fit();
+                        panZoom.center();
+                    });
+				}
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>

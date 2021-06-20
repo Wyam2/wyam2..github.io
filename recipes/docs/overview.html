@@ -1,0 +1,294 @@
+﻿<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <title>Wyam2 - Overview</title>
+        <link href="/assets/css/highlight.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/override.css" rel="stylesheet">
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>        
+        <script src="/assets/js/app.min.js"></script>         
+        <script src="/assets/js/highlight.pack.js"></script>   
+        <script src="/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/assets/js/mermaid.min.js"></script>
+        <script src="/assets/js/svg-pan-zoom.min.js"></script>
+        <!--[if lt IE 9]>
+        <script src="/assets/js/html5shiv.min.js"></script>
+        <script src="/assets/js/respond.min.js"></script>
+        <![endif]-->  
+
+        <meta name="google" content="notranslate">
+<meta http-equiv="Content-Language" content="en">
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/" class="logo">
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li><a href="/blog">Blog</a></li>
+        <li><a href="/docs">Documentation</a></li>
+        <li class="active"><a href="/recipes">Recipes</a></li>
+        <li><a href="/modules">Modules</a></li>
+        <li><a href="/shortcodes">Shortcodes</a></li>
+        <li><a href="/api">API</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+        <div><p><a href="https://github.com/Wyam2/docs/tree/master/input/recipes/docs/overview.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
+    <div id="infobar-headings"><h6>On This Page</h6><p><a href="#key-features">Key Features</a></p>
+<p><a href="#scaffolding">Scaffolding</a></p>
+<p><a href="#building">Building</a></p>
+<p><a href="#usage-notes">Usage Notes</a></p>
+<hr class="infobar-hidden">
+</div>
+
+                </section>
+                <section class="sidebar">    
+                                     
+                    
+
+                    <ul class="sidebar-menu">
+                        
+
+                <li class="treeview">
+                    <a href="/recipes/blog">Blog Recipe</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/recipes/blog/overview">Overview</a></li>
+                <li><a href="/recipes/blog/settings">Settings</a></li>
+                <li><a href="/recipes/blog/document-metadata">Document Metadata</a></li>
+                <li><a href="/recipes/blog/pipelines">Pipelines</a></li>
+                <li class="treeview">
+                    <a href="/recipes/blog/themes">Themes</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/recipes/blog/themes/blogtemplate">BlogTemplate</a></li>
+                <li><a href="/recipes/blog/themes/cleanblog">CleanBlog</a></li>
+                <li><a href="/recipes/blog/themes/phantom">Phantom</a></li>
+                <li><a href="/recipes/blog/themes/solidstate">SolidState</a></li>
+                <li><a href="/recipes/blog/themes/stellar">Stellar</a></li>
+                <li><a href="/recipes/blog/themes/trophy">Trophy</a></li>
+
+                    </ul>
+                </li>
+
+                    </ul>
+                </li>
+                <li class="treeview active">
+                    <a href="/recipes/docs">Docs Recipe</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li class="selected"><a href="/recipes/docs/overview">Overview</a></li>
+                <li><a href="/recipes/docs/settings">Settings</a></li>
+                <li><a href="/recipes/docs/document-metadata">Document Metadata</a></li>
+                <li><a href="/recipes/docs/pipelines">Pipelines</a></li>
+                <li class="treeview">
+                    <a href="/recipes/docs/themes">Themes</a> <a href="#" class="expand"></a>
+                    <ul class="treeview-menu">
+                        
+                <li><a href="/recipes/docs/themes/samson">Samson</a></li>
+
+                    </ul>
+                </li>
+
+                    </ul>
+                </li>
+
+                    </ul>
+                            
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+		<section class="content-header">
+			<h1>Overview</h1>
+		</section>
+	<section class="content">
+		<p>The Docs recipe is designed to cover many different use cases for documentation sites including any combination of blog, content, and API documentation. The generated site will automatically adapt to the input files and will hide navigation sections and other functionality if those types of files aren't available. For example, if you don't specify code or assemblies for the API section, the generated site will still be great for content pages and/or blog posts.</p>
+<h1 id="key-features">Key Features</h1>
+<ul>
+<li>Nested documentation content pages.</li>
+<li>Blog posts with optional category and author.</li>
+<li>Paged blog archives for posts, categories, authors, and dates.</li>
+<li>Posts and pages can be in <a href="/modules/markdown">Markdown</a> or <a href="/modules/razor">Razor</a>.</li>
+<li>API documentation from source files.</li>
+<li>API documentation from assemblies (with or without XML documentation file from MSBuild).</li>
+<li>Support for both namespace documentation and <code>&lt;inheritdoc/&gt;</code> XML comments.</li>
+<li>Static site searching for API types.</li>
+<li>Meta-refresh redirects and/or a Netlify redirect file.</li>
+<li>RSS, Atom, and/or RDF feeds.</li>
+</ul>
+<h1 id="scaffolding">Scaffolding</h1>
+<p>To scaffold the recipe, run:</p>
+<pre><code>wyam new -r <a href="/api/Wyam.Docs/Docs">Docs</a>
+</code></pre>
+<p>This generates a skeleton set of input files that includes a blog post and two docs content pages. You can use this as a starting point for your own site.</p>
+<h1 id="building">Building</h1>
+<p>To build a site with this recipe, run:</p>
+<pre><code>wyam -r <a href="/api/Wyam.Docs/Docs">Docs</a>
+</code></pre>
+<h1 id="usage-notes">Usage Notes</h1>
+<h2 id="msbuild-tools">MSBuild Tools</h2>
+<p>Depending on the type of projects you're building documentation for and what versions of Visual Studio you have installed (if any), you may need to install the <a href="https://www.microsoft.com/en-us/download/details.aspx?id=48159">Microsoft Build Tools 2015</a>. Specifically, if you see project loading errors that reference <code>System.Threading.Tasks.Dataflow</code> from your project files when verbose output is turned on you'll need to install the build tools.</p>
+<h2 id="source-files">Source Files</h2>
+<p>By default, your source files should be located in a "src" folder <em>either</em> under your "input" folder or alongside your "input" folder. You can also change where the recipe looks for source files from within the configuration file with the <code>SourceFiles</code> setting. Note that this setting doesn't point to a directory, but should rather be a string containing a <a href="/docs/concepts/io#globbing">globbing pattern</a> for each source file:</p>
+<pre><code>Settings[DocsKeys.SourceFiles] = @"C:/MySource/**/{!bin,!obj,!packages,!*.Tests,}/**/*.cs";
+</code></pre>
+<h2 id="blog-post-published-dates">Blog Post Published Dates</h2>
+<p>To find the published date for blog posts, the metadata will first be searched for a <code>Published</code> value. If one cannot be found (or it can't be converted to a <code>DateTime</code>) then the filename of the input file for the post will be checked for a date that appears in the beginning of the file name of the format <code>YYYY-MM-DD-</code>.</p>
+<h2 id="namespace-documentation-comments">Namespace Documentation Comments</h2>
+<p>The XML documentation standard is ambiguous on how you should defined comments for namespaces. Wyam will pick up standard XML documentation comments on any arbitrary namespace usage within your code. Alternatively, you can use a class named <code>NamespaceDoc</code> and place your namespace XML documentation comments on that class. Note that the former will not work if generating documentation from an assembly since the MSBuild XML documentation file does not output XML documentation comments for namespace usages.</p>
+<h2 id="inheriting-documentation-and-implicit-inheritance">Inheriting Documentation and Implicit Inheritance</h2>
+<p>Normally you have to include a special <code>&lt;inheritdoc/&gt;</code> XML comment to indicate that you want documentation comments from a base class or interface to be inherited. This is fully supported automatically and any use of <code>&lt;inheritdoc/&gt;</code> will be expanded. However, that adds a lot duplication to your codebase. If you would prefer assume <code>&lt;inheritdoc/&gt;</code> for any symbols that don't have their own XML documentation comments, add the following to your <a href="/docs/usage/configuration">configuration file</a>:</p>
+<pre><code>Settings[DocsKeys.ImplicitInheritDoc] = true;
+</code></pre>
+<h2 id="redirects">Redirects</h2>
+<p>If migrating your site from another generator, the paths may not match up exactly. This recipe supports multiple styles of redirects. To activate, add <code>RedirectFrom</code> metadata to the <a href="/docs/concepts/metadata#front-matter">front matter</a> of each page that should be the endpoint of a redirection. You can control what gets generated to support redirection with the <code>MetaRefreshRedirects</code> and <code>NetlifyRedirects</code> global metadata values. By default, <a href="https://www.w3.org/TR/WCAG20-TECHS/H76.html">meta refresh redirects</a> are generated. These are small HTML files that contain a <code>&lt;meta&gt;</code> header tag redirecting the client. They are also <a href="https://support.google.com/webmasters/answer/79812">supported by Google</a> and other search engines.</p>
+<h2 id="link-validation">Link Validation</h2>
+<p>The recipe includes the ability to validate both relative (internal) and absolute (external) links. Both features are opt-in given that they add additional time to the generation process. To activate them add <code>Settings[DocsKeys.ValidateRelativeLinks] = true;</code> for relative link validation and/or <code>Settings[DocsKeys.ValidateAbsoluteLinks] = true;</code> for absolute link validation to your configuration file.</p>
+<p>By default validation failures output a warning with details on the link, why it failed, and which files it's in. You can switch to outputting errors (which will usually break the build) by using <code>Settings[DocsKeys.ValidateLinksAsError] = true;</code> in your configuration file.</p>
+<p>Note that turning on validation for absolute links typically results in a number of falsly reported failures which will need to be checked manually (so it's not recommended to validate absolute links <em>and</em> output errors).</p>
+
+	</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                Wyam2 is maintained by <a href="https://savornicesei.com">Simona Avornicesei</a> and <a href="https://github.com/Wyam2/Wyam/graphs/contributors">other awesome contributors</a>, as a continuation of the <a href="https://github.com/Wyamio/Wyam">Wyam</a> project crafted by <a href="https://daveaglick.com">Dave Glick</a>. <a href="https://github.com/Wyam2/Wyam">Code on GitHub</a>. This site was entirely generated by Wyam. Check out <a href="https://github.com/Wyam2/docs">the site code on GitHub</a>.
+<br><br>
+
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        <div class="github-button">
+    <a href="https://github.com/Wyam2/Wyam"><i class="fa fa-github"></i> GitHub</a>
+</div>
+
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).ready(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        useMaxWidth: false
+                    },
+					startOnLoad: false,
+					cloneCssStyles: false
+                });     
+                mermaid.init(undefined, ".mermaid");
+
+                // Remove the max-width setting that Mermaid sets
+                var mermaidSvg = $('.mermaid svg');
+                mermaidSvg.addClass('img-responsive');
+                mermaidSvg.css('max-width', '');
+
+                // Make it scrollable
+				var target = document.querySelector(".mermaid svg");
+				if(target !== null)
+				{
+					var panZoom = window.panZoom = svgPanZoom(target, {
+						zoomEnabled: true,
+						controlIconsEnabled: true,
+						fit: true,
+						center: true,
+                        maxZoom: 20,
+                        zoomScaleSensitivity: 0.6
+					});			                          
+
+                    // Do the reset once right away to fit the diagram
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                    
+                    $(window).resize(function(){
+                        panZoom.resize();
+                        panZoom.fit();
+                        panZoom.center();
+                    });
+				}
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>
