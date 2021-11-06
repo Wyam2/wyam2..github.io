@@ -22,10 +22,6 @@
         <script src="/assets/js/jquery.sticky-kit.min.js"></script>
         <script src="/assets/js/mermaid.min.js"></script>
         <script src="/assets/js/svg-pan-zoom.min.js"></script>
-        <!--[if lt IE 9]>
-        <script src="/assets/js/html5shiv.min.js"></script>
-        <script src="/assets/js/respond.min.js"></script>
-        <![endif]-->  
 
         <meta name="google" content="notranslate">
 <meta http-equiv="Content-Language" content="en">
@@ -152,21 +148,35 @@
 		<li role="separator" class="divider"></li>
 			<li class="header">Property Members</li>
 				<li><a href="/api/Wyam.Common.JavaScript/IJavaScriptEngine/5C77E9AA">Name</a></li>
+				<li><a href="/api/Wyam.Common.JavaScript/IJavaScriptEngine/722A7D22">Supports<wbr>Garbage<wbr>Collection</a></li>
+				<li><a href="/api/Wyam.Common.JavaScript/IJavaScriptEngine/82F8EE6C">Supports<wbr>Script<wbr>Interruption</a></li>
+				<li><a href="/api/Wyam.Common.JavaScript/IJavaScriptEngine/B12F196C">Supports<wbr>Script<wbr>Precompilation</a></li>
 				<li><a href="/api/Wyam.Common.JavaScript/IJavaScriptEngine/B6E84474">Version</a></li>
 			<li class="header">Method Members</li>
 				<li><a href="/api/Wyam.Common.JavaScript/IJavaScriptEngine/D8EE0666">CallFunction<wbr>(string, <wbr>Object[])<wbr></a></li>
 				<li><a href="/api/Wyam.Common.JavaScript/IJavaScriptEngine/0509F7DD">CallFunction<wbr>&lt;T&gt;<wbr><wbr>(string, <wbr>Object[])<wbr></a></li>
+				<li><a href="/api/Wyam.Common.JavaScript/IJavaScriptEngine/A20B299C">CollectGarbage<wbr>()<wbr></a></li>
 				<li><a href="/api/Wyam.Common.JavaScript/IJavaScriptEngine/4E1B2C4E">EmbedHostObject<wbr>(string, <wbr>Object)<wbr></a></li>
 				<li><a href="/api/Wyam.Common.JavaScript/IJavaScriptEngine/F74B5C50">EmbedHostType<wbr>(string, <wbr>Type)<wbr></a></li>
 				<li><a href="/api/Wyam.Common.JavaScript/IJavaScriptEngine/DCED00C1">Evaluate<wbr>(string)<wbr></a></li>
+				<li><a href="/api/Wyam.Common.JavaScript/IJavaScriptEngine/9819EC85">Evaluate<wbr>(string, <wbr>string)<wbr></a></li>
 				<li><a href="/api/Wyam.Common.JavaScript/IJavaScriptEngine/9F139073">Evaluate<wbr>&lt;T&gt;<wbr><wbr>(string)<wbr></a></li>
+				<li><a href="/api/Wyam.Common.JavaScript/IJavaScriptEngine/CFDB7433">Evaluate<wbr>&lt;T&gt;<wbr><wbr>(string, <wbr>string)<wbr></a></li>
 				<li><a href="/api/Wyam.Common.JavaScript/IJavaScriptEngine/C01019CC">Execute<wbr>(string)<wbr></a></li>
+				<li><a href="/api/Wyam.Common.JavaScript/IJavaScriptEngine/5E173CCE">Execute<wbr>(string, <wbr>string)<wbr></a></li>
+				<li><a href="/api/Wyam.Common.JavaScript/IJavaScriptEngine/2A4DC6DB">Execute<wbr>(<wbr>I<wbr>Precompiled<wbr>Java<wbr>Script)<wbr></a></li>
 				<li><a href="/api/Wyam.Common.JavaScript/IJavaScriptEngine/A49E7DD9">ExecuteFile<wbr>(string, <wbr>Encoding)<wbr></a></li>
 				<li><a href="/api/Wyam.Common.JavaScript/IJavaScriptEngine/503F813D">ExecuteResource<wbr>(string, <wbr>Type)<wbr></a></li>
 				<li><a href="/api/Wyam.Common.JavaScript/IJavaScriptEngine/F8A479AF">ExecuteResource<wbr>(string, <wbr>Assembly)<wbr></a></li>
 				<li><a href="/api/Wyam.Common.JavaScript/IJavaScriptEngine/EA9F142D">GetVariableValue<wbr>(string)<wbr></a></li>
 				<li class="selected"><a href="/api/Wyam.Common.JavaScript/IJavaScriptEngine/5845A554">GetVariableValue<wbr>&lt;T&gt;<wbr><wbr>(string)<wbr></a></li>
 				<li><a href="/api/Wyam.Common.JavaScript/IJavaScriptEngine/901268C3">HasVariable<wbr>(string)<wbr></a></li>
+				<li><a href="/api/Wyam.Common.JavaScript/IJavaScriptEngine/11D0CDDF">Interrupt<wbr>()<wbr></a></li>
+				<li><a href="/api/Wyam.Common.JavaScript/IJavaScriptEngine/456DD160">Precompile<wbr>(string)<wbr></a></li>
+				<li><a href="/api/Wyam.Common.JavaScript/IJavaScriptEngine/4A0CFB99">Precompile<wbr>(string, <wbr>string)<wbr></a></li>
+				<li><a href="/api/Wyam.Common.JavaScript/IJavaScriptEngine/ACC7599B">PrecompileFile<wbr>(string, <wbr>Encoding)<wbr></a></li>
+				<li><a href="/api/Wyam.Common.JavaScript/IJavaScriptEngine/C4379F30">PrecompileResource<wbr>(string, <wbr>Type)<wbr></a></li>
+				<li><a href="/api/Wyam.Common.JavaScript/IJavaScriptEngine/DD1BF7CC">PrecompileResource<wbr>(string, <wbr>Assembly)<wbr></a></li>
 				<li><a href="/api/Wyam.Common.JavaScript/IJavaScriptEngine/B0B78C2D">RemoveVariable<wbr>(string)<wbr></a></li>
 				<li><a href="/api/Wyam.Common.JavaScript/IJavaScriptEngine/0D96E6F2">SetVariableValue<wbr>(string, <wbr>Object)<wbr></a></li>
 
@@ -285,9 +295,8 @@
         </div>
         <div class="wrapper bottom-wrapper">
             <footer class="bottom-footer">
-                Wyam2 is maintained by <a href="https://savornicesei.com">Simona Avornicesei</a> and <a href="https://github.com/Wyam2/Wyam/graphs/contributors">other awesome contributors</a>, as a continuation of the <a href="https://github.com/Wyamio/Wyam">Wyam</a> project crafted by <a href="https://daveaglick.com">Dave Glick</a>. <a href="https://github.com/Wyam2/Wyam">Code on GitHub</a>. This site was entirely generated by Wyam. Check out <a href="https://github.com/Wyam2/docs">the site code on GitHub</a>.
+                Wyam2 is maintained by <a href="https://avornicesei.com">Simona Avornicesei</a> and <a href="https://github.com/Wyam2/Wyam/graphs/contributors">other awesome contributors</a>, as a continuation of the <a href="https://github.com/Wyamio/Wyam">Wyam</a> project crafted by <a href="https://daveaglick.com">Dave Glick</a>. <a href="https://github.com/Wyam2/Wyam">Code on GitHub</a>. This site was entirely generated by Wyam. Check out <a href="https://github.com/Wyam2/docs">the site code on GitHub</a>.
 <br><br>
-
             </footer>
         </div>
         <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>

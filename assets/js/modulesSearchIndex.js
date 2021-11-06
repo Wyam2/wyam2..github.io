@@ -36,98 +36,98 @@ var searchModule = function() {
     a(
         {
             id:0,
-            title:"Execute",
-            content:"Execute",
+            title:"MinifyXhtml",
+            content:"MinifyXhtml",
             description:'',
             tags:''
         },
         {
-            url:'/modules/execute',
-            title:"Execute",
+            url:'/modules/minifyxhtml',
+            title:"MinifyXhtml",
             description:""
         }
     );
     a(
         {
             id:1,
-            title:"ReadFiles",
-            content:"ReadFiles",
+            title:"GroupByMany",
+            content:"GroupByMany",
             description:'',
             tags:''
         },
         {
-            url:'/modules/readfiles',
-            title:"ReadFiles",
+            url:'/modules/groupbymany',
+            title:"GroupByMany",
             description:""
         }
     );
     a(
         {
             id:2,
-            title:"ValidateLinks",
-            content:"ValidateLinks",
+            title:"Include",
+            content:"Include",
             description:'',
             tags:''
         },
         {
-            url:'/modules/validatelinks',
-            title:"ValidateLinks",
+            url:'/modules/include',
+            title:"Include",
             description:""
         }
     );
     a(
         {
             id:3,
-            title:"Combine",
-            content:"Combine",
+            title:"AutoLink",
+            content:"AutoLink",
             description:'',
             tags:''
         },
         {
-            url:'/modules/combine',
-            title:"Combine",
+            url:'/modules/autolink',
+            title:"AutoLink",
             description:""
         }
     );
     a(
         {
             id:4,
-            title:"Where",
-            content:"Where",
+            title:"Switch",
+            content:"Switch",
             description:'',
             tags:''
         },
         {
-            url:'/modules/where',
-            title:"Where",
+            url:'/modules/switch',
+            title:"Switch",
             description:""
         }
     );
     a(
         {
             id:5,
-            title:"CsvToMarkdown",
-            content:"CsvToMarkdown",
+            title:"Tree",
+            content:"Tree",
             description:'',
             tags:''
         },
         {
-            url:'/modules/csvtomarkdown',
-            title:"CsvToMarkdown",
+            url:'/modules/tree',
+            title:"Tree",
             description:""
         }
     );
     a(
         {
             id:6,
-            title:"ValidateMeta",
-            content:"ValidateMeta",
+            title:"Redirect",
+            content:"Redirect",
             description:'',
             tags:''
         },
         {
-            url:'/modules/validatemeta',
-            title:"ValidateMeta<T>",
+            url:'/modules/redirect',
+            title:"Redirect",
             description:""
         }
     );
@@ -148,62 +148,20 @@ var searchModule = function() {
     a(
         {
             id:8,
-            title:"YouTube",
-            content:"YouTube",
+            title:"Headings",
+            content:"Headings",
             description:'',
             tags:''
         },
         {
-            url:'/modules/youtube',
-            title:"YouTube",
+            url:'/modules/headings',
+            title:"Headings",
             description:""
         }
     );
     a(
         {
             id:9,
-            title:"Branch",
-            content:"Branch",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/branch',
-            title:"Branch",
-            description:""
-        }
-    );
-    a(
-        {
-            id:10,
-            title:"HtmlQuery",
-            content:"HtmlQuery",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/htmlquery',
-            title:"HtmlQuery",
-            description:""
-        }
-    );
-    a(
-        {
-            id:11,
-            title:"ExcelToCsv",
-            content:"ExcelToCsv",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/exceltocsv',
-            title:"ExcelToCsv",
-            description:""
-        }
-    );
-    a(
-        {
-            id:12,
             title:"GenerateCloudSearchData",
             content:"GenerateCloudSearchData",
             description:'',
@@ -217,469 +175,7 @@ var searchModule = function() {
     );
     a(
         {
-            id:13,
-            title:"GroupByMany",
-            content:"GroupByMany",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/groupbymany',
-            title:"GroupByMany",
-            description:""
-        }
-    );
-    a(
-        {
-            id:14,
-            title:"GenerateJson",
-            content:"GenerateJson",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/generatejson',
-            title:"GenerateJson",
-            description:""
-        }
-    );
-    a(
-        {
-            id:15,
-            title:"If",
-            content:"If",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/if',
-            title:"If",
-            description:""
-        }
-    );
-    a(
-        {
-            id:16,
-            title:"Prepend",
-            content:"Prepend",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/prepend',
-            title:"Prepend",
-            description:""
-        }
-    );
-    a(
-        {
-            id:17,
-            title:"MinifyHtml",
-            content:"MinifyHtml",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/minifyhtml',
-            title:"MinifyHtml",
-            description:""
-        }
-    );
-    a(
-        {
-            id:18,
-            title:"CopyMeta",
-            content:"CopyMeta",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/copymeta',
-            title:"CopyMeta",
-            description:""
-        }
-    );
-    a(
-        {
-            id:19,
-            title:"Yaml",
-            content:"Yaml",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/yaml',
-            title:"Yaml",
-            description:""
-        }
-    );
-    a(
-        {
-            id:20,
-            title:"AutoLink",
-            content:"AutoLink",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/autolink',
-            title:"AutoLink",
-            description:""
-        }
-    );
-    a(
-        {
-            id:21,
-            title:"HtmlInsert",
-            content:"HtmlInsert",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/htmlinsert',
-            title:"HtmlInsert",
-            description:""
-        }
-    );
-    a(
-        {
-            id:22,
-            title:"Take",
-            content:"Take",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/take',
-            title:"Take",
-            description:""
-        }
-    );
-    a(
-        {
-            id:23,
-            title:"Trace",
-            content:"Trace",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/trace',
-            title:"Trace",
-            description:""
-        }
-    );
-    a(
-        {
-            id:24,
-            title:"MinifyCss",
-            content:"MinifyCss",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/minifycss',
-            title:"MinifyCss",
-            description:""
-        }
-    );
-    a(
-        {
-            id:25,
-            title:"Download",
-            content:"Download",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/download',
-            title:"Download",
-            description:""
-        }
-    );
-    a(
-        {
-            id:26,
-            title:"Razor",
-            content:"Razor",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/razor',
-            title:"Razor",
-            description:""
-        }
-    );
-    a(
-        {
-            id:27,
-            title:"FrontMatter",
-            content:"FrontMatter",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/frontmatter',
-            title:"FrontMatter",
-            description:""
-        }
-    );
-    a(
-        {
-            id:28,
-            title:"WriteFiles",
-            content:"WriteFiles",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/writefiles',
-            title:"WriteFiles",
-            description:""
-        }
-    );
-    a(
-        {
-            id:29,
-            title:"Paginate",
-            content:"Paginate",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/paginate',
-            title:"Paginate",
-            description:""
-        }
-    );
-    a(
-        {
-            id:30,
-            title:"Shortcodes",
-            content:"Shortcodes",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/shortcodes',
-            title:"Shortcodes",
-            description:""
-        }
-    );
-    a(
-        {
-            id:31,
-            title:"GitHub",
-            content:"GitHub",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/github',
-            title:"GitHub",
-            description:""
-        }
-    );
-    a(
-        {
-            id:32,
-            title:"Image",
-            content:"Image",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/image',
-            title:"Image",
-            description:""
-        }
-    );
-    a(
-        {
-            id:33,
-            title:"Concat",
-            content:"Concat",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/concat',
-            title:"Concat",
-            description:""
-        }
-    );
-    a(
-        {
-            id:34,
-            title:"Tree",
-            content:"Tree",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/tree',
-            title:"Tree",
-            description:""
-        }
-    );
-    a(
-        {
-            id:35,
-            title:"FileName",
-            content:"FileName",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/filename',
-            title:"FileName",
-            description:""
-        }
-    );
-    a(
-        {
-            id:36,
-            title:"SearchIndex",
-            content:"SearchIndex",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/searchindex',
-            title:"SearchIndex",
-            description:""
-        }
-    );
-    a(
-        {
-            id:37,
-            title:"ReadProject",
-            content:"ReadProject",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/readproject',
-            title:"ReadProject",
-            description:""
-        }
-    );
-    a(
-        {
-            id:38,
-            title:"Redirect",
-            content:"Redirect",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/redirect',
-            title:"Redirect",
-            description:""
-        }
-    );
-    a(
-        {
-            id:39,
-            title:"Merge",
-            content:"Merge",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/merge',
-            title:"Merge",
-            description:""
-        }
-    );
-    a(
-        {
-            id:40,
-            title:"Join",
-            content:"Join",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/join',
-            title:"Join",
-            description:""
-        }
-    );
-    a(
-        {
-            id:41,
-            title:"Xml",
-            content:"Xml",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/xml',
-            title:"Xml",
-            description:""
-        }
-    );
-    a(
-        {
-            id:42,
-            title:"Replace",
-            content:"Replace",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/replace',
-            title:"Replace",
-            description:""
-        }
-    );
-    a(
-        {
-            id:43,
-            title:"Meta",
-            content:"Meta",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/meta',
-            title:"Meta",
-            description:""
-        }
-    );
-    a(
-        {
-            id:44,
-            title:"MirrorResources",
-            content:"MirrorResources",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/mirrorresources',
-            title:"MirrorResources",
-            description:""
-        }
-    );
-    a(
-        {
-            id:45,
-            title:"CopyFiles",
-            content:"CopyFiles",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/copyfiles',
-            title:"CopyFiles",
-            description:""
-        }
-    );
-    a(
-        {
-            id:46,
+            id:10,
             title:"NamedModule",
             content:"NamedModule",
             description:'',
@@ -693,21 +189,497 @@ var searchModule = function() {
     );
     a(
         {
-            id:47,
-            title:"Documents",
-            content:"Documents",
+            id:11,
+            title:"Objects",
+            content:"Objects",
             description:'',
             tags:''
         },
         {
-            url:'/modules/documents',
-            title:"Documents",
+            url:'/modules/objects',
+            title:"Objects",
             description:""
         }
     );
     a(
         {
-            id:48,
+            id:12,
+            title:"Razor",
+            content:"Razor",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/razor',
+            title:"Razor",
+            description:""
+        }
+    );
+    a(
+        {
+            id:13,
+            title:"Excerpt",
+            content:"Excerpt",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/excerpt',
+            title:"Excerpt",
+            description:""
+        }
+    );
+    a(
+        {
+            id:14,
+            title:"Highlight",
+            content:"Highlight",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/highlight',
+            title:"Highlight",
+            description:""
+        }
+    );
+    a(
+        {
+            id:15,
+            title:"Title",
+            content:"Title",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/title',
+            title:"Title",
+            description:""
+        }
+    );
+    a(
+        {
+            id:16,
+            title:"MinifyJs",
+            content:"MinifyJs",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/minifyjs',
+            title:"MinifyJs",
+            description:""
+        }
+    );
+    a(
+        {
+            id:17,
+            title:"Execute",
+            content:"Execute",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/execute',
+            title:"Execute",
+            description:""
+        }
+    );
+    a(
+        {
+            id:18,
+            title:"Xslt",
+            content:"Xslt",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/xslt',
+            title:"Xslt",
+            description:""
+        }
+    );
+    a(
+        {
+            id:19,
+            title:"Download",
+            content:"Download",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/download',
+            title:"Download",
+            description:""
+        }
+    );
+    a(
+        {
+            id:20,
+            title:"ReplaceIn",
+            content:"ReplaceIn",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/replacein',
+            title:"ReplaceIn",
+            description:""
+        }
+    );
+    a(
+        {
+            id:21,
+            title:"CopyMeta",
+            content:"CopyMeta",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/copymeta',
+            title:"CopyMeta",
+            description:""
+        }
+    );
+    a(
+        {
+            id:22,
+            title:"FileName",
+            content:"FileName",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/filename',
+            title:"FileName",
+            description:""
+        }
+    );
+    a(
+        {
+            id:23,
+            title:"ExcelToCsv",
+            content:"ExcelToCsv",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/exceltocsv',
+            title:"ExcelToCsv",
+            description:""
+        }
+    );
+    a(
+        {
+            id:24,
+            title:"Append",
+            content:"Append",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/append',
+            title:"Append",
+            description:""
+        }
+    );
+    a(
+        {
+            id:25,
+            title:"HtmlQuery",
+            content:"HtmlQuery",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/htmlquery',
+            title:"HtmlQuery",
+            description:""
+        }
+    );
+    a(
+        {
+            id:26,
+            title:"Concat",
+            content:"Concat",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/concat',
+            title:"Concat",
+            description:""
+        }
+    );
+    a(
+        {
+            id:27,
+            title:"Where",
+            content:"Where",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/where',
+            title:"Where",
+            description:""
+        }
+    );
+    a(
+        {
+            id:28,
+            title:"Join",
+            content:"Join",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/join',
+            title:"Join",
+            description:""
+        }
+    );
+    a(
+        {
+            id:29,
+            title:"Yaml",
+            content:"Yaml",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/yaml',
+            title:"Yaml",
+            description:""
+        }
+    );
+    a(
+        {
+            id:30,
+            title:"Image",
+            content:"Image",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/image',
+            title:"Image",
+            description:""
+        }
+    );
+    a(
+        {
+            id:31,
+            title:"Combine",
+            content:"Combine",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/combine',
+            title:"Combine",
+            description:""
+        }
+    );
+    a(
+        {
+            id:32,
+            title:"ReadFiles",
+            content:"ReadFiles",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/readfiles',
+            title:"ReadFiles",
+            description:""
+        }
+    );
+    a(
+        {
+            id:33,
+            title:"ModuleCollection",
+            content:"ModuleCollection",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/modulecollection',
+            title:"ModuleCollection",
+            description:""
+        }
+    );
+    a(
+        {
+            id:34,
+            title:"MinifyHtml",
+            content:"MinifyHtml",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/minifyhtml',
+            title:"MinifyHtml",
+            description:""
+        }
+    );
+    a(
+        {
+            id:35,
+            title:"Prepend",
+            content:"Prepend",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/prepend',
+            title:"Prepend",
+            description:""
+        }
+    );
+    a(
+        {
+            id:36,
+            title:"Branch",
+            content:"Branch",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/branch',
+            title:"Branch",
+            description:""
+        }
+    );
+    a(
+        {
+            id:37,
+            title:"Index",
+            content:"Index",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/indx',
+            title:"Index",
+            description:""
+        }
+    );
+    a(
+        {
+            id:38,
+            title:"ReadApplicationInput",
+            content:"ReadApplicationInput",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/readapplicationinput',
+            title:"ReadApplicationInput",
+            description:""
+        }
+    );
+    a(
+        {
+            id:39,
+            title:"GenerateJson",
+            content:"GenerateJson",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/generatejson',
+            title:"GenerateJson",
+            description:""
+        }
+    );
+    a(
+        {
+            id:40,
+            title:"SearchIndex",
+            content:"SearchIndex",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/searchindex',
+            title:"SearchIndex",
+            description:""
+        }
+    );
+    a(
+        {
+            id:41,
+            title:"Take",
+            content:"Take",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/take',
+            title:"Take",
+            description:""
+        }
+    );
+    a(
+        {
+            id:42,
+            title:"FrontMatter",
+            content:"FrontMatter",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/frontmatter',
+            title:"FrontMatter",
+            description:""
+        }
+    );
+    a(
+        {
+            id:43,
+            title:"If",
+            content:"If",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/if',
+            title:"If",
+            description:""
+        }
+    );
+    a(
+        {
+            id:44,
+            title:"Content",
+            content:"Content",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/content',
+            title:"Content",
+            description:""
+        }
+    );
+    a(
+        {
+            id:45,
+            title:"ForEach",
+            content:"ForEach",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/foreach',
+            title:"ForEach",
+            description:""
+        }
+    );
+    a(
+        {
+            id:46,
             title:"Flatten",
             content:"Flatten",
             description:'',
@@ -716,6 +688,34 @@ var searchModule = function() {
         {
             url:'/modules/flatten',
             title:"Flatten",
+            description:""
+        }
+    );
+    a(
+        {
+            id:47,
+            title:"UnwrittenFiles",
+            content:"UnwrittenFiles",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/unwrittenfiles',
+            title:"UnwrittenFiles",
+            description:""
+        }
+    );
+    a(
+        {
+            id:48,
+            title:"Xmp",
+            content:"Xmp",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/xmp',
+            title:"Xmp",
             description:""
         }
     );
@@ -736,146 +736,20 @@ var searchModule = function() {
     a(
         {
             id:50,
-            title:"Include",
-            content:"Include",
+            title:"ValidateLinks",
+            content:"ValidateLinks",
             description:'',
             tags:''
         },
         {
-            url:'/modules/include',
-            title:"Include",
+            url:'/modules/validatelinks',
+            title:"ValidateLinks",
             description:""
         }
     );
     a(
         {
             id:51,
-            title:"Sidecar",
-            content:"Sidecar",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/sidecar',
-            title:"Sidecar",
-            description:""
-        }
-    );
-    a(
-        {
-            id:52,
-            title:"Title",
-            content:"Title",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/title',
-            title:"Title",
-            description:""
-        }
-    );
-    a(
-        {
-            id:53,
-            title:"Append",
-            content:"Append",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/append',
-            title:"Append",
-            description:""
-        }
-    );
-    a(
-        {
-            id:54,
-            title:"Highlight",
-            content:"Highlight",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/highlight',
-            title:"Highlight",
-            description:""
-        }
-    );
-    a(
-        {
-            id:55,
-            title:"HtmlEscape",
-            content:"HtmlEscape",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/htmlescape',
-            title:"HtmlEscape",
-            description:""
-        }
-    );
-    a(
-        {
-            id:56,
-            title:"MinifyJs",
-            content:"MinifyJs",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/minifyjs',
-            title:"MinifyJs",
-            description:""
-        }
-    );
-    a(
-        {
-            id:57,
-            title:"AnalyzeCSharp",
-            content:"AnalyzeCSharp",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/analyzecsharp',
-            title:"AnalyzeCSharp",
-            description:""
-        }
-    );
-    a(
-        {
-            id:58,
-            title:"DirectoryMeta",
-            content:"DirectoryMeta",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/directorymeta',
-            title:"DirectoryMeta",
-            description:""
-        }
-    );
-    a(
-        {
-            id:59,
-            title:"GenerateFeeds",
-            content:"GenerateFeeds",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/generatefeeds',
-            title:"GenerateFeeds",
-            description:""
-        }
-    );
-    a(
-        {
-            id:60,
             title:"Markdown",
             content:"Markdown",
             description:'',
@@ -889,21 +763,7 @@ var searchModule = function() {
     );
     a(
         {
-            id:61,
-            title:"Switch",
-            content:"Switch",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/switch',
-            title:"Switch",
-            description:""
-        }
-    );
-    a(
-        {
-            id:62,
+            id:52,
             title:"Sass",
             content:"Sass",
             description:'',
@@ -917,119 +777,49 @@ var searchModule = function() {
     );
     a(
         {
-            id:63,
-            title:"Xmp",
-            content:"Xmp",
+            id:53,
+            title:"GitHub",
+            content:"GitHub",
             description:'',
             tags:''
         },
         {
-            url:'/modules/xmp',
-            title:"Xmp",
+            url:'/modules/github',
+            title:"GitHub",
             description:""
         }
     );
     a(
         {
-            id:64,
-            title:"Sitemap",
-            content:"Sitemap",
+            id:54,
+            title:"AnalyzeCSharp",
+            content:"AnalyzeCSharp",
             description:'',
             tags:''
         },
         {
-            url:'/modules/sitemap',
-            title:"Sitemap",
+            url:'/modules/analyzecsharp',
+            title:"AnalyzeCSharp",
             description:""
         }
     );
     a(
         {
-            id:65,
-            title:"ConcatBranch",
-            content:"ConcatBranch",
+            id:55,
+            title:"CopyFiles",
+            content:"CopyFiles",
             description:'',
             tags:''
         },
         {
-            url:'/modules/concatbranch',
-            title:"ConcatBranch",
+            url:'/modules/copyfiles',
+            title:"CopyFiles",
             description:""
         }
     );
     a(
         {
-            id:66,
-            title:"MinifyXhtml",
-            content:"MinifyXhtml",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/minifyxhtml',
-            title:"MinifyXhtml",
-            description:""
-        }
-    );
-    a(
-        {
-            id:67,
-            title:"Excerpt",
-            content:"Excerpt",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/excerpt',
-            title:"Excerpt",
-            description:""
-        }
-    );
-    a(
-        {
-            id:68,
-            title:"CsvToHtml",
-            content:"CsvToHtml",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/csvtohtml',
-            title:"CsvToHtml",
-            description:""
-        }
-    );
-    a(
-        {
-            id:69,
-            title:"Headings",
-            content:"Headings",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/headings',
-            title:"Headings",
-            description:""
-        }
-    );
-    a(
-        {
-            id:70,
-            title:"MinifyXml",
-            content:"MinifyXml",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/modules/minifyxml',
-            title:"MinifyXml",
-            description:""
-        }
-    );
-    a(
-        {
-            id:71,
+            id:56,
             title:"OrderBy",
             content:"OrderBy",
             description:'',
@@ -1043,119 +833,133 @@ var searchModule = function() {
     );
     a(
         {
-            id:72,
-            title:"ModuleCollection",
-            content:"ModuleCollection",
+            id:57,
+            title:"Xml",
+            content:"Xml",
             description:'',
             tags:''
         },
         {
-            url:'/modules/modulecollection',
-            title:"ModuleCollection",
+            url:'/modules/xml',
+            title:"Xml",
             description:""
         }
     );
     a(
         {
-            id:73,
-            title:"UnwrittenFiles",
-            content:"UnwrittenFiles",
+            id:58,
+            title:"Shortcodes",
+            content:"Shortcodes",
             description:'',
             tags:''
         },
         {
-            url:'/modules/unwrittenfiles',
-            title:"UnwrittenFiles",
+            url:'/modules/shortcodes',
+            title:"Shortcodes",
             description:""
         }
     );
     a(
         {
-            id:74,
-            title:"Xslt",
-            content:"Xslt",
+            id:59,
+            title:"Trace",
+            content:"Trace",
             description:'',
             tags:''
         },
         {
-            url:'/modules/xslt',
-            title:"Xslt",
+            url:'/modules/trace',
+            title:"Trace",
             description:""
         }
     );
     a(
         {
-            id:75,
-            title:"Index",
-            content:"Index",
+            id:60,
+            title:"MinifyXml",
+            content:"MinifyXml",
             description:'',
             tags:''
         },
         {
-            url:'/modules/indx',
-            title:"Index",
+            url:'/modules/minifyxml',
+            title:"MinifyXml",
             description:""
         }
     );
     a(
         {
-            id:76,
-            title:"ForEach",
-            content:"ForEach",
+            id:61,
+            title:"Merge",
+            content:"Merge",
             description:'',
             tags:''
         },
         {
-            url:'/modules/foreach',
-            title:"ForEach",
+            url:'/modules/merge',
+            title:"Merge",
             description:""
         }
     );
     a(
         {
-            id:77,
-            title:"Content",
-            content:"Content",
+            id:62,
+            title:"ReadProject",
+            content:"ReadProject",
             description:'',
             tags:''
         },
         {
-            url:'/modules/content',
-            title:"Content",
+            url:'/modules/readproject',
+            title:"ReadProject",
             description:""
         }
     );
     a(
         {
-            id:78,
-            title:"Sql",
-            content:"Sql",
+            id:63,
+            title:"Paginate",
+            content:"Paginate",
             description:'',
             tags:''
         },
         {
-            url:'/modules/sql',
-            title:"Sql",
+            url:'/modules/paginate',
+            title:"Paginate",
             description:""
         }
     );
     a(
         {
-            id:79,
-            title:"Objects",
-            content:"Objects",
+            id:64,
+            title:"Sidecar",
+            content:"Sidecar",
             description:'',
             tags:''
         },
         {
-            url:'/modules/objects',
-            title:"Objects",
+            url:'/modules/sidecar',
+            title:"Sidecar",
             description:""
         }
     );
     a(
         {
-            id:80,
+            id:65,
+            title:"ValidateMeta",
+            content:"ValidateMeta",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/validatemeta',
+            title:"ValidateMeta<T>",
+            description:""
+        }
+    );
+    a(
+        {
+            id:66,
             title:"ReadSolution",
             content:"ReadSolution",
             description:'',
@@ -1169,35 +973,147 @@ var searchModule = function() {
     );
     a(
         {
-            id:81,
-            title:"ReplaceIn",
-            content:"ReplaceIn",
+            id:67,
+            title:"HtmlInsert",
+            content:"HtmlInsert",
             description:'',
             tags:''
         },
         {
-            url:'/modules/replacein',
-            title:"ReplaceIn",
+            url:'/modules/htmlinsert',
+            title:"HtmlInsert",
             description:""
         }
     );
     a(
         {
-            id:82,
-            title:"Json",
-            content:"Json",
+            id:68,
+            title:"MinifyCss",
+            content:"MinifyCss",
             description:'',
             tags:''
         },
         {
-            url:'/modules/json',
-            title:"Json",
+            url:'/modules/minifycss',
+            title:"MinifyCss",
             description:""
         }
     );
     a(
         {
-            id:83,
+            id:69,
+            title:"Sitemap",
+            content:"Sitemap",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/sitemap',
+            title:"Sitemap",
+            description:""
+        }
+    );
+    a(
+        {
+            id:70,
+            title:"ConcatBranch",
+            content:"ConcatBranch",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/concatbranch',
+            title:"ConcatBranch",
+            description:""
+        }
+    );
+    a(
+        {
+            id:71,
+            title:"Documents",
+            content:"Documents",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/documents',
+            title:"Documents",
+            description:""
+        }
+    );
+    a(
+        {
+            id:72,
+            title:"HtmlEscape",
+            content:"HtmlEscape",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/htmlescape',
+            title:"HtmlEscape",
+            description:""
+        }
+    );
+    a(
+        {
+            id:73,
+            title:"Sql",
+            content:"Sql",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/sql',
+            title:"Sql",
+            description:""
+        }
+    );
+    a(
+        {
+            id:74,
+            title:"MirrorResources",
+            content:"MirrorResources",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/mirrorresources',
+            title:"MirrorResources",
+            description:""
+        }
+    );
+    a(
+        {
+            id:75,
+            title:"Replace",
+            content:"Replace",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/replace',
+            title:"Replace",
+            description:""
+        }
+    );
+    a(
+        {
+            id:76,
+            title:"YouTube",
+            content:"YouTube",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/youtube',
+            title:"YouTube",
+            description:""
+        }
+    );
+    a(
+        {
+            id:77,
             title:"Sort",
             content:"Sort",
             description:'',
@@ -1211,15 +1127,113 @@ var searchModule = function() {
     );
     a(
         {
-            id:84,
-            title:"ReadApplicationInput",
-            content:"ReadApplicationInput",
+            id:78,
+            title:"CsvToMarkdown",
+            content:"CsvToMarkdown",
             description:'',
             tags:''
         },
         {
-            url:'/modules/readapplicationinput',
-            title:"ReadApplicationInput",
+            url:'/modules/csvtomarkdown',
+            title:"CsvToMarkdown",
+            description:""
+        }
+    );
+    a(
+        {
+            id:79,
+            title:"GenerateFeeds",
+            content:"GenerateFeeds",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/generatefeeds',
+            title:"GenerateFeeds",
+            description:""
+        }
+    );
+    a(
+        {
+            id:80,
+            title:"CsvToHtml",
+            content:"CsvToHtml",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/csvtohtml',
+            title:"CsvToHtml",
+            description:""
+        }
+    );
+    a(
+        {
+            id:81,
+            title:"Json",
+            content:"Json",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/json',
+            title:"Json",
+            description:""
+        }
+    );
+    a(
+        {
+            id:82,
+            title:"DirectoryMeta",
+            content:"DirectoryMeta",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/directorymeta',
+            title:"DirectoryMeta",
+            description:""
+        }
+    );
+    a(
+        {
+            id:83,
+            title:"WriteFiles",
+            content:"WriteFiles",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/writefiles',
+            title:"WriteFiles",
+            description:""
+        }
+    );
+    a(
+        {
+            id:84,
+            title:"CountModule",
+            content:"CountModule",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/countmodule',
+            title:"CountModule",
+            description:""
+        }
+    );
+    a(
+        {
+            id:85,
+            title:"Meta",
+            content:"Meta",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/modules/meta',
+            title:"Meta",
             description:""
         }
     );

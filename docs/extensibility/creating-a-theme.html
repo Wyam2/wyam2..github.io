@@ -22,10 +22,6 @@
         <script src="/assets/js/jquery.sticky-kit.min.js"></script>
         <script src="/assets/js/mermaid.min.js"></script>
         <script src="/assets/js/svg-pan-zoom.min.js"></script>
-        <!--[if lt IE 9]>
-        <script src="/assets/js/html5shiv.min.js"></script>
-        <script src="/assets/js/respond.min.js"></script>
-        <![endif]-->  
 
         <meta name="google" content="notranslate">
 <meta http-equiv="Content-Language" content="en">
@@ -80,7 +76,7 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-        <div><p><a href="https://github.com/Wyam2/docs/tree/master/input/docs/extensibility/creating-a-theme.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
+        <div><p><a href="https://github.com/Wyam2/docs/tree/main/input/docs/extensibility/creating-a-theme.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
     <div id="infobar-headings"><h6>On This Page</h6><p><a href="#notes">Notes</a></p>
 <hr class="infobar-hidden">
 </div>
@@ -188,9 +184,9 @@
 	<section class="content">
 		<p>Creating a theme is easy. One of the most helpful things to keep in mind is that there is no behind-the-scenes magic at work. The built-in themes use the exact same mechanisms and conventions you have access to.</p>
 <p>A theme <a href="/docs/concepts/themes">is just a collection of input files</a>. They work by being in an input folder at a lower precedence than the main input folder. You can even start working on your theme using files in your normal <code>input</code> path and then package them up later.</p>
-<p>Most themes are tied to a specific <a href="/recipes">recipe</a> since each recipe acts like an independent site generator with different conventions, types of output, and so on. The easiest way to get started writing a theme for one of the built-in recipes is to copy one of the <a href="https://github.com/Wyamio/Wyam/tree/develop/themes">existing themes</a> into your <code>input</code> folder and then start editing it from there. If you're developing a theme for a built-in recipe, also note that as the Wyam and recipe version increments, so will the theme files and thus old theme files may not work anymore due to changes in the recipe. In this case you'll need to examine the differences (if any) between the theme files you started with and the most recent versions and then port those changes into your own theme to maintain compatibility with an updated recipe version.</p>
-<p>Once you've got the input files exactly as you like them, package them up as a <a href="http://blog.nuget.org/20160126/nuget-contentFiles-demystified.html">NuGet package with content files</a>. When such a package is included in a Wyam generation (either by using the <code>--nuget</code> <a href="/docs/usage/command-line">command line option</a> or by using the <code>#nuget</code> preprocessor directive in a <a href="/docs/usage/configuration">configuration file</a>), it will automatically make the files in the content folder of the package available as a low precedence input path.</p>
-<p>Note that the built-in themes rely on a lookup table to map the theme name such as "CleanBlog" to the matching NuGet package (in this case <a href="https://www.nuget.org/packages/Wyam.Blog.CleanBlog/">Wyam.Blog.CleanBlog</a>). That's why you can use the <code>--theme</code> command line option with a simple theme name for built-in themes. While this lookup table is currently limited only to built-in themes, the net effect is exactly the same as if including the theme package using the NuGet command line option or preprocessor directive. To let others use your theme, just advertise the NuGet package and they can include it via NuGet.</p>
+<p>Most themes are tied to a specific <a href="/recipes">recipe</a> since each recipe acts like an independent site generator with different conventions, types of output, and so on. The easiest way to get started writing a theme for one of the built-in recipes is to copy one of the <a href="https://github.com/Wyam2/wyam/tree/develop/themes">existing themes</a> into your <code>input</code> folder and then start editing it from there. If you're developing a theme for a built-in recipe, also note that as the Wyam and recipe version increments, so will the theme files and thus old theme files may not work anymore due to changes in the recipe. In this case you'll need to examine the differences (if any) between the theme files you started with and the most recent versions and then port those changes into your own theme to maintain compatibility with an updated recipe version.</p>
+<p>Once you've got the input files exactly as you like them, package them up as a <a href="http://blog.nuget.org/20160126/nuget-contentFiles-demystified.html">NuGet package with content files</a>. When such a package is included in a Wyam2 generation (either by using the <code>--nuget</code> <a href="/docs/usage/command-line">command line option</a> or by using the <code>#nuget</code> preprocessor directive in a <a href="/docs/usage/configuration">configuration file</a>), it will automatically make the files in the content folder of the package available as a low precedence input path.</p>
+<p>Note that the built-in themes rely on a lookup table to map the theme name such as "CleanBlog" to the matching NuGet package (in this case <a href="https://www.nuget.org/packages/Wyam2.Blog.CleanBlog/">Wyam2.Blog.CleanBlog</a>). That's why you can use the <code>--theme</code> command line option with a simple theme name for built-in themes. While this lookup table is currently limited only to built-in themes, the net effect is exactly the same as if including the theme package using the NuGet command line option or preprocessor directive. To let others use your theme, just advertise the NuGet package and they can include it via NuGet.</p>
 <h1 id="notes">Notes</h1>
 <h2 id="links">Links</h2>
 <p>A theme needs to support generating relative links that may (or may not be) under a <a href="/docs/deployment/serving-from-a-subdirectory">virtual directory</a>. The <code><a href="/api/Wyam.Common.Execution/IExecutionContext">IExecutionContext</a></code> has an extension method that helps resolve links to their appropriate output path. In <a href="/modules/razor">Razor</a> the call looks like:</p>
@@ -209,9 +205,8 @@
         </div>
         <div class="wrapper bottom-wrapper">
             <footer class="bottom-footer">
-                Wyam2 is maintained by <a href="https://savornicesei.com">Simona Avornicesei</a> and <a href="https://github.com/Wyam2/Wyam/graphs/contributors">other awesome contributors</a>, as a continuation of the <a href="https://github.com/Wyamio/Wyam">Wyam</a> project crafted by <a href="https://daveaglick.com">Dave Glick</a>. <a href="https://github.com/Wyam2/Wyam">Code on GitHub</a>. This site was entirely generated by Wyam. Check out <a href="https://github.com/Wyam2/docs">the site code on GitHub</a>.
+                Wyam2 is maintained by <a href="https://avornicesei.com">Simona Avornicesei</a> and <a href="https://github.com/Wyam2/Wyam/graphs/contributors">other awesome contributors</a>, as a continuation of the <a href="https://github.com/Wyamio/Wyam">Wyam</a> project crafted by <a href="https://daveaglick.com">Dave Glick</a>. <a href="https://github.com/Wyam2/Wyam">Code on GitHub</a>. This site was entirely generated by Wyam. Check out <a href="https://github.com/Wyam2/docs">the site code on GitHub</a>.
 <br><br>
-
             </footer>
         </div>
         <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>

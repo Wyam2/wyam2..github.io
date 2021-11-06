@@ -1,0 +1,308 @@
+﻿<!DOCTYPE html><html><head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+        <meta name="description">
+        <meta name="keywords" content="static content generator,static site generator,static site,HTML,web development,.NET,C#,Razor,Markdown,YAML">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="shortcut icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <link rel="icon" href="/assets/img/favicon.ico" type="image/x-icon">
+        <title>Wyam2 - Version 3.0.0-rc1</title>
+        <link href="/assets/css/highlight.css" rel="stylesheet">
+        <link href="/assets/css/bootstrap/bootstrap.css" rel="stylesheet">
+        <link href="/assets/css/adminlte/AdminLTE.css" rel="stylesheet">
+        <link href="/assets/css/theme/theme.css" rel="stylesheet">
+        <link href="//fonts.googleapis.com/css?family=Roboto+Mono:400,700|Roboto:400,400i,700,700i" rel="stylesheet">
+        <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+        <link href="/assets/css/override.css" rel="stylesheet">
+        <script src="/assets/js/jquery-2.2.3.min.js"></script>
+        <script src="/assets/js/bootstrap.min.js"></script>        
+        <script src="/assets/js/app.min.js"></script>         
+        <script src="/assets/js/highlight.pack.js"></script>   
+        <script src="/assets/js/jquery.slimscroll.min.js"></script>
+        <script src="/assets/js/jquery.sticky-kit.min.js"></script>
+        <script src="/assets/js/mermaid.min.js"></script>
+        <script src="/assets/js/svg-pan-zoom.min.js"></script>
+
+        <meta name="google" content="notranslate">
+<meta http-equiv="Content-Language" content="en">
+    </head>
+    <body class="hold-transition wyam layout-boxed  ">    
+        <div class="top-banner"></div>
+        <div class="wrapper with-container">
+            <!-- Header -->
+            <header class="main-header">   
+                     
+                <a href="/" class="logo">
+
+                                <!-- mini logo for sidebar mini 50x50 pixels -->
+                                <span class="logo-mini"><img src="/assets/img/logo.png"></span>
+                                <!-- logo for regular state and mobile devices -->
+                                <span class="logo-lg"><img src="/assets/img/logo.png"></span>
+                                            </a>   
+                         
+                <nav class="navbar navbar-static-top" role="navigation">
+                    <!-- Sidebar toggle button-->
+                        <a href="#" class="sidebar-toggle visible-xs-block" data-toggle="offcanvas" role="button">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-right"></i>
+                        </a>
+                                        
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
+                            <span class="sr-only">Toggle side menu</span>
+                            <i class="fa fa-chevron-circle-down"></i>
+                        </button>
+                    </div>
+            
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse pull-left" id="navbar-collapse">
+                        <ul class="nav navbar-nav">                            
+                                    <li class="active"><a href="/blog">Blog</a></li>
+        <li><a href="/docs">Documentation</a></li>
+        <li><a href="/recipes">Recipes</a></li>
+        <li><a href="/modules">Modules</a></li>
+        <li><a href="/shortcodes">Shortcodes</a></li>
+        <li><a href="/api">API</a></li>
+ 
+                        </ul>       
+                    </div>
+                    <!-- /.navbar-collapse -->
+                
+                    <!-- Navbar Right Menu -->
+                </nav>
+            </header>
+            
+            <!-- Left side column. contains the logo and sidebar -->
+            <aside class="main-sidebar ">
+                <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
+                    	
+        <div><p><a href="https://github.com/Wyam2/docs/tree/main/input/blog/2021-08-16-version-3.0.0-rc1.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
+    <div id="infobar-headings"><h6>On This Page</h6><p><a href="#release-notes">Release Notes</a></p>
+<hr class="infobar-hidden">
+</div>
+
+                </section>
+                <section class="sidebar">    
+                                     
+                    
+
+                    <ul class="sidebar-menu">
+                        
+
+        <li class="header"><i class="fa fa-bookmark"></i> Categories</li>    
+            <li><a href="/blog/release">release</a></li>
+    
+    <li class="header"><i class="fa fa-calendar"></i> Archive</li>    
+        <li><a href="/blog/archive/2021.11">noiembrie, 2021</a></li>
+        <li><a href="/blog/archive/2021.08">august, 2021</a></li>
+        <li><a href="/blog/archive/2019.02">februarie, 2019</a></li>
+        <li><a href="/blog/archive/2019.01">ianuarie, 2019</a></li>
+        <li><a href="/blog/archive/2018.11">noiembrie, 2018</a></li>
+    
+        <li class="header"><i class="fa fa-user"></i> Authors</li>    
+            <li><a href="/blog/author/Dave-Glick">Dave Glick</a></li>
+            <li><a href="/blog/author/Simona-Avornicesei">Simona Avornicesei</a></li>
+
+                    </ul>
+                            
+                </section>                
+            </aside>
+            
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+                
+
+
+
+		<section class="content-header">
+			<h1>Version 3.0.0-rc1</h1>
+		</section>
+	<section class="content">
+		
+
+
+
+<dl class="dl-horizontal" style="margin-bottom: 12px;">
+    <dt style="text-align: left;"><i class="fa fa-calendar"></i> Published</dt>
+    <dd>16 August 2021</dd>
+        <dt style="text-align: left;"><i class="fa fa-bookmark"></i> Category</dt>
+        <dd><a href="/blog/release">release</a></dd>
+            <dt style="text-align: left;"><i class="fa fa-user"></i> Author</dt>
+        <dd><a href="/blog/author/Simona-Avornicesei">Simona Avornicesei</a></dd>
+</dl>
+
+
+<p>Version 3.0.0-rc1 is now available.</p>
+<p>It is the first release of Wyam2, as a drop-in replacement for Wyam</p>
+<ul>
+<li>Wyam.Tool was renamed to Wyam2.Tool <code>dotnet tool install -g Wyam2.Tool</code></li>
+<li>wyam was renamed to wyam2 <code>dotnet wyam2 new --recipe <a href="/api/Wyam.Blog/Blog">Blog</a></code></li>
+</ul>
+<h1 id="release-notes">Release Notes</h1>
+<h2 id="features">Features</h2>
+<ul>
+<li>Add command-line switch for no logo (<a href="https://github.com/Wyam2/wyam/issues/4">#4</a>, logo was removed)</li>
+<li>Render all XML comment tags (<a href="https://github.com/Wyam2/wyam/issues/24">#24</a>)
+<ul>
+<li>added support for: revisionHistory, note, definition list, cref langword</li>
+</ul>
+</li>
+</ul>
+<h2 id="fixes">Fixes</h2>
+<ul>
+<li>Cake.Wyam "Could not execute because the specified command or file was not found" error (<a href="https://github.com/Wyam2/wyam/issues/25">#25</a>)</li>
+<li>Build: NuGet pack errors NU5125 (licenceUrl) and NU5048 (iconUrl) (<a href="https://github.com/Wyam2/wyam/issues/6">#6</a>)</li>
+<li>Could not reference Wyam.Common namespace with nuget (<a href="https://github.com/Wyam2/wyam/issues/1">#1</a>)</li>
+<li>Update blog themes: CleanBlog to v6.0.4, Phantom, SolidState, Stellar</li>
+</ul>
+<h2 id="documentation">Documentation</h2>
+<ul>
+<li>Markdown table not well rendered (<a href="https://github.com/Wyam2/wyam/issues/73">#73</a>)</li>
+<li>AutoLinkTypes docs theme setting is slightly confusing (<a href="https://github.com/Wyam2/wyam/issues/74">#74</a>)</li>
+</ul>
+<h2 id="refactoring">Refactoring</h2>
+<ul>
+<li>Update JSPool to v4.0.0</li>
+<li>Update JavaScriptEngineSwitcher.Core to v3.3.0 and JavaScriptEngineSwitcher.Jint to v3.1.0</li>
+<li>Update Microsoft.NET.Test.Sdk to v16.11.0</li>
+<li>Update NuGet to 5.11.0</li>
+<li>Update MetadataExtractor to v2.7.0</li>
+<li>Update Google.Apis.* to v1.54.0 and Google.Apis.YouTube to 1.54.0.2378</li>
+<li>Update System.Data.SqlClient to v4.8.2</li>
+<li>Update System.Reflection.TypeExtensions to v4.7.0</li>
+<li>Update Markdig to v0.25.0</li>
+<li>Update SixLabors.ImageSharp to v1.0.3</li>
+<li>Update Google.Apis.YouTube.v3 to v1.52.0.2366</li>
+<li>Update CsvHelper to v27.1.1</li>
+<li>Update MetadataExtractor to v2.6.0</li>
+<li>Update dotless.Core to v1.6.7</li>
+<li>Update SharpScss to v2.0.0</li>
+<li>Update ReflectionMagic to v4.1.0</li>
+<li>Update Polly to v7.2.2</li>
+<li>Update WebMarkupMin.Core to v2.9.0</li>
+<li>Update Octokit to v0.50.0</li>
+<li>Update Microsoft.AspNetCore to latest version targeting .NET Standard 2.0</li>
+<li>Update ConcurrentHashSet to v1.2.0</li>
+<li>Update YamlDotNet to v11.2.1</li>
+<li>Update Microsoft.IO.RecyclableMemoryStream to v2.1.2</li>
+<li>Update System.Data.SqlClient to v4.8.1</li>
+<li>Update System.Collections.Immutable to v1.5.0</li>
+<li>Update Microsoft.CodeAnalysis.CSharp to v3.4.0</li>
+<li>Update Microsoft.NET.Test.Sdk to v16.10.0</li>
+<li>Update NuGet to 5.10.0</li>
+<li>Update Google.Apis.YouTube.v3 to v1.52.0.2343</li>
+<li>Update Microsoft.AspNetCore.WebSockets to v2.2.1</li>
+<li>Update YamlDotNet to v5.1.0</li>
+<li>Update ConcurrentHashSet to v1.1.0</li>
+<li>Update SharpZipLib to v1.3.2</li>
+<li>Update XmpCore to v6.1.10.1 and MetadataExtractor to v2.5.0</li>
+<li>Update StyleCop.Analyzers to v1.1.118 and Roslynator.Analyzers to v3.2.0</li>
+<li>Update Shouldly to v4.0.3</li>
+<li>Update NSubstitute to v4.2.2 (thus upgrading Castle.Core to v4.4.1)</li>
+<li>Update Autofixture to v4.5.1</li>
+<li>Update NUnit to v3.13.2 and NUnit3TestAdapter to v4.0.0</li>
+<li>Update Buildalyzer.Workspaces to v2.6.0</li>
+<li>Update Google.Api to v1.52.0</li>
+<li>Update NuGet to 5.9.1</li>
+<li>Update Newtonsoft.Json to v13.0.1</li>
+<li>Update CsvHelper to v27.1.0</li>
+<li>Update EPPlus to latest LGPL version 4.5.3.3</li>
+<li>Update Cake to v1.1.0</li>
+<li>Update AngleSharp to v0.16.0</li>
+<li>Update Cake.Wyam NuGet package icon to the new Cake-Contrib logo for Cake addins (#22, thanks @augustoproiete)</li>
+<li>Cake.Wyam: Add cake-addin tag to NuGet package(#21, thanks @augustoproiete)</li>
+<li>Update Cake.Wyam to target Cake v1.0.0 (#19, thanks @augustoproiete)</li>
+</ul>
+
+
+	</section>
+                
+            </div>           
+            
+            <!-- Footer -->
+            <footer class="main-footer">
+            </footer>
+            
+        </div>
+        <div class="wrapper bottom-wrapper">
+            <footer class="bottom-footer">
+                Wyam2 is maintained by <a href="https://avornicesei.com">Simona Avornicesei</a> and <a href="https://github.com/Wyam2/Wyam/graphs/contributors">other awesome contributors</a>, as a continuation of the <a href="https://github.com/Wyamio/Wyam">Wyam</a> project crafted by <a href="https://daveaglick.com">Dave Glick</a>. <a href="https://github.com/Wyam2/Wyam">Code on GitHub</a>. This site was entirely generated by Wyam. Check out <a href="https://github.com/Wyam2/docs">the site code on GitHub</a>.
+<br><br>
+            </footer>
+        </div>
+        <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
+        <div class="github-button">
+    <a href="https://github.com/Wyam2/Wyam"><i class="fa fa-github"></i> GitHub</a>
+</div>
+
+        <script>           
+            // Close the sidebar if we select an anchor link
+            $(".main-sidebar a[href^='#']:not('.expand')").click(function(){
+                $(document.body).removeClass('sidebar-open');
+            });
+            
+            $(document).ready(function() {
+                mermaid.initialize(
+                {
+                    flowchart:
+                    {
+                        useMaxWidth: false
+                    },
+					startOnLoad: false,
+					cloneCssStyles: false
+                });     
+                mermaid.init(undefined, ".mermaid");
+
+                // Remove the max-width setting that Mermaid sets
+                var mermaidSvg = $('.mermaid svg');
+                mermaidSvg.addClass('img-responsive');
+                mermaidSvg.css('max-width', '');
+
+                // Make it scrollable
+				var target = document.querySelector(".mermaid svg");
+				if(target !== null)
+				{
+					var panZoom = window.panZoom = svgPanZoom(target, {
+						zoomEnabled: true,
+						controlIconsEnabled: true,
+						fit: true,
+						center: true,
+                        maxZoom: 20,
+                        zoomScaleSensitivity: 0.6
+					});			                          
+
+                    // Do the reset once right away to fit the diagram
+                    panZoom.resize();
+                    panZoom.fit();
+                    panZoom.center();
+                    
+                    $(window).resize(function(){
+                        panZoom.resize();
+                        panZoom.fit();
+                        panZoom.center();
+                    });
+				}
+                
+                $('pre code').each(function(i, block) {
+                    hljs.highlightBlock(block);
+                });  
+            });
+
+            hljs.initHighlightingOnLoad();
+
+            // Back to top
+            $(window).scroll(function() {
+                if ($(this).scrollTop() >= 200) {        // If page is scrolled more than 50px
+                    $('#return-to-top').fadeIn(1000);    // Fade in the arrow
+                } else {
+                    $('#return-to-top').fadeOut(1000);   // Else fade out the arrow
+                }
+            });
+            $('#return-to-top').click(function() {      // When arrow is clicked
+                $('body,html').animate({
+                    scrollTop : 0                       // Scroll to top of body
+                }, 500);
+            });
+        </script>
+    
+</body></html>

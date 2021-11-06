@@ -22,10 +22,6 @@
         <script src="/assets/js/jquery.sticky-kit.min.js"></script>
         <script src="/assets/js/mermaid.min.js"></script>
         <script src="/assets/js/svg-pan-zoom.min.js"></script>
-        <!--[if lt IE 9]>
-        <script src="/assets/js/html5shiv.min.js"></script>
-        <script src="/assets/js/respond.min.js"></script>
-        <![endif]-->  
 
         <meta name="google" content="notranslate">
 <meta http-equiv="Content-Language" content="en">
@@ -197,18 +193,18 @@
 								<dt>Implementing Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/api/Wyam.Core.Shortcodes.Contents/Raw">Raw</a></li>								
-											<li><a href="/api/Wyam.Core.Shortcodes.Html/Giphy">Giphy</a></li>								
-											<li><a href="/api/Wyam.Core.Shortcodes.Html/YouTube">YouTube</a></li>								
 											<li><a href="/api/Wyam.Highlight.Shortcodes/Highlight">Highlight</a></li>								
 											<li><a href="/api/Wyam.Core.Shortcodes.Html/Twitter">Twitter</a></li>								
+											<li><a href="/api/Wyam.Core.Shortcodes.Html/Embed">Embed</a></li>								
+											<li><a href="/api/Wyam.Core.Shortcodes.Metadata/Meta">Meta</a></li>								
 											<li><a href="/api/Wyam.Core.Shortcodes.Html/CodePen">CodePen</a></li>								
 											<li><a href="/api/Wyam.Core.Shortcodes.Html/Table">Table</a></li>								
-											<li><a href="/api/Wyam.Core.Shortcodes.Metadata/Meta">Meta</a></li>								
-											<li><a href="/api/Wyam.Core.Shortcodes.Html/Link">Link</a></li>								
-											<li><a href="/api/Wyam.Core.Shortcodes.Html/Figure">Figure</a></li>								
-											<li><a href="/api/Wyam.Core.Shortcodes.Html/Embed">Embed</a></li>								
+											<li><a href="/api/Wyam.Core.Shortcodes.Contents/Raw">Raw</a></li>								
 											<li><a href="/api/Wyam.Core.Shortcodes.Html/Gist">Gist</a></li>								
+											<li><a href="/api/Wyam.Core.Shortcodes.Html/Link">Link</a></li>								
+											<li><a href="/api/Wyam.Core.Shortcodes.Html/YouTube">YouTube</a></li>								
+											<li><a href="/api/Wyam.Core.Shortcodes.Html/Figure">Figure</a></li>								
+											<li><a href="/api/Wyam.Core.Shortcodes.Html/Giphy">Giphy</a></li>								
 											<li><a href="/api/Wyam.Core.Shortcodes.IO/Include">Include</a></li>								
 									</ul>
 								</dd>				
@@ -219,30 +215,30 @@
 							graph BT
 	Type["IShortcode"]
 class Type type-node
-	Implementing0["Raw"]-.-&gt;Type
-	click Implementing0 "/api/Wyam.Core.Shortcodes.Contents/Raw"
-	Implementing1["Giphy"]-.-&gt;Type
-	click Implementing1 "/api/Wyam.Core.Shortcodes.Html/Giphy"
-	Implementing2["YouTube"]-.-&gt;Type
-	click Implementing2 "/api/Wyam.Core.Shortcodes.Html/YouTube"
-	Implementing3["Highlight"]-.-&gt;Type
-	click Implementing3 "/api/Wyam.Highlight.Shortcodes/Highlight"
-	Implementing4["Twitter"]-.-&gt;Type
-	click Implementing4 "/api/Wyam.Core.Shortcodes.Html/Twitter"
-	Implementing5["CodePen"]-.-&gt;Type
-	click Implementing5 "/api/Wyam.Core.Shortcodes.Html/CodePen"
-	Implementing6["Table"]-.-&gt;Type
-	click Implementing6 "/api/Wyam.Core.Shortcodes.Html/Table"
-	Implementing7["Meta"]-.-&gt;Type
-	click Implementing7 "/api/Wyam.Core.Shortcodes.Metadata/Meta"
+	Implementing0["Highlight"]-.-&gt;Type
+	click Implementing0 "/api/Wyam.Highlight.Shortcodes/Highlight"
+	Implementing1["Twitter"]-.-&gt;Type
+	click Implementing1 "/api/Wyam.Core.Shortcodes.Html/Twitter"
+	Implementing2["Embed"]-.-&gt;Type
+	click Implementing2 "/api/Wyam.Core.Shortcodes.Html/Embed"
+	Implementing3["Meta"]-.-&gt;Type
+	click Implementing3 "/api/Wyam.Core.Shortcodes.Metadata/Meta"
+	Implementing4["CodePen"]-.-&gt;Type
+	click Implementing4 "/api/Wyam.Core.Shortcodes.Html/CodePen"
+	Implementing5["Table"]-.-&gt;Type
+	click Implementing5 "/api/Wyam.Core.Shortcodes.Html/Table"
+	Implementing6["Raw"]-.-&gt;Type
+	click Implementing6 "/api/Wyam.Core.Shortcodes.Contents/Raw"
+	Implementing7["Gist"]-.-&gt;Type
+	click Implementing7 "/api/Wyam.Core.Shortcodes.Html/Gist"
 	Implementing8["Link"]-.-&gt;Type
 	click Implementing8 "/api/Wyam.Core.Shortcodes.Html/Link"
-	Implementing9["Figure"]-.-&gt;Type
-	click Implementing9 "/api/Wyam.Core.Shortcodes.Html/Figure"
-	Implementing10["Embed"]-.-&gt;Type
-	click Implementing10 "/api/Wyam.Core.Shortcodes.Html/Embed"
-	Implementing11["Gist"]-.-&gt;Type
-	click Implementing11 "/api/Wyam.Core.Shortcodes.Html/Gist"
+	Implementing9["YouTube"]-.-&gt;Type
+	click Implementing9 "/api/Wyam.Core.Shortcodes.Html/YouTube"
+	Implementing10["Figure"]-.-&gt;Type
+	click Implementing10 "/api/Wyam.Core.Shortcodes.Html/Figure"
+	Implementing11["Giphy"]-.-&gt;Type
+	click Implementing11 "/api/Wyam.Core.Shortcodes.Html/Giphy"
 	Implementing12["Include"]-.-&gt;Type
 	click Implementing12 "/api/Wyam.Core.Shortcodes.IO/Include"
 
@@ -312,9 +308,8 @@ class Type type-node
         </div>
         <div class="wrapper bottom-wrapper">
             <footer class="bottom-footer">
-                Wyam2 is maintained by <a href="https://savornicesei.com">Simona Avornicesei</a> and <a href="https://github.com/Wyam2/Wyam/graphs/contributors">other awesome contributors</a>, as a continuation of the <a href="https://github.com/Wyamio/Wyam">Wyam</a> project crafted by <a href="https://daveaglick.com">Dave Glick</a>. <a href="https://github.com/Wyam2/Wyam">Code on GitHub</a>. This site was entirely generated by Wyam. Check out <a href="https://github.com/Wyam2/docs">the site code on GitHub</a>.
+                Wyam2 is maintained by <a href="https://avornicesei.com">Simona Avornicesei</a> and <a href="https://github.com/Wyam2/Wyam/graphs/contributors">other awesome contributors</a>, as a continuation of the <a href="https://github.com/Wyamio/Wyam">Wyam</a> project crafted by <a href="https://daveaglick.com">Dave Glick</a>. <a href="https://github.com/Wyam2/Wyam">Code on GitHub</a>. This site was entirely generated by Wyam. Check out <a href="https://github.com/Wyam2/docs">the site code on GitHub</a>.
 <br><br>
-
             </footer>
         </div>
         <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>

@@ -22,10 +22,6 @@
         <script src="/assets/js/jquery.sticky-kit.min.js"></script>
         <script src="/assets/js/mermaid.min.js"></script>
         <script src="/assets/js/svg-pan-zoom.min.js"></script>
-        <!--[if lt IE 9]>
-        <script src="/assets/js/html5shiv.min.js"></script>
-        <script src="/assets/js/respond.min.js"></script>
-        <![endif]-->  
 
         <meta name="google" content="notranslate">
 <meta http-equiv="Content-Language" content="en">
@@ -194,23 +190,23 @@
 								<dt>Implementing Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/api/Wyam.Feeds.Syndication.Rdf/RdfTextInput">RdfTextInput</a></li>								
-											<li><a href="/api/Wyam.Feeds.Syndication.Rdf/RdfItem">RdfItem</a></li>								
-											<li><a href="/api/Wyam.Feeds.Syndication.Atom/AtomLink">AtomLink</a></li>								
-											<li><a href="/api/Wyam.Feeds.Syndication.Atom/AtomInReplyTo">AtomInReplyTo</a></li>								
-											<li><a href="/api/Wyam.Feeds.Syndication.Rss/RssEnclosure">RssEnclosure</a></li>								
-											<li><a href="/api/Wyam.Feeds.Syndication.Atom/AtomBase">AtomBase</a></li>								
-											<li><a href="/api/Wyam.Feeds.Syndication.Atom/AtomContent">AtomContent</a></li>								
-											<li><a href="/api/Wyam.Feeds.Syndication.Rss/RssChannel">RssChannel</a></li>								
-											<li><a href="/api/Wyam.Feeds.Syndication.Rdf/RdfImage">RdfImage</a></li>								
-											<li><a href="/api/Wyam.Feeds.Syndication.Rdf/RdfChannel">RdfChannel</a></li>								
-											<li><a href="/api/Wyam.Feeds.Syndication.Rss/RssChannelBase">RssChannelBase</a></li>								
-											<li><a href="/api/Wyam.Feeds.Syndication.Atom/AtomFeed">AtomFeed</a></li>								
-											<li><a href="/api/Wyam.Feeds.Syndication.Rss/RssImage">RssImage</a></li>								
-											<li><a href="/api/Wyam.Feeds.Syndication.Rdf/RdfBase">RdfBase</a></li>								
 											<li><a href="/api/Wyam.Feeds.Syndication.Atom/AtomSource">AtomSource</a></li>								
-											<li><a href="/api/Wyam.Feeds.Syndication.Rss/RssGuid">RssGuid</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Atom/AtomContent">AtomContent</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Rss/RssEnclosure">RssEnclosure</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Rdf/RdfBase">RdfBase</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Atom/AtomFeed">AtomFeed</a></li>								
 											<li><a href="/api/Wyam.Feeds.Syndication.Atom/AtomEntry">AtomEntry</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Rdf/RdfChannel">RdfChannel</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Rss/RssImage">RssImage</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Rdf/RdfItem">RdfItem</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Atom/AtomBase">AtomBase</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Rss/RssChannelBase">RssChannelBase</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Rdf/RdfImage">RdfImage</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Rss/RssChannel">RssChannel</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Atom/AtomInReplyTo">AtomInReplyTo</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Atom/AtomLink">AtomLink</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Rdf/RdfTextInput">RdfTextInput</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Rss/RssGuid">RssGuid</a></li>								
 									</ul>
 								</dd>				
 						</dl>
@@ -220,40 +216,40 @@
 							graph BT
 	Type["IUriProvider"]
 class Type type-node
-	Implementing0["RdfTextInput"]-.-&gt;Type
-	click Implementing0 "/api/Wyam.Feeds.Syndication.Rdf/RdfTextInput"
-	Implementing1["RdfItem"]-.-&gt;Type
-	click Implementing1 "/api/Wyam.Feeds.Syndication.Rdf/RdfItem"
-	Implementing2["AtomLink"]-.-&gt;Type
-	click Implementing2 "/api/Wyam.Feeds.Syndication.Atom/AtomLink"
-	Implementing3["AtomInReplyTo"]-.-&gt;Type
-	click Implementing3 "/api/Wyam.Feeds.Syndication.Atom/AtomInReplyTo"
-	Implementing4["RssEnclosure"]-.-&gt;Type
-	click Implementing4 "/api/Wyam.Feeds.Syndication.Rss/RssEnclosure"
-	Implementing5["AtomBase"]-.-&gt;Type
-	click Implementing5 "/api/Wyam.Feeds.Syndication.Atom/AtomBase"
-	Implementing6["AtomContent"]-.-&gt;Type
-	click Implementing6 "/api/Wyam.Feeds.Syndication.Atom/AtomContent"
-	Implementing7["RssChannel"]-.-&gt;Type
-	click Implementing7 "/api/Wyam.Feeds.Syndication.Rss/RssChannel"
-	Implementing8["RdfImage"]-.-&gt;Type
-	click Implementing8 "/api/Wyam.Feeds.Syndication.Rdf/RdfImage"
-	Implementing9["RdfChannel"]-.-&gt;Type
-	click Implementing9 "/api/Wyam.Feeds.Syndication.Rdf/RdfChannel"
+	Implementing0["AtomSource"]-.-&gt;Type
+	click Implementing0 "/api/Wyam.Feeds.Syndication.Atom/AtomSource"
+	Implementing1["AtomContent"]-.-&gt;Type
+	click Implementing1 "/api/Wyam.Feeds.Syndication.Atom/AtomContent"
+	Implementing2["RssEnclosure"]-.-&gt;Type
+	click Implementing2 "/api/Wyam.Feeds.Syndication.Rss/RssEnclosure"
+	Implementing3["RdfBase"]-.-&gt;Type
+	click Implementing3 "/api/Wyam.Feeds.Syndication.Rdf/RdfBase"
+	Implementing4["AtomFeed"]-.-&gt;Type
+	click Implementing4 "/api/Wyam.Feeds.Syndication.Atom/AtomFeed"
+	Implementing5["AtomEntry"]-.-&gt;Type
+	click Implementing5 "/api/Wyam.Feeds.Syndication.Atom/AtomEntry"
+	Implementing6["RdfChannel"]-.-&gt;Type
+	click Implementing6 "/api/Wyam.Feeds.Syndication.Rdf/RdfChannel"
+	Implementing7["RssImage"]-.-&gt;Type
+	click Implementing7 "/api/Wyam.Feeds.Syndication.Rss/RssImage"
+	Implementing8["RdfItem"]-.-&gt;Type
+	click Implementing8 "/api/Wyam.Feeds.Syndication.Rdf/RdfItem"
+	Implementing9["AtomBase"]-.-&gt;Type
+	click Implementing9 "/api/Wyam.Feeds.Syndication.Atom/AtomBase"
 	Implementing10["RssChannelBase"]-.-&gt;Type
 	click Implementing10 "/api/Wyam.Feeds.Syndication.Rss/RssChannelBase"
-	Implementing11["AtomFeed"]-.-&gt;Type
-	click Implementing11 "/api/Wyam.Feeds.Syndication.Atom/AtomFeed"
-	Implementing12["RssImage"]-.-&gt;Type
-	click Implementing12 "/api/Wyam.Feeds.Syndication.Rss/RssImage"
-	Implementing13["RdfBase"]-.-&gt;Type
-	click Implementing13 "/api/Wyam.Feeds.Syndication.Rdf/RdfBase"
-	Implementing14["AtomSource"]-.-&gt;Type
-	click Implementing14 "/api/Wyam.Feeds.Syndication.Atom/AtomSource"
-	Implementing15["RssGuid"]-.-&gt;Type
-	click Implementing15 "/api/Wyam.Feeds.Syndication.Rss/RssGuid"
-	Implementing16["AtomEntry"]-.-&gt;Type
-	click Implementing16 "/api/Wyam.Feeds.Syndication.Atom/AtomEntry"
+	Implementing11["RdfImage"]-.-&gt;Type
+	click Implementing11 "/api/Wyam.Feeds.Syndication.Rdf/RdfImage"
+	Implementing12["RssChannel"]-.-&gt;Type
+	click Implementing12 "/api/Wyam.Feeds.Syndication.Rss/RssChannel"
+	Implementing13["AtomInReplyTo"]-.-&gt;Type
+	click Implementing13 "/api/Wyam.Feeds.Syndication.Atom/AtomInReplyTo"
+	Implementing14["AtomLink"]-.-&gt;Type
+	click Implementing14 "/api/Wyam.Feeds.Syndication.Atom/AtomLink"
+	Implementing15["RdfTextInput"]-.-&gt;Type
+	click Implementing15 "/api/Wyam.Feeds.Syndication.Rdf/RdfTextInput"
+	Implementing16["RssGuid"]-.-&gt;Type
+	click Implementing16 "/api/Wyam.Feeds.Syndication.Rss/RssGuid"
 
 						</div>
 					</div>
@@ -311,9 +307,8 @@ class Type type-node
         </div>
         <div class="wrapper bottom-wrapper">
             <footer class="bottom-footer">
-                Wyam2 is maintained by <a href="https://savornicesei.com">Simona Avornicesei</a> and <a href="https://github.com/Wyam2/Wyam/graphs/contributors">other awesome contributors</a>, as a continuation of the <a href="https://github.com/Wyamio/Wyam">Wyam</a> project crafted by <a href="https://daveaglick.com">Dave Glick</a>. <a href="https://github.com/Wyam2/Wyam">Code on GitHub</a>. This site was entirely generated by Wyam. Check out <a href="https://github.com/Wyam2/docs">the site code on GitHub</a>.
+                Wyam2 is maintained by <a href="https://avornicesei.com">Simona Avornicesei</a> and <a href="https://github.com/Wyam2/Wyam/graphs/contributors">other awesome contributors</a>, as a continuation of the <a href="https://github.com/Wyamio/Wyam">Wyam</a> project crafted by <a href="https://daveaglick.com">Dave Glick</a>. <a href="https://github.com/Wyam2/Wyam">Code on GitHub</a>. This site was entirely generated by Wyam. Check out <a href="https://github.com/Wyam2/docs">the site code on GitHub</a>.
 <br><br>
-
             </footer>
         </div>
         <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>

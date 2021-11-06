@@ -22,10 +22,6 @@
         <script src="/assets/js/jquery.sticky-kit.min.js"></script>
         <script src="/assets/js/mermaid.min.js"></script>
         <script src="/assets/js/svg-pan-zoom.min.js"></script>
-        <!--[if lt IE 9]>
-        <script src="/assets/js/html5shiv.min.js"></script>
-        <script src="/assets/js/respond.min.js"></script>
-        <![endif]-->  
 
         <meta name="google" content="notranslate">
 <meta http-equiv="Content-Language" content="en">
@@ -80,7 +76,7 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-        <div><p><a href="https://github.com/Wyam2/docs/tree/master/input/docs/usage/command-line.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
+        <div><p><a href="https://github.com/Wyam2/docs/tree/main/input/docs/usage/command-line.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
     <div id="infobar-headings"><h6>On This Page</h6><p><a href="#nested-arguments">Nested Arguments</a></p>
 <p><a href="#embedded-web-server">Embedded Web server</a></p>
 <p><a href="#file-watching">File Watching</a></p>
@@ -317,6 +313,72 @@ usage:  build [-v] [--attach] [-w] [-p [arg]] [--force-ext]
                              package.                                           
     &lt;package&gt;                The package to install.                              
 </code></pre>
+<p>You can scaffold a new wyam project, using <code>new</code>:</p>
+<pre><code>&gt;wyam new -r <a href="/api/Wyam.Blog/Blog">Blog</a> -help
+
+usage:  new [-v] [--attach] [-u] [--use-local-packages]
+        [--use-global-sources] [--ignore-default-sources]
+        [--packages-path &lt;arg&gt;] [-i &lt;arg&gt;] [-c &lt;arg&gt;] [--ns &lt;arg&gt;...]
+        [-n &lt;arg&gt;...] [-r &lt;arg&gt;] [-a &lt;arg&gt;...] [--] &lt;root&gt;
+
+    -v, --verbose                    Turns on verbose output showing
+                                     additional trace message useful for
+                                     debugging.
+    --attach                         Pause execution at the start of the
+                                     program until a debugger is
+                                     attached.
+    -u, --update-packages            Check the NuGet server for more
+                                     recent versions of each package and
+                                     update them if applicable.
+    --use-local-packages             Toggles the use of a local NuGet
+                                     packages folder.
+    --use-global-sources             Toggles the use of the global NuGet
+                                     sources (default is false).
+    --ignore-default-sources         Ignores default NuGet sources like
+                                     the NuGet Gallery (default is
+                                     false).
+    --packages-path &lt;arg&gt;            The packages path to use (only if
+                                     use-local is true).
+    -i, --input &lt;arg&gt;                The path of input files, can be
+                                     absolute or relative to the current
+                                     folder.
+    -c, --config &lt;arg&gt;               Configuration file (by default,
+                                     config.wyam is used).
+    --ns, --nuget-source &lt;arg&gt;...    Specifies an additional package
+                                     source to use.
+    -n, --nuget &lt;arg&gt;...             Adds a NuGet package (downloading
+                                     and installing it if needed). See
+                                     below for syntax details.
+    -r, --recipe &lt;arg&gt;               Specifies a recipe to use. See
+                                     below for syntax details.
+    -a, --assembly &lt;arg&gt;...          Adds an assembly reference by name,
+                                     file name, or globbing pattern.
+    &lt;root&gt;                           The folder (or config file) to use.
+
+--nuget usage:
+
+    -p, --prerelease         Specifies that prerelease packages are
+                             allowed.
+    -u, --unlisted           Specifies that unlisted packages are
+                             allowed.
+    -v, --version &lt;arg&gt;      Specifies the version range of the package
+                             to use.
+    -l, --latest             Specifies that the latest available version
+                             of the package should be used (this will
+                             always trigger a request to the sources).
+    -s, --source &lt;arg&gt;...    Specifies the package source(s) to get the
+                             package from.
+    -e, --exclusive          Indicates that only the specified package
+                             source(s) should be used to find the
+                             package.
+    &lt;package&gt;                The package to install.
+
+--recipe usage:
+
+    -i, --ignore-known-packages    Ignores (does not add) packages for
+                                   known recipes.
+    &lt;recipe&gt;                       The recipe to use.
+</code></pre>
 <h1 id="nested-arguments">Nested Arguments</h1>
 <p>Note that some of the arguments such as <code>--nuget</code> are "nested" and must be contained in quotes if they contain options of their own (and any inner quotes must be escaped). For example, the following command will load a Nuget package named <code>Foo.Bar</code>:</p>
 <pre><code>wyam --nuget Foo.Bar 
@@ -352,9 +414,8 @@ usage:  build [-v] [--attach] [-w] [-p [arg]] [--force-ext]
         </div>
         <div class="wrapper bottom-wrapper">
             <footer class="bottom-footer">
-                Wyam2 is maintained by <a href="https://savornicesei.com">Simona Avornicesei</a> and <a href="https://github.com/Wyam2/Wyam/graphs/contributors">other awesome contributors</a>, as a continuation of the <a href="https://github.com/Wyamio/Wyam">Wyam</a> project crafted by <a href="https://daveaglick.com">Dave Glick</a>. <a href="https://github.com/Wyam2/Wyam">Code on GitHub</a>. This site was entirely generated by Wyam. Check out <a href="https://github.com/Wyam2/docs">the site code on GitHub</a>.
+                Wyam2 is maintained by <a href="https://avornicesei.com">Simona Avornicesei</a> and <a href="https://github.com/Wyam2/Wyam/graphs/contributors">other awesome contributors</a>, as a continuation of the <a href="https://github.com/Wyamio/Wyam">Wyam</a> project crafted by <a href="https://daveaglick.com">Dave Glick</a>. <a href="https://github.com/Wyam2/Wyam">Code on GitHub</a>. This site was entirely generated by Wyam. Check out <a href="https://github.com/Wyam2/docs">the site code on GitHub</a>.
 <br><br>
-
             </footer>
         </div>
         <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>

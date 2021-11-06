@@ -22,10 +22,6 @@
         <script src="/assets/js/jquery.sticky-kit.min.js"></script>
         <script src="/assets/js/mermaid.min.js"></script>
         <script src="/assets/js/svg-pan-zoom.min.js"></script>
-        <!--[if lt IE 9]>
-        <script src="/assets/js/html5shiv.min.js"></script>
-        <script src="/assets/js/respond.min.js"></script>
-        <![endif]-->  
 
         <meta name="google" content="notranslate">
 <meta http-equiv="Content-Language" content="en">
@@ -209,17 +205,17 @@
 								<dt>Implementing Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/api/Wyam.Testing.Meta/TestMetadata">TestMetadata</a></li>								
+											<li><a href="/api/Wyam.Common.Meta/IMetadataDictionary">IMetadataDictionary</a></li>								
+											<li><a href="/api/Wyam.Core.Documents/CustomDocument">CustomDocument</a></li>								
 											<li><a href="/api/Wyam.Common.Configuration/ISettings">ISettings</a></li>								
+											<li><a href="/api/Wyam.Common.Configuration/IReadOnlySettings">IReadOnlySettings</a></li>								
+											<li><a href="/api/Wyam.Common.Execution/IExecutionContext">IExecutionContext</a></li>								
+											<li><a href="/api/Wyam.Testing.Configuration/TestSettings">TestSettings</a></li>								
+											<li><a href="/api/Wyam.Testing.Meta/TestMetadata">TestMetadata</a></li>								
 											<li><a href="/api/Wyam.Common.Documents/IDocument">IDocument</a></li>								
 											<li><a href="/api/Wyam.Testing.Documents/TestDocument">TestDocument</a></li>								
-											<li><a href="/api/Wyam.Common.Meta/IMetadataDictionary">IMetadataDictionary</a></li>								
-											<li><a href="/api/Wyam.Common.Configuration/IReadOnlySettings">IReadOnlySettings</a></li>								
 											<li><a href="/api/Wyam.Testing.Execution/TestExecutionContext">TestExecutionContext</a></li>								
-											<li><a href="/api/Wyam.Core.Documents/CustomDocument">CustomDocument</a></li>								
 											<li><a href="/api/Wyam.Common.Meta/ConvertingDictionary">ConvertingDictionary</a></li>								
-											<li><a href="/api/Wyam.Testing.Configuration/TestSettings">TestSettings</a></li>								
-											<li><a href="/api/Wyam.Common.Execution/IExecutionContext">IExecutionContext</a></li>								
 									</ul>
 								</dd>				
 						</dl>
@@ -230,28 +226,28 @@
 	Type-.-&gt;Interface0["IReadOnlyDictionary&lt;string, Object&gt;"]
 	Type["IMetadata"]
 class Type type-node
-	Implementing0["TestMetadata"]-.-&gt;Type
-	click Implementing0 "/api/Wyam.Testing.Meta/TestMetadata"
-	Implementing1["ISettings"]-.-&gt;Type
-	click Implementing1 "/api/Wyam.Common.Configuration/ISettings"
-	Implementing2["IDocument"]-.-&gt;Type
-	click Implementing2 "/api/Wyam.Common.Documents/IDocument"
-	Implementing3["TestDocument"]-.-&gt;Type
-	click Implementing3 "/api/Wyam.Testing.Documents/TestDocument"
-	Implementing4["IMetadataDictionary"]-.-&gt;Type
-	click Implementing4 "/api/Wyam.Common.Meta/IMetadataDictionary"
-	Implementing5["IReadOnlySettings"]-.-&gt;Type
-	click Implementing5 "/api/Wyam.Common.Configuration/IReadOnlySettings"
-	Implementing6["TestExecutionContext"]-.-&gt;Type
-	click Implementing6 "/api/Wyam.Testing.Execution/TestExecutionContext"
-	Implementing7["CustomDocument"]-.-&gt;Type
-	click Implementing7 "/api/Wyam.Core.Documents/CustomDocument"
-	Implementing8["ConvertingDictionary"]-.-&gt;Type
-	click Implementing8 "/api/Wyam.Common.Meta/ConvertingDictionary"
-	Implementing9["TestSettings"]-.-&gt;Type
-	click Implementing9 "/api/Wyam.Testing.Configuration/TestSettings"
-	Implementing10["IExecutionContext"]-.-&gt;Type
-	click Implementing10 "/api/Wyam.Common.Execution/IExecutionContext"
+	Implementing0["IMetadataDictionary"]-.-&gt;Type
+	click Implementing0 "/api/Wyam.Common.Meta/IMetadataDictionary"
+	Implementing1["CustomDocument"]-.-&gt;Type
+	click Implementing1 "/api/Wyam.Core.Documents/CustomDocument"
+	Implementing2["ISettings"]-.-&gt;Type
+	click Implementing2 "/api/Wyam.Common.Configuration/ISettings"
+	Implementing3["IReadOnlySettings"]-.-&gt;Type
+	click Implementing3 "/api/Wyam.Common.Configuration/IReadOnlySettings"
+	Implementing4["IExecutionContext"]-.-&gt;Type
+	click Implementing4 "/api/Wyam.Common.Execution/IExecutionContext"
+	Implementing5["TestSettings"]-.-&gt;Type
+	click Implementing5 "/api/Wyam.Testing.Configuration/TestSettings"
+	Implementing6["TestMetadata"]-.-&gt;Type
+	click Implementing6 "/api/Wyam.Testing.Meta/TestMetadata"
+	Implementing7["IDocument"]-.-&gt;Type
+	click Implementing7 "/api/Wyam.Common.Documents/IDocument"
+	Implementing8["TestDocument"]-.-&gt;Type
+	click Implementing8 "/api/Wyam.Testing.Documents/TestDocument"
+	Implementing9["TestExecutionContext"]-.-&gt;Type
+	click Implementing9 "/api/Wyam.Testing.Execution/TestExecutionContext"
+	Implementing10["ConvertingDictionary"]-.-&gt;Type
+	click Implementing10 "/api/Wyam.Common.Meta/ConvertingDictionary"
 
 						</div>
 					</div>
@@ -573,9 +569,8 @@ class Type type-node
         </div>
         <div class="wrapper bottom-wrapper">
             <footer class="bottom-footer">
-                Wyam2 is maintained by <a href="https://savornicesei.com">Simona Avornicesei</a> and <a href="https://github.com/Wyam2/Wyam/graphs/contributors">other awesome contributors</a>, as a continuation of the <a href="https://github.com/Wyamio/Wyam">Wyam</a> project crafted by <a href="https://daveaglick.com">Dave Glick</a>. <a href="https://github.com/Wyam2/Wyam">Code on GitHub</a>. This site was entirely generated by Wyam. Check out <a href="https://github.com/Wyam2/docs">the site code on GitHub</a>.
+                Wyam2 is maintained by <a href="https://avornicesei.com">Simona Avornicesei</a> and <a href="https://github.com/Wyam2/Wyam/graphs/contributors">other awesome contributors</a>, as a continuation of the <a href="https://github.com/Wyamio/Wyam">Wyam</a> project crafted by <a href="https://daveaglick.com">Dave Glick</a>. <a href="https://github.com/Wyam2/Wyam">Code on GitHub</a>. This site was entirely generated by Wyam. Check out <a href="https://github.com/Wyam2/docs">the site code on GitHub</a>.
 <br><br>
-
             </footer>
         </div>
         <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>

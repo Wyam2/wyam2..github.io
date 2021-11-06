@@ -65,9 +65,7 @@ ol, ul { margin: 0; padding: 0; }
 
 .sidenav a span:hover:after { width: 100%; }
 
-/*.sidenav a span:hover, .offcanvas a span:focus{
-    border-bottom: 3px solid $color-alpha;
-}*/
+/*.sidenav a span:hover, .offcanvas a span:focus{ border-bottom: 3px solid $color-alpha; }*/
 .sidenav .closebtn { position: absolute; top: 0; right: 25px; font-size: 36px; margin-left: 50px; border: none; cursor: pointer; color: #0a0a0a; }
 
 main > .nav { top: 1.75em; }

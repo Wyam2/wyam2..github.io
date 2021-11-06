@@ -22,10 +22,6 @@
         <script src="/assets/js/jquery.sticky-kit.min.js"></script>
         <script src="/assets/js/mermaid.min.js"></script>
         <script src="/assets/js/svg-pan-zoom.min.js"></script>
-        <!--[if lt IE 9]>
-        <script src="/assets/js/html5shiv.min.js"></script>
-        <script src="/assets/js/respond.min.js"></script>
-        <![endif]-->  
 
         <meta name="google" content="notranslate">
 <meta http-equiv="Content-Language" content="en">
@@ -80,7 +76,7 @@
             <aside class="main-sidebar ">
                 <section class="infobar" data-spy="affix" data-offset-top="60" data-offset-bottom="200"> 
                     	
-        <div><p><a href="https://github.com/Wyam2/docs/tree/master/input/docs/usage/obtaining.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
+        <div><p><a href="https://github.com/Wyam2/docs/tree/main/input/docs/usage/obtaining.md"><i class="fa fa-pencil-square" aria-hidden="true"></i> Edit Content</a></p></div>
     <div id="infobar-headings"><h6>On This Page</h6><p><a href="#global-tool">Global Tool</a></p>
 <p><a href="#zip-file">Zip File</a></p>
 <p><a href="#tools-package">Tools Package</a></p>
@@ -193,11 +189,11 @@
 	<section class="content">
 		<p>There are several ways to download and install Wyam depending on which platform you're using and how much automation and control you want. Wyam currently requires <a href="https://www.microsoft.com/net/download">.NET Core 2.x</a> to be installed on your system.</p>
 <h1 id="global-tool">Global Tool</h1>
-<p>The easiest way to install Wyam is via the <a href="https://docs.microsoft.com/en-us/dotnet/core/tools/global-tools">global tool package</a> named <a href="https://www.nuget.org/packages/Wyam.Tool/">Wyam.Tool</a>. You can install it like this:</p>
-<pre><code>dotnet tool install -g Wyam.Tool
+<p>The easiest way to install Wyam is via the <a href="https://docs.microsoft.com/en-us/dotnet/core/tools/global-tools">global tool package</a> named <a href="https://www.nuget.org/packages/Wyam2.Tool/">Wyam2.Tool</a>. You can install it like this:</p>
+<pre><code>dotnet tool install -g Wyam2.Tool
 </code></pre>
-<p>Then you can use it with the <code>wyam</code> command:</p>
-<pre><code>wyam ...
+<p>Then you can use it with the <code>wyam2</code> command:</p>
+<pre><code>dotnet wyam2 ...
 </code></pre>
 <p>On non-Windows systems you might need to add .NET Global tool folder to the environment path variable, for your shell to find the <code>wyam</code> command. If running Bash you can add it to your <code>.bash_profile</code> like below (<code>echo ~/.dotnet/tools</code> will give your absolute path to .NET global tool folder):</p>
 <pre><code>cat &lt;&lt; \EOF &gt;&gt; ~/.bash_profile
@@ -206,36 +202,35 @@ export PATH="$PATH:/home/{username}/.dotnet/tools"
 EOF
 </code></pre>
 <h1 id="zip-file">Zip File</h1>
-<p>To download Wyam as a zip file, visit the <a href="https://github.com/Wyamio/Wyam/releases">Releases</a> page and download the most recent archive. Then unzip it into a folder of your choice. That's it. .NET Core <a href="https://docs.microsoft.com/en-us/dotnet/core/deploying/#framework-dependent-deployments-fdd">framework-dependent deployment</a>, which means it's shipped as a DLL assembly that requires the <code>dotnet</code> CLI bootstrapper to run. You may also want to add the folder where you unzipped Wyam to your path, but that step is optional.</p>
-<p>Once you download the <a href="https://github.com/Wyamio/Wyam/releases">ZIP archive</a> and extract it somewhere, running Wyam looks like:</p>
+<p>To download Wyam as a zip file, visit the <a href="https://github.com/Wyam2/Wyam/releases">Releases</a> page and download the most recent archive. Then unzip it into a folder of your choice. That's it. .NET Core <a href="https://docs.microsoft.com/en-us/dotnet/core/deploying/#framework-dependent-deployments-fdd">framework-dependent deployment</a>, which means it's shipped as a DLL assembly that requires the <code>dotnet</code> CLI bootstrapper to run. You may also want to add the folder where you unzipped Wyam to your path, but that step is optional.</p>
+<p>Once you download the <a href="https://github.com/Wyam2/Wyam/releases">ZIP archive</a> and extract it somewhere, running Wyam looks like:</p>
 <pre><code>dotnet /path/to/wyam/Wyam.dll ...
 </code></pre>
 <h1 id="tools-package">Tools Package</h1>
-<p><a href="https://www.nuget.org/packages/Wyam">One of the NuGet packages provided by Wyam</a> is a "tools package". This means that it includes the wyam executable as well as all other required libraries in a special "tools" subfolder that gets unpacked when the package is downloaded. This is helpful in cases where you want to obtain the Wyam command line application from NuGet (as opposed to downloading it directly). For example, a tools package allows you to easily use Wyam in <a href="http://cakebuild.net/">Cake</a> build scripts.</p>
+<p><a href="https://www.nuget.org/packages/Wyam2">One of the NuGet packages provided by Wyam2</a> is a "tools package". This means that it includes the wyam executable as well as all other required libraries in a special "tools" subfolder that gets unpacked when the package is downloaded. This is helpful in cases where you want to obtain the Wyam command line application from NuGet (as opposed to downloading it directly). For example, a tools package allows you to easily use Wyam in <a href="http://cakebuild.net/">Cake</a> build scripts.</p>
 <p>For more information about how tools packages work, see the excellent blog post <em><a href="https://lostechies.com/joshuaflanagan/2011/06/24/how-to-use-a-tool-installed-by-nuget-in-your-build-scripts/">How to use a tool installed by Nuget in your build scripts</a></em>.</p>
 <h1 id="chocolatey">Chocolatey</h1>
-<p>Wyam can be installed via <a href="https://chocolatey.org/packages/wyam">Chocolatey</a> using the following command:</p>
-<pre><code>choco install wyam
+<p>Wyam can be installed via <a href="https://chocolatey.org/packages/wyam2">Chocolatey</a> using the following command:</p>
+<pre><code>choco install wyam2
 </code></pre>
 <p>A specific version can be installed with the following command:</p>
-<pre><code>choco install wyam --version 1.2.3
+<pre><code>choco install wyam2 --version 3.0.0
 </code></pre>
-<p>You can update Wyam with Chocolatey using the following command:</p>
-<pre><code>choco upgrade wyam
+<p>You can update Wyam2 with Chocolatey using the following command:</p>
+<pre><code>choco upgrade wyam2
 </code></pre>
 <p>If you would like to bypass the Chocolatey registry and install the tools package from the NuGet gallery instead (not recommended), you can use the following command:</p>
-<pre><code>choco install Wyam -s https://www.nuget.org/api/v2/
+<pre><code>choco install Wyam2 -s https://www.nuget.org/api/v2/
 </code></pre>
 <h1 id="libraries">Libraries</h1>
-<p>If you're developing addins or you want to embed Wyam in your own applications you can use <a href="https://www.nuget.org/packages/Wyam.Common">Wyam.Common</a> for developing addins and <a href="https://www.nuget.org/packages/Wyam.Core">Wyam.Core</a> for embedding the engine. These are both available as packages on NuGet. If you're embedding Wyam and your configuration requires other libraries (such as modules), you may also have to <a href="https://www.nuget.org/packages?q=wyam">search NuGet for related Wyam libraries</a> and add those too.</p>
+<p>If you're developing addins or you want to embed Wyam in your own applications you can use <a href="https://www.nuget.org/packages/Wyam2.Common">Wyam2.Common</a> for developing addins and <a href="https://www.nuget.org/packages/Wyam2.Core">Wyam2.Core</a> for embedding the engine. These are both available as packages on NuGet. If you're embedding Wyam and your configuration requires other libraries (such as modules), you may also have to <a href="https://www.nuget.org/packages?q=wyam2">search NuGet for related Wyam2 libraries</a> and add those too.</p>
 <h1 id="development-builds">Development Builds</h1>
-<p>You can also get the most recent builds at the MyGet feed:</p>
-<p>NuGet V3 clients (VS 2015, Wyam): <a href="https://www.myget.org/F/wyam/api/v3/index.json">https://www.myget.org/F/wyam/api/v3/index.json</a></p>
-<p>NuGet V2 clients (VS 2013, Cake): <a href="https://www.myget.org/F/wyam/api/v2">https://www.myget.org/F/wyam/api/v2</a></p>
-<p>To use the development feed inside a Wyam configuration file for a particular module, specify it like this:</p>
-<pre><code>#n Wyam.Markdown -s https://www.myget.org/F/wyam/api/v3/index.json -l
+<p>You can also get the latest nightly builds from GitHub feed from <a href="https://nuget.pkg.github.com/Wyam2/index.json">https://nuget.pkg.github.com/Wyam2/index.json</a></p>
+<p>To use the nightly feed inside a Wyam configuration file for a particular module, specify it like this:</p>
+<pre><code>#n Wyam2.Markdown -s https://nuget.pkg.github.com/Wyam2/index.json -l
 </code></pre>
 <p>The <code>-l</code> flag indicates that the latest version of the specified package should always be used.</p>
+<p>For more details about working with GitHub NuGet registry, see <a href="https://docs.github.com/en/packages/working-with-a-github-packages-registry/working-with-the-nuget-registry">official docs</a>.</p>
 
 	</section>
                 
@@ -248,9 +243,8 @@ EOF
         </div>
         <div class="wrapper bottom-wrapper">
             <footer class="bottom-footer">
-                Wyam2 is maintained by <a href="https://savornicesei.com">Simona Avornicesei</a> and <a href="https://github.com/Wyam2/Wyam/graphs/contributors">other awesome contributors</a>, as a continuation of the <a href="https://github.com/Wyamio/Wyam">Wyam</a> project crafted by <a href="https://daveaglick.com">Dave Glick</a>. <a href="https://github.com/Wyam2/Wyam">Code on GitHub</a>. This site was entirely generated by Wyam. Check out <a href="https://github.com/Wyam2/docs">the site code on GitHub</a>.
+                Wyam2 is maintained by <a href="https://avornicesei.com">Simona Avornicesei</a> and <a href="https://github.com/Wyam2/Wyam/graphs/contributors">other awesome contributors</a>, as a continuation of the <a href="https://github.com/Wyamio/Wyam">Wyam</a> project crafted by <a href="https://daveaglick.com">Dave Glick</a>. <a href="https://github.com/Wyam2/Wyam">Code on GitHub</a>. This site was entirely generated by Wyam. Check out <a href="https://github.com/Wyam2/docs">the site code on GitHub</a>.
 <br><br>
-
             </footer>
         </div>
         <a href="javascript:" id="return-to-top"><i class="fa fa-chevron-up"></i></a>
