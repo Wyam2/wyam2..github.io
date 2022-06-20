@@ -202,9 +202,9 @@
 								<dt>Implementing Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/api/Wyam.Common.IO/IFile">IFile</a></li>								
 											<li><a href="/api/Wyam.Testing.IO/TestFile">TestFile</a></li>								
 											<li><a href="/api/Wyam.Testing.IO/TestDirectory">TestDirectory</a></li>								
+											<li><a href="/api/Wyam.Common.IO/IFile">IFile</a></li>								
 											<li><a href="/api/Wyam.Common.IO/IDirectory">IDirectory</a></li>								
 									</ul>
 								</dd>				
@@ -215,12 +215,12 @@
 							graph BT
 	Type["IFileSystemEntry"]
 class Type type-node
-	Implementing0["IFile"]-.-&gt;Type
-	click Implementing0 "/api/Wyam.Common.IO/IFile"
-	Implementing1["TestFile"]-.-&gt;Type
-	click Implementing1 "/api/Wyam.Testing.IO/TestFile"
-	Implementing2["TestDirectory"]-.-&gt;Type
-	click Implementing2 "/api/Wyam.Testing.IO/TestDirectory"
+	Implementing0["TestFile"]-.-&gt;Type
+	click Implementing0 "/api/Wyam.Testing.IO/TestFile"
+	Implementing1["TestDirectory"]-.-&gt;Type
+	click Implementing1 "/api/Wyam.Testing.IO/TestDirectory"
+	Implementing2["IFile"]-.-&gt;Type
+	click Implementing2 "/api/Wyam.Common.IO/IFile"
 	Implementing3["IDirectory"]-.-&gt;Type
 	click Implementing3 "/api/Wyam.Common.IO/IDirectory"
 

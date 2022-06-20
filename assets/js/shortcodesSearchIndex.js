@@ -36,76 +36,6 @@ var searchModule = function() {
     a(
         {
             id:0,
-            title:"Include",
-            content:"Include",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/shortcodes/include',
-            title:"Include",
-            description:""
-        }
-    );
-    a(
-        {
-            id:1,
-            title:"Highlight",
-            content:"Highlight",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/shortcodes/highlight',
-            title:"Highlight",
-            description:""
-        }
-    );
-    a(
-        {
-            id:2,
-            title:"Embed",
-            content:"Embed",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/shortcodes/embed',
-            title:"Embed",
-            description:""
-        }
-    );
-    a(
-        {
-            id:3,
-            title:"Gist",
-            content:"Gist",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/shortcodes/gist',
-            title:"Gist",
-            description:""
-        }
-    );
-    a(
-        {
-            id:4,
-            title:"Twitter",
-            content:"Twitter",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/shortcodes/twitter',
-            title:"Twitter",
-            description:""
-        }
-    );
-    a(
-        {
-            id:5,
             title:"Link",
             content:"Link",
             description:'',
@@ -119,63 +49,7 @@ var searchModule = function() {
     );
     a(
         {
-            id:6,
-            title:"YouTube",
-            content:"YouTube",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/shortcodes/youtube',
-            title:"YouTube",
-            description:""
-        }
-    );
-    a(
-        {
-            id:7,
-            title:"CodePen",
-            content:"CodePen",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/shortcodes/codepen',
-            title:"CodePen",
-            description:""
-        }
-    );
-    a(
-        {
-            id:8,
-            title:"Table",
-            content:"Table",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/shortcodes/table',
-            title:"Table",
-            description:""
-        }
-    );
-    a(
-        {
-            id:9,
-            title:"Raw",
-            content:"Raw",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/shortcodes/raw',
-            title:"Raw",
-            description:""
-        }
-    );
-    a(
-        {
-            id:10,
+            id:1,
             title:"Giphy",
             content:"Giphy",
             description:'',
@@ -189,7 +63,35 @@ var searchModule = function() {
     );
     a(
         {
-            id:11,
+            id:2,
+            title:"Include",
+            content:"Include",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/shortcodes/include',
+            title:"Include",
+            description:""
+        }
+    );
+    a(
+        {
+            id:3,
+            title:"Table",
+            content:"Table",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/shortcodes/table',
+            title:"Table",
+            description:""
+        }
+    );
+    a(
+        {
+            id:4,
             title:"Figure",
             content:"Figure",
             description:'',
@@ -198,6 +100,104 @@ var searchModule = function() {
         {
             url:'/shortcodes/figure',
             title:"Figure",
+            description:""
+        }
+    );
+    a(
+        {
+            id:5,
+            title:"Embed",
+            content:"Embed",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/shortcodes/embed',
+            title:"Embed",
+            description:""
+        }
+    );
+    a(
+        {
+            id:6,
+            title:"Twitter",
+            content:"Twitter",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/shortcodes/twitter',
+            title:"Twitter",
+            description:""
+        }
+    );
+    a(
+        {
+            id:7,
+            title:"Highlight",
+            content:"Highlight",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/shortcodes/highlight',
+            title:"Highlight",
+            description:""
+        }
+    );
+    a(
+        {
+            id:8,
+            title:"Raw",
+            content:"Raw",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/shortcodes/raw',
+            title:"Raw",
+            description:""
+        }
+    );
+    a(
+        {
+            id:9,
+            title:"YouTube",
+            content:"YouTube",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/shortcodes/youtube',
+            title:"YouTube",
+            description:""
+        }
+    );
+    a(
+        {
+            id:10,
+            title:"Gist",
+            content:"Gist",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/shortcodes/gist',
+            title:"Gist",
+            description:""
+        }
+    );
+    a(
+        {
+            id:11,
+            title:"CodePen",
+            content:"CodePen",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/shortcodes/codepen',
+            title:"CodePen",
             description:""
         }
     );

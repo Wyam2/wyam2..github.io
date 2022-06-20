@@ -4,7 +4,86 @@
 	<title>Wyam2</title>
 	<link rel="self" href="https://wyam2.github.io/" />
 	<rights>2022</rights>
-	<updated>2022-06-20T06:28:40Z</updated>
+	<updated>2022-06-20T17:43:51Z</updated>
+	<entry>
+		<id>https://wyam2.github.io/blog/version-3.0.0</id>
+		<title>Version 3.0.0</title>
+		<author>
+			<name>Simona Avornicesei</name>
+		</author>
+		<link href="https://wyam2.github.io/blog/version-3.0.0" />
+		<updated>2022-06-20T00:00:00Z</updated>
+		<content>&lt;p&gt;Version 3.0.0 is now available on &lt;a href="https://github.com/Wyam2/wyam/releases/tag/3.0.0"&gt;GitHub release page&lt;/a&gt;, &lt;a href="https://www.nuget.org/packages?packagetype=&amp;amp;sortby=relevance&amp;amp;q=wyam2"&gt;Nuget&lt;/a&gt; and &lt;a href="https://community.chocolatey.org/packages/wyam2/3.0.0"&gt;Chocolatey&lt;/a&gt;).&lt;/p&gt;
+&lt;p&gt;Most notable features and fixes in this release are:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;first release of Wyam2, as a drop-in replacement for Wyam
+&lt;ul&gt;
+&lt;li&gt;Wyam.Tool was renamed to Wyam2.Tool &lt;code&gt;dotnet tool install -g Wyam2.Tool&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;wyam was renamed to wyam2 &lt;code&gt;wyam2 new --recipe Blog&lt;/code&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Update NuGet.* packages to v6.2.1 to mitigate CVE-2022-30184 / GHSA-3885-8gqc-3wpf&lt;/li&gt;
+&lt;li&gt;Update blog themes: CleanBlog to v6.0.4, Phantom, SolidState, Stellar&lt;/li&gt;
+&lt;li&gt;Render all XML comment tags (#24) - &lt;a href="/recipes/docs/xml-comments-support"&gt;see documentation&lt;/a&gt; for details
+&lt;ul&gt;
+&lt;li&gt;added support for: revisionHistory, note, definition list, cref langword&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;li&gt;Could not reference Wyam.Common namespace with nuget (#1)&lt;/li&gt;
+&lt;li&gt;Add command-line switch for no logo (#4, logo was removed)&lt;/li&gt;
+&lt;li&gt;Cake.Wyam &amp;quot;Could not execute because the specified command or file was not found&amp;quot; error (#25)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id="release-notes"&gt;Release Notes&lt;/h1&gt;
+&lt;h2 id="security-vulnerabilities-fixes"&gt;Security / Vulnerabilities fixes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Update NuGet.* packages to v6.2.1 to mitigate CVE-2022-30184 / GHSA-3885-8gqc-3wpf&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="fixes"&gt;Fixes&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Cake addin documentation updated to specify Wyam2 instead of the original Wyam project&lt;/li&gt;
+&lt;li&gt;Wyam 3.0.0-rc3 does not render correctly note and table list XML comments (#92)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="refactoring"&gt;Refactoring&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Update StyleCop.Analyzers to v1.2.0-beta.435&lt;/li&gt;
+&lt;li&gt;Update Roslynator.Analyzers to v4.1.1&lt;/li&gt;
+&lt;li&gt;Update Microsoft.SourceLink.GitHub to v1.1.1&lt;/li&gt;
+&lt;li&gt;Update Microsoft.CodeAnalysis.CSharp to v4.1.0&lt;/li&gt;
+&lt;li&gt;Added dependency NuGet.PackageManagement to Wyam2.Configuration project&lt;/li&gt;
+&lt;li&gt;Removed dependencies to NuGet.Client, NuGet.ContentModel, NuGet.PackageManagement.NetStandard, NuGet.Repositories, NuGet.RuntimeModel in Wyam2.Configuration project&lt;/li&gt;
+&lt;li&gt;Update JavaScriptEngineSwitcher.Jint to v3.18.0-preview to support ES6, &lt;a href="https://github.com/sebastienros/jint/issues/343#issuecomment-1133930693"&gt;see here&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Update Octokit to v0.51.0&lt;/li&gt;
+&lt;li&gt;Update SixLabors.ImageSharp to v2.1.2&lt;/li&gt;
+&lt;li&gt;Update Polly to v7.2.3&lt;/li&gt;
+&lt;li&gt;Update SharpZipLib to v1.3.3&lt;/li&gt;
+&lt;li&gt;Update MetadataExtractor to v2.7.2&lt;/li&gt;
+&lt;li&gt;Update Google.Apis, Google.Apis.Auth, Google.Apis.Core and Google.Apis.YouTube.v3 to v1.57.0&lt;/li&gt;
+&lt;li&gt;Update CsvHelper to v27.2.1&lt;/li&gt;
+&lt;li&gt;Update Markdig to v0.30.2&lt;/li&gt;
+&lt;li&gt;Update Nunit to v3.13.3&lt;/li&gt;
+&lt;li&gt;Update NSubstitute to v4.3.0&lt;/li&gt;
+&lt;li&gt;Update Castle.Core to v.5.0.0&lt;/li&gt;
+&lt;li&gt;Update Microsoft.NET.Test.Sdk to v17.2.0&lt;/li&gt;
+&lt;li&gt;Update System.Data.SqlClient to v4.8.3&lt;/li&gt;
+&lt;li&gt;Update NUnit3TestAdapter to v4.2.1&lt;/li&gt;
+&lt;li&gt;Update Microsoft.IO.RecyclableMemoryStream to v2.2.0&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="devops"&gt;DevOps&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Simplified extraction of git branch and SHA in build script&lt;/li&gt;
+&lt;li&gt;Fixed Wyam2 and Wyam2.Tool nuget packages description&lt;/li&gt;
+&lt;li&gt;Roslynator.Analyzers 4.x requires Roslyn 4.0.1 thus .NET SDK 6.0 build&lt;/li&gt;
+&lt;li&gt;GHA(deps): Bump peter-evans/repository-dispatch from 1 to 2&lt;/li&gt;
+&lt;li&gt;GHA(deps): Bump actions/upload-artifact from 2 to 3&lt;/li&gt;
+&lt;li&gt;GHA(deps): Bump github/codeql-action from 1 to 2&lt;/li&gt;
+&lt;li&gt;GHA(deps): Bump crazy-max/ghaction-github-labeler from 3 to 4&lt;/li&gt;
+&lt;li&gt;GHA(deps): Bump actions/setup-dotnet from 1 to 2&lt;/li&gt;
+&lt;li&gt;GHA(deps): Bump smartsquaregmbh/delete-old-packages from 0.3.3 to 0.4.0&lt;/li&gt;
+&lt;li&gt;GHA(deps): Bump actions/checkout from 2 to 3&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+		<summary>&lt;p&gt;Version 3.0.0 is now available on &lt;a href="https://github.com/Wyam2/wyam/releases/tag/3.0.0"&gt;GitHub release page&lt;/a&gt;, &lt;a href="https://www.nuget.org/packages?packagetype=&amp;amp;sortby=relevance&amp;amp;q=wyam2"&gt;Nuget&lt;/a&gt; and &lt;a href="https://community.chocolatey.org/packages/wyam2/3.0.0"&gt;Chocolatey&lt;/a&gt;).&lt;/p&gt;</summary>
+	</entry>
 	<entry>
 		<id>https://wyam2.github.io/blog/version-3.0.0-rc3</id>
 		<title>Version 3.0.0-rc3</title>
@@ -136,83 +215,30 @@
 		<summary>&lt;p&gt;Version 3.0.0-rc1 is now available.&lt;/p&gt;</summary>
 	</entry>
 	<entry>
-		<id>https://wyam2.github.io/blog/version-3.0.0</id>
-		<title>Version 3.0.0</title>
+		<id>https://wyam2.github.io/blog/version-2.2.3</id>
+		<title>Version 2.2.3</title>
 		<author>
-			<name>Simona Avornicesei</name>
+			<name>Dave Glick</name>
 		</author>
-		<link href="https://wyam2.github.io/blog/version-3.0.0" />
-		<updated>2021-06-20T00:00:00Z</updated>
-		<content>&lt;p&gt;Version 3.0.0 is now available on &lt;a href="https://github.com/Wyam2/wyam/releases/tag/3.0.0"&gt;GitHub release page&lt;/a&gt;, &lt;a href="https://www.nuget.org/packages?packagetype=&amp;amp;sortby=relevance&amp;amp;q=wyam2"&gt;Nuget&lt;/a&gt; and &lt;a href="https://community.chocolatey.org/packages/wyam2/3.0.0"&gt;Chocolatey&lt;/a&gt;).&lt;/p&gt;
-&lt;p&gt;Most notable features and fixes in this release are:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;first release of Wyam2, as a drop-in replacement for Wyam
-&lt;ul&gt;
-&lt;li&gt;Wyam.Tool was renamed to Wyam2.Tool &lt;code&gt;dotnet tool install -g Wyam2.Tool&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;wyam was renamed to wyam2 &lt;code&gt;wyam2 new --recipe Blog&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Update NuGet.* packages to v6.2.1 to mitigate CVE-2022-30184 / GHSA-3885-8gqc-3wpf&lt;/li&gt;
-&lt;li&gt;Update blog themes: CleanBlog to v6.0.4, Phantom, SolidState, Stellar&lt;/li&gt;
-&lt;li&gt;Render all XML comment tags (#24) - &lt;a href="/recipes/docs/xml-comments-support"&gt;see documentation&lt;/a&gt; for details
-&lt;ul&gt;
-&lt;li&gt;added support for: revisionHistory, note, definition list, cref langword&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/li&gt;
-&lt;li&gt;Could not reference Wyam.Common namespace with nuget (#1)&lt;/li&gt;
-&lt;li&gt;Add command-line switch for no logo (#4, logo was removed)&lt;/li&gt;
-&lt;li&gt;Cake.Wyam &amp;quot;Could not execute because the specified command or file was not found&amp;quot; error (#25)&lt;/li&gt;
-&lt;/ul&gt;
+		<link href="https://wyam2.github.io/blog/version-2.2.3" />
+		<updated>2019-02-27T00:00:00Z</updated>
+		<content>&lt;p&gt;Version 2.2.3 is now available.&lt;/p&gt;
 &lt;h1 id="release-notes"&gt;Release Notes&lt;/h1&gt;
-&lt;h2 id="security-vulnerabilities-fixes"&gt;Security / Vulnerabilities fixes&lt;/h2&gt;
+&lt;h2 id="features"&gt;Features&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Update NuGet.* packages to v6.2.1 to mitigate CVE-2022-30184 / GHSA-3885-8gqc-3wpf&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="fixes"&gt;Fixes&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Cake addin documentation updated to specify Wyam2 instead of the original Wyam project&lt;/li&gt;
-&lt;li&gt;Wyam 3.0.0-rc3 does not render correctly note and table list XML comments (#92)&lt;/li&gt;
+&lt;li&gt;New &lt;code&gt;Raw&lt;/code&gt; shortcode useful for escaping inner shortcode syntax&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h2 id="refactoring"&gt;Refactoring&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Update StyleCop.Analyzers to v1.2.0-beta.435&lt;/li&gt;
-&lt;li&gt;Update Roslynator.Analyzers to v4.1.1&lt;/li&gt;
-&lt;li&gt;Update Microsoft.SourceLink.GitHub to v1.1.1&lt;/li&gt;
-&lt;li&gt;Update Microsoft.CodeAnalysis.CSharp to v4.1.0&lt;/li&gt;
-&lt;li&gt;Added dependency NuGet.PackageManagement to Wyam2.Configuration project&lt;/li&gt;
-&lt;li&gt;Removed dependencies to NuGet.Client, NuGet.ContentModel, NuGet.PackageManagement.NetStandard, NuGet.Repositories, NuGet.RuntimeModel in Wyam2.Configuration project&lt;/li&gt;
-&lt;li&gt;Update JavaScriptEngineSwitcher.Jint to v3.18.0-preview to support ES6, &lt;a href="https://github.com/sebastienros/jint/issues/343#issuecomment-1133930693"&gt;see here&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;Update Octokit to v0.51.0&lt;/li&gt;
-&lt;li&gt;Update SixLabors.ImageSharp to v2.1.2&lt;/li&gt;
-&lt;li&gt;Update Polly to v7.2.3&lt;/li&gt;
-&lt;li&gt;Update SharpZipLib to v1.3.3&lt;/li&gt;
-&lt;li&gt;Update MetadataExtractor to v2.7.2&lt;/li&gt;
-&lt;li&gt;Update Google.Apis, Google.Apis.Auth, Google.Apis.Core and Google.Apis.YouTube.v3 to v1.57.0&lt;/li&gt;
-&lt;li&gt;Update CsvHelper to v27.2.1&lt;/li&gt;
-&lt;li&gt;Update Markdig to v0.30.2&lt;/li&gt;
-&lt;li&gt;Update Nunit to v3.13.3&lt;/li&gt;
-&lt;li&gt;Update NSubstitute to v4.3.0&lt;/li&gt;
-&lt;li&gt;Update Castle.Core to v.5.0.0&lt;/li&gt;
-&lt;li&gt;Update Microsoft.NET.Test.Sdk to v17.2.0&lt;/li&gt;
-&lt;li&gt;Update System.Data.SqlClient to v4.8.3&lt;/li&gt;
-&lt;li&gt;Update NUnit3TestAdapter to v4.2.1&lt;/li&gt;
-&lt;li&gt;Update Microsoft.IO.RecyclableMemoryStream to v2.2.0&lt;/li&gt;
+&lt;li&gt;Changes the special nested escape processing instruction for shortcodes from a standard processing instruction to &lt;code&gt;&amp;lt;?* ... ?&amp;gt;&lt;/code&gt;&lt;/li&gt;
 &lt;/ul&gt;
-&lt;h2 id="devops"&gt;DevOps&lt;/h2&gt;
+&lt;h2 id="fixes"&gt;Fixes&lt;/h2&gt;
 &lt;ul&gt;
-&lt;li&gt;Simplified extraction of git branch and SHA in build script&lt;/li&gt;
-&lt;li&gt;Fixed Wyam2 and Wyam2.Tool nuget packages description&lt;/li&gt;
-&lt;li&gt;Roslynator.Analyzers 4.x requires Roslyn 4.0.1 thus .NET SDK 6.0 build&lt;/li&gt;
-&lt;li&gt;GHA(deps): Bump peter-evans/repository-dispatch from 1 to 2&lt;/li&gt;
-&lt;li&gt;GHA(deps): Bump actions/upload-artifact from 2 to 3&lt;/li&gt;
-&lt;li&gt;GHA(deps): Bump github/codeql-action from 1 to 2&lt;/li&gt;
-&lt;li&gt;GHA(deps): Bump crazy-max/ghaction-github-labeler from 3 to 4&lt;/li&gt;
-&lt;li&gt;GHA(deps): Bump actions/setup-dotnet from 1 to 2&lt;/li&gt;
-&lt;li&gt;GHA(deps): Bump smartsquaregmbh/delete-old-packages from 0.3.3 to 0.4.0&lt;/li&gt;
-&lt;li&gt;GHA(deps): Bump actions/checkout from 2 to 3&lt;/li&gt;
+&lt;li&gt;Fixes a regression in &lt;code&gt;AutoLink&lt;/code&gt; where a new document was being returned when it shouldn't have been (#786)&lt;/li&gt;
+&lt;li&gt;Moved the &lt;code&gt;AutoLink&lt;/code&gt; module in docs to execute after all template processing (#786)&lt;/li&gt;
 &lt;/ul&gt;
 </content>
-		<summary>&lt;p&gt;Version 3.0.0 is now available on &lt;a href="https://github.com/Wyam2/wyam/releases/tag/3.0.0"&gt;GitHub release page&lt;/a&gt;, &lt;a href="https://www.nuget.org/packages?packagetype=&amp;amp;sortby=relevance&amp;amp;q=wyam2"&gt;Nuget&lt;/a&gt; and &lt;a href="https://community.chocolatey.org/packages/wyam2/3.0.0"&gt;Chocolatey&lt;/a&gt;).&lt;/p&gt;</summary>
+		<summary>&lt;p&gt;Version 2.2.3 is now available.&lt;/p&gt;</summary>
 	</entry>
 	<entry>
 		<id>https://wyam2.github.io/blog/version-2.2.2</id>
@@ -238,32 +264,6 @@
 &lt;/ul&gt;
 </content>
 		<summary>&lt;p&gt;Version 2.2.2 is now available.&lt;/p&gt;</summary>
-	</entry>
-	<entry>
-		<id>https://wyam2.github.io/blog/version-2.2.3</id>
-		<title>Version 2.2.3</title>
-		<author>
-			<name>Dave Glick</name>
-		</author>
-		<link href="https://wyam2.github.io/blog/version-2.2.3" />
-		<updated>2019-02-27T00:00:00Z</updated>
-		<content>&lt;p&gt;Version 2.2.3 is now available.&lt;/p&gt;
-&lt;h1 id="release-notes"&gt;Release Notes&lt;/h1&gt;
-&lt;h2 id="features"&gt;Features&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;New &lt;code&gt;Raw&lt;/code&gt; shortcode useful for escaping inner shortcode syntax&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="refactoring"&gt;Refactoring&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Changes the special nested escape processing instruction for shortcodes from a standard processing instruction to &lt;code&gt;&amp;lt;?* ... ?&amp;gt;&lt;/code&gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;h2 id="fixes"&gt;Fixes&lt;/h2&gt;
-&lt;ul&gt;
-&lt;li&gt;Fixes a regression in &lt;code&gt;AutoLink&lt;/code&gt; where a new document was being returned when it shouldn't have been (#786)&lt;/li&gt;
-&lt;li&gt;Moved the &lt;code&gt;AutoLink&lt;/code&gt; module in docs to execute after all template processing (#786)&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-		<summary>&lt;p&gt;Version 2.2.3 is now available.&lt;/p&gt;</summary>
 	</entry>
 	<entry>
 		<id>https://wyam2.github.io/blog/version-2.2.1</id>

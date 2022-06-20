@@ -191,8 +191,8 @@
 								<dt>Implementing Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/api/Wyam.SearchIndex/SearchIndexItem">SearchIndexItem</a></li>								
 											<li><a href="/api/Wyam.SearchIndex/DocSearchIndexItem">DocSearchIndexItem</a></li>								
+											<li><a href="/api/Wyam.SearchIndex/SearchIndexItem">SearchIndexItem</a></li>								
 									</ul>
 								</dd>				
 						</dl>
@@ -202,10 +202,10 @@
 							graph BT
 	Type["ISearchIndexItem"]
 class Type type-node
-	Implementing0["SearchIndexItem"]-.-&gt;Type
-	click Implementing0 "/api/Wyam.SearchIndex/SearchIndexItem"
-	Implementing1["DocSearchIndexItem"]-.-&gt;Type
-	click Implementing1 "/api/Wyam.SearchIndex/DocSearchIndexItem"
+	Implementing0["DocSearchIndexItem"]-.-&gt;Type
+	click Implementing0 "/api/Wyam.SearchIndex/DocSearchIndexItem"
+	Implementing1["SearchIndexItem"]-.-&gt;Type
+	click Implementing1 "/api/Wyam.SearchIndex/SearchIndexItem"
 
 						</div>
 					</div>

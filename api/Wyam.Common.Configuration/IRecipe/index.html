@@ -198,8 +198,8 @@
 								<dt>Implementing Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/api/Wyam.Common.Configuration/Recipe">Recipe</a></li>								
 											<li><a href="/api/Wyam.Blog/Blog">Blog</a></li>								
+											<li><a href="/api/Wyam.Common.Configuration/Recipe">Recipe</a></li>								
 											<li><a href="/api/Wyam.Docs/Docs">Docs</a></li>								
 									</ul>
 								</dd>				
@@ -210,10 +210,10 @@
 							graph BT
 	Type["IRecipe"]
 class Type type-node
-	Implementing0["Recipe"]-.-&gt;Type
-	click Implementing0 "/api/Wyam.Common.Configuration/Recipe"
-	Implementing1["Blog"]-.-&gt;Type
-	click Implementing1 "/api/Wyam.Blog/Blog"
+	Implementing0["Blog"]-.-&gt;Type
+	click Implementing0 "/api/Wyam.Blog/Blog"
+	Implementing1["Recipe"]-.-&gt;Type
+	click Implementing1 "/api/Wyam.Common.Configuration/Recipe"
 	Implementing2["Docs"]-.-&gt;Type
 	click Implementing2 "/api/Wyam.Docs/Docs"
 
