@@ -195,18 +195,18 @@
 								<dt>Implementing Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/api/Wyam.Feeds.Syndication.Rdf/RdfFeed">RdfFeed</a></li>								
-											<li><a href="/api/Wyam.Feeds.Syndication/Feed">Feed</a></li>								
-											<li><a href="/api/Wyam.Feeds.Syndication/FeedMetadata">FeedMetadata</a></li>								
-											<li><a href="/api/Wyam.Feeds.Syndication.Atom/AtomFeed">AtomFeed</a></li>								
 											<li><a href="/api/Wyam.Feeds.Syndication/IFeedItem">IFeedItem</a></li>								
-											<li><a href="/api/Wyam.Feeds.Syndication.Rss/RssFeed">RssFeed</a></li>								
-											<li><a href="/api/Wyam.Feeds.Syndication.Atom/AtomEntry">AtomEntry</a></li>								
-											<li><a href="/api/Wyam.Feeds.Syndication.Rdf/RdfChannel">RdfChannel</a></li>								
-											<li><a href="/api/Wyam.Feeds.Syndication.Rdf/RdfItem">RdfItem</a></li>								
-											<li><a href="/api/Wyam.Feeds.Syndication.Rss/RssItem">RssItem</a></li>								
-											<li><a href="/api/Wyam.Feeds.Syndication/FeedItem">FeedItem</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Rdf/RdfFeed">RdfFeed</a></li>								
 											<li><a href="/api/Wyam.Feeds.Syndication/IFeed">IFeed</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication/FeedMetadata">FeedMetadata</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Rdf/RdfChannel">RdfChannel</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication/FeedItem">FeedItem</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Atom/AtomFeed">AtomFeed</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Rss/RssItem">RssItem</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Atom/AtomEntry">AtomEntry</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Rss/RssFeed">RssFeed</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication.Rdf/RdfItem">RdfItem</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication/Feed">Feed</a></li>								
 											<li><a href="/api/Wyam.Feeds.Syndication.Rdf/RdfTextInput">RdfTextInput</a></li>								
 									</ul>
 								</dd>				
@@ -217,30 +217,30 @@
 							graph BT
 	Type["IFeedMetadata"]
 class Type type-node
-	Implementing0["RdfFeed"]-.-&gt;Type
-	click Implementing0 "/api/Wyam.Feeds.Syndication.Rdf/RdfFeed"
-	Implementing1["Feed"]-.-&gt;Type
-	click Implementing1 "/api/Wyam.Feeds.Syndication/Feed"
-	Implementing2["FeedMetadata"]-.-&gt;Type
-	click Implementing2 "/api/Wyam.Feeds.Syndication/FeedMetadata"
-	Implementing3["AtomFeed"]-.-&gt;Type
-	click Implementing3 "/api/Wyam.Feeds.Syndication.Atom/AtomFeed"
-	Implementing4["IFeedItem"]-.-&gt;Type
-	click Implementing4 "/api/Wyam.Feeds.Syndication/IFeedItem"
-	Implementing5["RssFeed"]-.-&gt;Type
-	click Implementing5 "/api/Wyam.Feeds.Syndication.Rss/RssFeed"
-	Implementing6["AtomEntry"]-.-&gt;Type
-	click Implementing6 "/api/Wyam.Feeds.Syndication.Atom/AtomEntry"
-	Implementing7["RdfChannel"]-.-&gt;Type
-	click Implementing7 "/api/Wyam.Feeds.Syndication.Rdf/RdfChannel"
-	Implementing8["RdfItem"]-.-&gt;Type
-	click Implementing8 "/api/Wyam.Feeds.Syndication.Rdf/RdfItem"
-	Implementing9["RssItem"]-.-&gt;Type
-	click Implementing9 "/api/Wyam.Feeds.Syndication.Rss/RssItem"
-	Implementing10["FeedItem"]-.-&gt;Type
-	click Implementing10 "/api/Wyam.Feeds.Syndication/FeedItem"
-	Implementing11["IFeed"]-.-&gt;Type
-	click Implementing11 "/api/Wyam.Feeds.Syndication/IFeed"
+	Implementing0["IFeedItem"]-.-&gt;Type
+	click Implementing0 "/api/Wyam.Feeds.Syndication/IFeedItem"
+	Implementing1["RdfFeed"]-.-&gt;Type
+	click Implementing1 "/api/Wyam.Feeds.Syndication.Rdf/RdfFeed"
+	Implementing2["IFeed"]-.-&gt;Type
+	click Implementing2 "/api/Wyam.Feeds.Syndication/IFeed"
+	Implementing3["FeedMetadata"]-.-&gt;Type
+	click Implementing3 "/api/Wyam.Feeds.Syndication/FeedMetadata"
+	Implementing4["RdfChannel"]-.-&gt;Type
+	click Implementing4 "/api/Wyam.Feeds.Syndication.Rdf/RdfChannel"
+	Implementing5["FeedItem"]-.-&gt;Type
+	click Implementing5 "/api/Wyam.Feeds.Syndication/FeedItem"
+	Implementing6["AtomFeed"]-.-&gt;Type
+	click Implementing6 "/api/Wyam.Feeds.Syndication.Atom/AtomFeed"
+	Implementing7["RssItem"]-.-&gt;Type
+	click Implementing7 "/api/Wyam.Feeds.Syndication.Rss/RssItem"
+	Implementing8["AtomEntry"]-.-&gt;Type
+	click Implementing8 "/api/Wyam.Feeds.Syndication.Atom/AtomEntry"
+	Implementing9["RssFeed"]-.-&gt;Type
+	click Implementing9 "/api/Wyam.Feeds.Syndication.Rss/RssFeed"
+	Implementing10["RdfItem"]-.-&gt;Type
+	click Implementing10 "/api/Wyam.Feeds.Syndication.Rdf/RdfItem"
+	Implementing11["Feed"]-.-&gt;Type
+	click Implementing11 "/api/Wyam.Feeds.Syndication/Feed"
 	Implementing12["RdfTextInput"]-.-&gt;Type
 	click Implementing12 "/api/Wyam.Feeds.Syndication.Rdf/RdfTextInput"
 

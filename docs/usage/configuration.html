@@ -246,10 +246,10 @@ Adds a NuGet package (downloading and installing it if needed).
 (1.0,2.0) = 1.0 &lt; x &lt; 2.0
 [1.0,2.0] = 1.0 ≤ x ≤ 2.0
 </code></pre>
-<p>Note that many modules require their package to be installed before they can be used. For example, to make use of the <a href="/modules/markdown">Markdown</a> module, you must install the <code>Wyam.Markdown</code> package. To do this, you would add the following to your configuration file:</p>
+<p>Note that many modules require their package to be installed before they can be used. For example, to make use of the <a href="/modules/markdown">Markdown</a> module, you must install the <code>Wyam2.Markdown</code> package. To do this, you would add the following to your configuration file:</p>
 <pre><code>#n Wyam.Markdown
 </code></pre>
-<p>You can also specify the special <code>Wyam.All</code> package which will download all of the official Wyam module packages at once:</p>
+<p>You can also specify the special <code>Wyam2.All</code> package which will download all of the official Wyam module packages at once:</p>
 <pre><code>#n Wyam.All
 </code></pre>
 <p>All NuGet packages you specify, along with their dependencies, are located and downloaded at startup. Walking the full dependency tree can be time consuming since queries have to be issued to the NuGet server(s) for each individual package. To improve performance, the full set of packages and their dependencies is cached in a <code>packages.xml</code> file. If Wyam has already calculated the dependency tree for a given package and version, that entire tree will be stored in this cache file and it won't need to be rewalked on the next run. This means that the first execution of Wyam may take longer as the dependency cache is populated but subsiquent executions should be much faster.</p>

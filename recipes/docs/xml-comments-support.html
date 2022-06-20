@@ -163,6 +163,7 @@
 </ul>
 </li>
 <li><strong>definition list</strong>, as defined by <a href="http://ewsoftware.github.io/XMLCommentsGuide/html/e433d846-db15-4ac8-a5f5-f3428609ae6c.htm">SHFB</a></li>
+<li>** table list** with 2 or multiple columns, as defined by <a href="http://ewsoftware.github.io/XMLCommentsGuide/html/e433d846-db15-4ac8-a5f5-f3428609ae6c.htm">SHFB</a></li>
 <li><strong>note</strong>, as defined by <a href="http://ewsoftware.github.io/XMLCommentsGuide/html/4302a60f-e4f4-4b8d-a451-5f453c4ebd46.htm">SHFB</a>
 <ul>
 <li>it is rendered as a <code>&lt;div&gt;</code> with css class <em>note type</em>, for example <code>&lt;div class="tip"&gt;Always update documentation!&lt;/div&gt;</code></li>
@@ -185,7 +186,7 @@
 <li><strong>event</strong> is not supported but it is possible to select class methods and retrieve their type and summary</li>
 <li><strong>preliminary</strong> can be retrieved from <code><a href="/api/Wyam.CodeAnalysis/OtherComment">OtherComment</a></code>, see <a href="https://github.com/Wyam2/wyam/blob/1ae999a995113ee9cc719d709699d6df76a5bb74/tests/extensions/Wyam.CodeAnalysis.Tests/AnalyzeCSharpXmlDocumentationFixture.cs#L166">this</a> test</li>
 <li><strong>threadsafety</strong> can also be retrieved from <code><a href="/api/Wyam.CodeAnalysis/OtherComment">OtherComment</a></code></li>
-<li><strong>nested code elements</strong> since the same can be acomplish by defining independent <code>code</code> blocks</li>
+<li><strong>nested code elements</strong> are not supported since the same can be acomplish by defining independent <code>code</code> blocks</li>
 <li><strong>AttachedEventComments</strong> is not supported</li>
 <li><strong>AttachedPropertyComments</strong> is not supported</li>
 <li><strong>Code Contract elements</strong> is not supported</li>

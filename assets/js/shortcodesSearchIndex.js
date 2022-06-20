@@ -36,14 +36,14 @@ var searchModule = function() {
     a(
         {
             id:0,
-            title:"Gist",
-            content:"Gist",
+            title:"Include",
+            content:"Include",
             description:'',
             tags:''
         },
         {
-            url:'/shortcodes/gist',
-            title:"Gist",
+            url:'/shortcodes/include',
+            title:"Include",
             description:""
         }
     );
@@ -64,62 +64,6 @@ var searchModule = function() {
     a(
         {
             id:2,
-            title:"YouTube",
-            content:"YouTube",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/shortcodes/youtube',
-            title:"YouTube",
-            description:""
-        }
-    );
-    a(
-        {
-            id:3,
-            title:"Figure",
-            content:"Figure",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/shortcodes/figure',
-            title:"Figure",
-            description:""
-        }
-    );
-    a(
-        {
-            id:4,
-            title:"Meta",
-            content:"Meta",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/shortcodes/meta',
-            title:"Meta",
-            description:""
-        }
-    );
-    a(
-        {
-            id:5,
-            title:"Raw",
-            content:"Raw",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/shortcodes/raw',
-            title:"Raw",
-            description:""
-        }
-    );
-    a(
-        {
-            id:6,
             title:"Embed",
             content:"Embed",
             description:'',
@@ -133,7 +77,35 @@ var searchModule = function() {
     );
     a(
         {
-            id:7,
+            id:3,
+            title:"Gist",
+            content:"Gist",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/shortcodes/gist',
+            title:"Gist",
+            description:""
+        }
+    );
+    a(
+        {
+            id:4,
+            title:"Twitter",
+            content:"Twitter",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/shortcodes/twitter',
+            title:"Twitter",
+            description:""
+        }
+    );
+    a(
+        {
+            id:5,
             title:"Link",
             content:"Link",
             description:'',
@@ -147,35 +119,21 @@ var searchModule = function() {
     );
     a(
         {
-            id:8,
-            title:"Include",
-            content:"Include",
+            id:6,
+            title:"YouTube",
+            content:"YouTube",
             description:'',
             tags:''
         },
         {
-            url:'/shortcodes/include',
-            title:"Include",
+            url:'/shortcodes/youtube',
+            title:"YouTube",
             description:""
         }
     );
     a(
         {
-            id:9,
-            title:"Giphy",
-            content:"Giphy",
-            description:'',
-            tags:''
-        },
-        {
-            url:'/shortcodes/giphy',
-            title:"Giphy",
-            description:""
-        }
-    );
-    a(
-        {
-            id:10,
+            id:7,
             title:"CodePen",
             content:"CodePen",
             description:'',
@@ -189,7 +147,7 @@ var searchModule = function() {
     );
     a(
         {
-            id:11,
+            id:8,
             title:"Table",
             content:"Table",
             description:'',
@@ -203,15 +161,57 @@ var searchModule = function() {
     );
     a(
         {
-            id:12,
-            title:"Twitter",
-            content:"Twitter",
+            id:9,
+            title:"Raw",
+            content:"Raw",
             description:'',
             tags:''
         },
         {
-            url:'/shortcodes/twitter',
-            title:"Twitter",
+            url:'/shortcodes/raw',
+            title:"Raw",
+            description:""
+        }
+    );
+    a(
+        {
+            id:10,
+            title:"Giphy",
+            content:"Giphy",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/shortcodes/giphy',
+            title:"Giphy",
+            description:""
+        }
+    );
+    a(
+        {
+            id:11,
+            title:"Figure",
+            content:"Figure",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/shortcodes/figure',
+            title:"Figure",
+            description:""
+        }
+    );
+    a(
+        {
+            id:12,
+            title:"Meta",
+            content:"Meta",
+            description:'',
+            tags:''
+        },
+        {
+            url:'/shortcodes/meta',
+            title:"Meta",
             description:""
         }
     );

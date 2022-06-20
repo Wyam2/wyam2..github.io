@@ -197,13 +197,13 @@
 								<dt>Implementing Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/api/Wyam.GitHub/GitHub">GitHub</a></li>								
-											<li><a href="/api/Wyam.CodeAnalysis/ReadProject">ReadProject</a></li>								
-											<li><a href="/api/Wyam.Core.Modules.IO/ReadFiles">ReadFiles</a></li>								
 											<li><a href="/api/Wyam.CodeAnalysis/ReadWorkspace">ReadWorkspace</a></li>								
-											<li><a href="/api/Wyam.Core.Modules.IO/CopyFiles">CopyFiles</a></li>								
+											<li><a href="/api/Wyam.Core.Modules.IO/ReadFiles">ReadFiles</a></li>								
+											<li><a href="/api/Wyam.CodeAnalysis/ReadProject">ReadProject</a></li>								
 											<li><a href="/api/Wyam.YouTube/YouTube">YouTube</a></li>								
+											<li><a href="/api/Wyam.Core.Modules.IO/CopyFiles">CopyFiles</a></li>								
 											<li><a href="/api/Wyam.CodeAnalysis/ReadSolution">ReadSolution</a></li>								
+											<li><a href="/api/Wyam.GitHub/GitHub">GitHub</a></li>								
 									</ul>
 								</dd>				
 						</dl>
@@ -213,20 +213,20 @@
 							graph BT
 	Type["IAsNewDocuments"]
 class Type type-node
-	Implementing0["GitHub"]-.-&gt;Type
-	click Implementing0 "/api/Wyam.GitHub/GitHub"
-	Implementing1["ReadProject"]-.-&gt;Type
-	click Implementing1 "/api/Wyam.CodeAnalysis/ReadProject"
-	Implementing2["ReadFiles"]-.-&gt;Type
-	click Implementing2 "/api/Wyam.Core.Modules.IO/ReadFiles"
-	Implementing3["ReadWorkspace"]-.-&gt;Type
-	click Implementing3 "/api/Wyam.CodeAnalysis/ReadWorkspace"
+	Implementing0["ReadWorkspace"]-.-&gt;Type
+	click Implementing0 "/api/Wyam.CodeAnalysis/ReadWorkspace"
+	Implementing1["ReadFiles"]-.-&gt;Type
+	click Implementing1 "/api/Wyam.Core.Modules.IO/ReadFiles"
+	Implementing2["ReadProject"]-.-&gt;Type
+	click Implementing2 "/api/Wyam.CodeAnalysis/ReadProject"
+	Implementing3["YouTube"]-.-&gt;Type
+	click Implementing3 "/api/Wyam.YouTube/YouTube"
 	Implementing4["CopyFiles"]-.-&gt;Type
 	click Implementing4 "/api/Wyam.Core.Modules.IO/CopyFiles"
-	Implementing5["YouTube"]-.-&gt;Type
-	click Implementing5 "/api/Wyam.YouTube/YouTube"
-	Implementing6["ReadSolution"]-.-&gt;Type
-	click Implementing6 "/api/Wyam.CodeAnalysis/ReadSolution"
+	Implementing5["ReadSolution"]-.-&gt;Type
+	click Implementing5 "/api/Wyam.CodeAnalysis/ReadSolution"
+	Implementing6["GitHub"]-.-&gt;Type
+	click Implementing6 "/api/Wyam.GitHub/GitHub"
 
 						</div>
 					</div>

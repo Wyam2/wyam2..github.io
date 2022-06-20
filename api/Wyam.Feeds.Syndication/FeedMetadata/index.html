@@ -206,8 +206,8 @@
 								<dt>Derived Types</dt>
 								<dd>
 									<ul class="list-unstyled">
-											<li><a href="/api/Wyam.Feeds.Syndication/Feed">Feed</a></li>								
 											<li><a href="/api/Wyam.Feeds.Syndication/FeedItem">FeedItem</a></li>								
+											<li><a href="/api/Wyam.Feeds.Syndication/Feed">Feed</a></li>								
 									</ul>
 								</dd>			
 							
@@ -221,10 +221,10 @@
 	click Interface0 "/api/Wyam.Feeds.Syndication/IFeedMetadata"
 	Type["FeedMetadata"]
 class Type type-node
-	Derived0["Feed"]--&gt;Type
-	click Derived0 "/api/Wyam.Feeds.Syndication/Feed"
-	Derived1["FeedItem"]--&gt;Type
-	click Derived1 "/api/Wyam.Feeds.Syndication/FeedItem"
+	Derived0["FeedItem"]--&gt;Type
+	click Derived0 "/api/Wyam.Feeds.Syndication/FeedItem"
+	Derived1["Feed"]--&gt;Type
+	click Derived1 "/api/Wyam.Feeds.Syndication/Feed"
 
 						</div>
 					</div>
